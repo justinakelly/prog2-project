@@ -95,6 +95,9 @@ module.exports = {
     getAll,
     oneArtwork
 }
+
+
+//guardamos la inof en una variable y la exportamos asi la podemos requerir desde otro archivo 
 // Agregar producto:
 // imagen: campo de tipo file.
 // Nombre del producto: campo de tipo texto.

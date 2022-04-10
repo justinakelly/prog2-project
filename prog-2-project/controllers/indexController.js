@@ -1,4 +1,5 @@
 var index = require('../db/artworksData');
+var moduleArtworks = require('../db/artworksData')
 
 const controller = {
 //nos llevamos/cortamos el callback, el segundo argumento de la funcion de las rutas
