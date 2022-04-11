@@ -2,7 +2,8 @@
 //Debe ser coherente con la información pedida en el formulario de carga de productos. 
 // Los datos deben ser coherentes con la información pedida en el formulario de carga de productos.
 
-const artworksInfo = [
+const data = {
+    artworks: [
     {
         image : '../public/images/products/garden-of-forking-paths.jpeg',
         name : 'GARDEN OF FORKING PATHS',
@@ -75,17 +76,31 @@ const artworksInfo = [
         description : '',
         date : '22-5',
     }
+],
+user: {
+    email : '',
+    username : '',
+    password : '',
+    document : '',
+    profilePicture : '',
+
+},
+commments: [
+    {
+        username: '',
+        commentary : '',
+        profilePicture : ''
+    }
 ]
+}
 
 
 function getAll () {
   return artworksInfo;
 }
 
-module.exports = {
-    artworksInfo, 
-    getAll
-}
+module.exports = data;
+
 
 
 //guardamos la inof en una variable y la exportamos asi la podemos requerir desde otro archivo 

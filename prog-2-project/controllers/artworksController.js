@@ -6,14 +6,21 @@ const controller = {
         
        // res.send (moduleArtworks[req.params.id -1])
 
-       // res.render ('artworks', {product: moduleArtworks[req.params.id -1]})  --> cuando tenga ejs 
-        res.send ('listo')
+         //--> cuando tenga ejs 
+        //res.send ('listo')
 
     }, //no lo entiendo, no serie en index?
     show: function(req, res){
-        const result = moduleArtworks[0]
+      //  const result = moduleArtworks[0]
         //const result = moduleArtworks[req.params.id - 1]
-        res.send(result)
+     // res.render ('product', {product: moduleArtworks[req.params.id]})
+      //  res.send(result)
+      console.log(moduleArtworks.lista[req.params.id -1])
+      res.render ('product', {
+          artwork: moduleArtworks.lista[req.params.id -1],  //arreglar esto porque cambie nombres de la carpeta db 
+                                                                //archivos commentsData, userData no tiene que funcionar
+          commentsInfo: moduleArtworks.comentarios
+        })
 
     },
     add: function(req, res){
