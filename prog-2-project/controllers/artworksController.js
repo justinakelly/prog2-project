@@ -2,6 +2,12 @@ var moduleArtworks = require('../db/artworksData')
 
 const controller = {
     index: function(req, res){ 
+        //res.send('respond with products')
+        
+       // res.send (moduleArtworks[req.params.id -1])
+
+       // res.render ('artworks', {product: moduleArtworks[req.params.id -1]})  --> cuando tenga ejs 
+
 
     }, //no lo entiendo, no serie en index?
     show: function(req, res){
