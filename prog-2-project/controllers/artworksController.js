@@ -7,7 +7,11 @@ const controller = {
        // res.send (moduleArtworks[req.params.id -1])
 
        // res.render ('artworks', {product: moduleArtworks[req.params.id -1]})  --> cuando tenga ejs 
+<<<<<<< HEAD
+        
+=======
         res.send ('listo')
+>>>>>>> 069fdae36feb0c3970b6b16ab3310d883d3445ff
 
     }, //no lo entiendo, no serie en index?
     show: function(req, res){
