@@ -82,18 +82,9 @@ function getAll () {
   return artworksInfo;
 }
 
-function oneArtwork (){
-    // for (let i = 0; i < artworksInfo.length; i++) {
-    //     const element = artworksInfo[i];
-        return artworksInfo[1]
-        
-    }
-
-
 module.exports = {
     artworksInfo, 
-    getAll,
-    oneArtwork
+    getAll
 }
 
 
