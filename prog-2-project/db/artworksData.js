@@ -42,8 +42,8 @@ const data = {
     },
     {
         image : '../public/images/products/.jpeg',
-        name : '',
-        description : '',
+        name : 'THE PASSION',
+        description : 'Passion is an impulse of the soul, strong and emotional.',
         date : '22-5',
     },
     {
@@ -88,7 +88,27 @@ user: {
 commments: [
     {
         username: '@hola',
-        commentary : '',
+        commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
+        profilePicture : ''
+    },
+    {
+        username: '@justinakelly',
+        commentary : 'Amazing!',
+        profilePicture : ''
+    },
+    {
+        username: '@candelariatallavi',
+        commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
+        profilePicture : ''
+    },
+    {
+        username: '@justinabsegui',
+        commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
+        profilePicture : ''
+    },
+    {
+        username: '@user',
+        commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
         profilePicture : ''
     }
 ]
