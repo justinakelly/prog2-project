@@ -17,9 +17,27 @@ const data = {
         date : '22-5',
     },
     {
-        image : '../public/images/products/.jpeg',
-        name : '',
-        description : '',
+        image : '../public/images/products/acid-scan-3.png',
+        name : 'ACID SCAN 3',
+        description : '"ACID SCANS" is a series of portrait based on scans of my face and other body parts. There is around 10 to 25 scans in each artwork. In my paintings, I have always tried to abstract the portrait the most without loosing the essence of it. These are the digital version of my vision of a portrait.',
+        date : '22-5',
+    },
+    {
+        image : '../public/images/products/alter-egos.jpeg',
+        name : 'ALTER EGOS',
+        description : 'Who is the first self ? Who created who ? They all die together! Inspired from a movie that I am not supposed to talk about!',
+        date : '22-5',
+    },
+    {
+        image : '../public/images/products/tied-to-the-past.jpeg',
+        name : 'TIED TO THE PAST',
+        description : 'Past traumas are the metastasis of present behaviors. Finding their way through the stream of unconsciousness, taking control over our train of thought. Overwhelming. Like a heavy mass pinning you down through the darkness of a bygone age while witnessing the distant glimmer of an unreachable light from the future. « Tied To The Past » is an attempt to depict and exorcise the feeling of being chained to unhealed wounds. When acknowledging damages isn’t enough to reach the surface anymore. When the desire to heal can’t compete with recollections. Tearing past, present and future apart in an endless cycle.',
+        date : '22-5',
+    },
+    {
+        image : '../public/images/products/zen.jpeg',
+        name : 'ZEN',
+        description : '“The only Zen you’ll find on mountain tops is the Zen you bring up there with you.” -- Alan Watts',
         date : '22-5',
     },
     {
@@ -54,25 +72,7 @@ const data = {
     },
     {
         image : '../public/images/products/.jpeg',
-        name : '',
-        description : '',
-        date : '22-5',
-    },
-    {
-        image : '../public/images/products/.jpeg',
-        name : '',
-        description : '',
-        date : '22-5',
-    },
-    {
-        image : '../public/images/products/.jpeg',
-        name : '',
-        description : '',
-        date : '22-5',
-    },
-    {
-        image : '../public/images/products/.jpeg',
-        name : '',
+        name : 'poner foto default',
         description : '',
         date : '22-5',
     }
@@ -87,7 +87,7 @@ user: {
 },
 commments: [
     {
-        username: '',
+        username: '@hola',
         commentary : '',
         profilePicture : ''
     }
@@ -96,7 +96,7 @@ commments: [
 
 
 function getAll () {
-  return artworksInfo;
+  return data;
 }
 
 module.exports = data;

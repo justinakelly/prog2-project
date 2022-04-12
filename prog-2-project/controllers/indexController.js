@@ -1,11 +1,11 @@
-var index = require('../db/artworksData');
-var moduleArtworks = require('../db/artworksData')
+var data = require('../db/artworksData');
 
 const controller = {
 //nos llevamos/cortamos el callback, el segundo argumento de la funcion de las rutas
     index: function(req, res){
       //  res.send(moduleArtworks.getAll())
-        res.render('index', {index: moduleArtworks.getAll() })
+      //  res.render('index', {index: data.getAll() })
+        res.render('index', {index: data.artworks })
 
     },
     
