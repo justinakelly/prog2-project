@@ -20,7 +20,7 @@ const controller = {
       res.render ('product', {
           artwork: data.artworks[req.params.id -1],  //arreglar esto porque cambie nombres de la carpeta db 
                                                                //archivos commentsData, userData no tiene que funcionar
-          comments: data.commments
+          comment: data.comments
         })
 
     },
