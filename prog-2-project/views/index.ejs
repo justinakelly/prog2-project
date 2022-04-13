@@ -111,7 +111,7 @@
 						<article class="product-box_data">
 							<h2> <%= artwork[i].name %> </h2>
 							<p> <%= artwork[i].description %> </p>
-							<p>Comentarios: <%=  %> </p>
+							<p>Comments: <%= artwork.length %> </p> <!--en realidad quiero comments.length-->
 						</article>
 					</a>
 				</section>
@@ -128,25 +128,27 @@
 				<h2 class="products-title">Más comentados</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
+			<% for (let i= 0; i < mostCommented.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="product.html">
 						<figure class="product-box_image">
-							<img src="../public/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="/images/products/default-image.png" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
+							<h2>Nombre del producto <%= mostCommented[i].name %> </h2>
 							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
 							<p>Comentarios: 12</p>
-						</article>
+						</article> 
 					</a>
 				</section>
 			</div>
+			<% } %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="product.html">
 						<figure class="product-box_image">
-							<img src="../public/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="/images/products/default-image.png" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
 							<h2>Nombre del producto</h2>

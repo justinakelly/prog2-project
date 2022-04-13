@@ -6,9 +6,16 @@ const controller = {
     index: function(req, res){
       //  res.send(moduleArtworks.getAll())
       //  res.render('index', {index: data.getAll() })
+      function randomNum () {
+        return Math.floor(Math.random() * data.artworks.length);
+    }
+     const randomArtwork = function getRandomArtwork (){
+          return data.artworks[randomNum()]
+      };
         res.render('index', {
             artwork: data.artworks,
-            commments: data.commments })
+            commments: data.commments, 
+            mostCommented: randomArtwork})
 
     },
     
