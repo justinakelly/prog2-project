@@ -95,34 +95,29 @@ comments: [
     {
         username: '@hola',
         commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
-        profilePicture : ''
+        profilePicture : '/images/users/default-user.jpeg'
     },
     {
         username: '@justinakelly',
         commentary : 'Amazing!',
-        profilePicture : ''
+        profilePicture : '/images/users/default-user.jpeg'
     },
     {
         username: '@candelariatallavi',
-        commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
-        profilePicture : ''
+        commentary : 'Where can I buy this?',
+        profilePicture : '/images/users/default-user.jpeg'
     },
     {
         username: '@justinabsegui',
-        commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
-        profilePicture : ''
+        commentary : 'This is crazy (insert emoji aplausos)',
+        profilePicture : '/images/users/default-user.jpeg'
     },
     {
         username: '@user',
         commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
-        profilePicture : ''
+        profilePicture : '/images/users/default-user.jpeg'
     }
 ]
-}
-
-
-function getAll () {
-  return data;
 }
 
 module.exports = data;
