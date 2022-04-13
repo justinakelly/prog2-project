@@ -1,3 +1,4 @@
+const { commments } = require('../db/artworksData');
 var data = require('../db/artworksData');
 
 const controller = {
@@ -5,7 +6,9 @@ const controller = {
     index: function(req, res){
       //  res.send(moduleArtworks.getAll())
       //  res.render('index', {index: data.getAll() })
-        res.render('index', {index: data.artworks })
+        res.render('index', {
+            artwork: data.artworks,
+            commments: data.commments })
 
     },
     

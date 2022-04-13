@@ -1,12 +1,12 @@
 <!-- <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1><</h1>
+    <p>Welcome to </p>
   </body>
 </html>
 -->
@@ -101,20 +101,22 @@
 				<h2 class="products-title">Novedades</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
+			<% for (let i= 0; i < artwork.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="product.html">
+					<a href="/artworks/<%= artwork[i].id %>">
 						<figure class="product-box_image">
-							<img src="../public/images/products/default-image.png" alt="cafetera moulinex">
+							<img src=" <%= artwork[i].image %> " alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2> <%= artwork[i].name %> </h2>
+							<p> <%= artwork[i].description %> </p>
+							<p>Comentarios: <%=  %> </p>
 						</article>
 					</a>
 				</section>
 			</div>
+			<% } %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="product.html">
