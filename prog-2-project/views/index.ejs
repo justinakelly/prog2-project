@@ -53,15 +53,15 @@
 			<% for (let i= 0; i < mostCommented.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/artworks/<%= artwork[i].id %>">
+					<a href="product.html">
 						<figure class="product-box_image">
-							<img src=" <%= artwork[i].image %> " width="300" alt="artwork image">
+							<img src="/images/products/default-image.png" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2> <%= artwork[i].name %> </h2>
-							<p> <%= artwork[i].description %> </p>
-							<p>Comments: <%= artwork.length %> </p> <!--en realidad quiero comments.length-->
-						</article>
+							<h2> <%= mostCommented[i].name %> </h2>
+							<p> <%= mostCommented.description %></p>
+							<p> <%= mostCommented.length %></p> <!--en realidad quiero comments.length-->
+						</article> 
 					</a>
 				</section>
 			</div>
@@ -73,7 +73,7 @@
 							<img src="/images/products/default-image.png" alt="artwork">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
+							<h2>Nombre del producto</h2> <!-- aca quiero <%= mostCommented[i].name %> -->
 							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
 							<p>Comentarios: 12</p>
 							<p></p>
@@ -88,7 +88,7 @@
 							<img src="../public/images/products/default-image.png" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
+							<h2>Nombre del producto</h2> <!-- aca quiero <%= mostCommented[i].name %> -->
 							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
 							<p>Comentarios: 12</p>
 						</article>
@@ -102,7 +102,7 @@
 							<img src="../public/images/products/default-image.png" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
+							<h2>Nombre del producto</h2> <!-- aca quiero <%= mostCommented[i].name %> -->
 							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
 							<p>Comentarios: 12</p>
 						</article>
