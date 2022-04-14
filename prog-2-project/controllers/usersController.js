@@ -10,13 +10,13 @@ const controller = {
 },
     profile: function (req, res) {
     res.render('profile', {
-        user: user,
+        userData: user,
         artworks: artworksData,
     });
 },
     edit: function (req, res) {
-    res.render('edit', {
-        user: user,
+    res.render('profile-edit', {
+        userData: user,
     });
 }
 }
