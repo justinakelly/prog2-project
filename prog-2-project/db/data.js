@@ -107,7 +107,7 @@ const data = {
             profilePicture : '/images/users/4.png'
         }
     ],
-    
+
     user: {
         email : 'luispehuen@digital.com',
         username : 'profesdh',
@@ -128,3 +128,23 @@ module.exports = data;
 // Nombre del producto: campo de tipo texto.
 // descripción: campo de tipo texto.
 // Fecha de carga: campo de tipo fecha.
+
+
+
+// usuario: contendrá un objeto literal con los datos de un usuario. Serán los datos del usuario logueado. 
+//Los datos deben ser coherentes con la información pedida en el formulario de registro. 
+// Los datos del usuario deben mostrarse en todos los lugares donde aparezca el header logueado y en “mi perfil”.
+
+// email: campo de tipo email.
+// usuario: campo de tipo texto.
+// contraseña: campo de tipo contraseña.
+// fecha de nacimiento: campo de tipo fecha.
+// nro de documento: campo de tipo numérico.
+// foto de perfil: campo de tipo file.
+
+
+// comentarios: contendrá un array de objetos literales con los datos de los comentarios que se ven en el detalle de un producto.
+// La información de cada comentario debe ser:
+// nombre de usuario.
+// texto del comentario.
+// imagen de perfil: no es necesario que coloques una imagen de perfil. Podés dejar la que está ahora en la maqueta.

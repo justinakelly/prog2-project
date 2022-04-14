@@ -1,6 +1,4 @@
-var data = require('../db/artworksData')
-var userData = require ('../db/userData')
-var commentsData = require ('../db/commentsData')
+var data = require('../db/data')
 
 const controller = {
     index: function(req, res){ 
@@ -21,20 +19,14 @@ const controller = {
 
     }, //no lo entiendo, no serie en index?
     show: function(req, res){
-      //  const result = moduleArtworks[0]
-        //const result = moduleArtworks[req.params.id - 1]
-     // res.render ('product', {product: moduleArtworks[req.params.id]})
-      //  res.send(result)
-      console.log(data.artworks[req.params.id -1])
       res.render ('product', {
-          artwork: data.artworks[req.params.id -1],  //arreglar esto porque cambie nombres de la carpeta db 
-                                                               //archivos commentsData, userData no tiene que funcionar
+          artwork: data.artworks[req.params.id -1],
           comment: data.comments
         })
 
     },
     add: function(req, res){
-        res.send('hola')
+        res.send('product-add', {title: 'prueba'})
     }
    
 };

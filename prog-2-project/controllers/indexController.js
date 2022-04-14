@@ -1,5 +1,4 @@
-const { commments } = require('../db/artworksData');
-var data = require('../db/artworksData');
+var data = require('../db/data');
 
 const controller = {
 //nos llevamos/cortamos el callback, el segundo argumento de la funcion de las rutas
@@ -19,14 +18,15 @@ const controller = {
 
     },
     results: function (req,res){
-        res.render ('index', { title: 'Express' });
+        res.render ('search-results', { title: 'Express' });
     },
 
     login: function(req, res, next) {
-        res.render('index', { title: 'Express' });
+        res.render('login', { title: 'Express' });
     },
+
     register: function(req, res, next) {
-        res.render('index', { title: 'Express' })
+        res.render('register', { title: 'Express' })
     }
 };
 

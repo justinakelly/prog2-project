@@ -1,12 +1,13 @@
-var users = require('../db/userData');
-var artworks = require('../db/artworksData');
+var data = require('../db/data')
 
 const controller = {
+    
     register: function (req, res) {
-    res.render('register');
+    
+        res.render('register', {title: 'prueba'});
 },
     login: function (req, res) {
-    res.render('login');
+    res.render('login', {title: 'prueba'});
 },
     profile: function (req, res) {
     res.render('profile', {
