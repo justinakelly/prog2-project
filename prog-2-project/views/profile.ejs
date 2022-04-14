@@ -16,8 +16,8 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title">Nombre del usuario 
-						<a href="/profile-edit">
+					<h1 class="main-title">
+						<a href="/users/profile/edit"> <%= user.username  %> 
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
@@ -39,27 +39,26 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">My products</h2>
+				<h2 class="products-title">Mis productos</h2>
 			</div>
 			<!-- Show mis productos -->
-			<%   for(let i=0; i<artwork.length, i++){ %>
+			<% for (let i= 0; i < 3; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/artworks/<%= artwork[i].id %> ">
+					<a href="/artworks/<%= i+1 %> ">
 						<figure class="product-box_image">
-							<img src="<%= artwork[i].image %>" width="300" alt="artwork image">
+							<img src="<%= artwork[i].image %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2> <%=artwork[i].name%> </h2>
-							<p> <%= artwork[i].description %> </p>
-							<p>Comments: <%= artwork.length %> </p>
+							<h2><%= artwork[i].name %></h2>
+							<p><%= artwork[i].description %></p>
+							<p>Comentarios:  </p>
 						</article>
 					</a>
 				</section>
-			
 			</div>
-		</div>
-	</div>
+			<% } %>
+		
 	<!-- /Mis productos -->
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
