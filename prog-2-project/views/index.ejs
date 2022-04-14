@@ -11,7 +11,7 @@
 	
 	<!-- Banner -->
 	<div class="banner">
-		<img src="/images/banner-index.JPEG" alt="Banner de ofertas">
+		<img src="/images/banner-index.JPEG" alt="Banner">
 	</div>
 	<!-- /Banner -->
 
@@ -19,15 +19,15 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Novedades</h2>
+				<h2 class="products-title">Newest</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<% for (let i= 0; i < artwork.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/artworks/<%= i+1 %>">
+					<a href="/artworks/<%= artwork[i].id %>">
 						<figure class="product-box_image">
-							<img src=" <%= artwork[i].image %> " width="300" alt="cafetera moulinex">
+							<img src=" <%= artwork[i].image %> " width="300" alt="artwork image">
 						</figure>
 						<article class="product-box_data">
 							<h2> <%= artwork[i].name %> </h2>
@@ -42,11 +42,12 @@
 		</div>
 	</div>
 	<!-- /Novedades -->
-	<!-- Más comentados -->
+	
+	<!-- Most commented -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Más comentados</h2>
+				<h2 class="products-title">Most popular</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<% for (let i= 0; i < mostCommented.length; i++) { %>
@@ -54,12 +55,12 @@
 				<section class="product-box">
 					<a href="product.html">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="/images/products/default-image.png" alt="artwork image">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto <%= mostCommented[i].name %> </h2>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2> <%= mostCommented[i].name %> </h2>
+							<p> <%= mostCommented.description %></p>
+							<p> <%= mostCommented.length %></p> <!--en realidad quiero comments.length-->
 						</article> 
 					</a>
 				</section>
@@ -69,17 +70,47 @@
 				<section class="product-box">
 					<a href="product.html">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="/images/products/default-image.png" alt="artwork image">
 						</figure>
 						<article class="product-box_data">
-							<h2> <%= products[i].name %> </h2>
-							<p> <%= products[i].description%> </p>
-							<p>Comentarios: 12</p>
+							<h2> <%= mostCommented[i].name %> </h2>
+							<p> <%= mostCommented.description %></p>
+							<p> <%= mostCommented.length %></p> <!--en realidad quiero comments.length-->
 						</article>
 					</a>
 				</section>
 			</div>
-	<!-- /Más comentados -->
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+					<a href="product.html">
+						<figure class="product-box_image">
+							<img src="../public/images/products/default-image.png" alt="artwork image">
+						</figure>
+						<article class="product-box_data">
+							<h2> <%= mostCommented[i].name %> </h2>
+							<p> <%= mostCommented.description %></p>
+							<p> <%= mostCommented.length %></p> <!--en realidad quiero comments.length-->
+						</article>
+					</a>
+				</section>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+					<a href="product.html">
+						<figure class="product-box_image">
+							<img src="../public/images/products/default-image.png" alt="artwork image">
+						</figure>
+						<article class="product-box_data">
+							<h2> <%= mostCommented[i].name %> </h2>
+							<p> <%= mostCommented.description %></p>
+							<p> <%= mostCommented.length %></p> <!--en realidad quiero comments.length-->
+						</article>
+					</a>
+				</section>
+			</div>
+		</div>
+	</div>
+	<!-- /Most commented -->
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
 	<!-- /footer -->
