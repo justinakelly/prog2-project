@@ -20,7 +20,7 @@ const controller = {
     },
     
     login: function(req, res, next) {
-        res.render('index', { title: 'Express' })
+        res.render('index', { title: 'Express' });
     },
     register: function(req, res, next) {
         res.render('index', { title: 'Express' })
