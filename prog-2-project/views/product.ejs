@@ -1,11 +1,19 @@
-<%- include('./partials/header.ejs') %> 
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<%-include('./partials/head', {title:'DIGITAL ART WORLD'})%>
+<body>
+	<!-- Header -->
+	<%-include('partials/header')%>
+	<!-- Header -->
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= artwork.name %> </h2> 
 			<p class="product-detail-description">
-				<a href="/artworks/add">Editar</a>
+				<a href="/artworks/add">Buy</a>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -23,7 +31,7 @@
 							<div class="data">
 								<p class="user">
 								<strong> <a href="profile.html"> <%= comment[i].username %> </a> </strong>
-								<%= comment[i].commentary %> 
+								<%= comment[i].comment %> 
 								</p>
 							</div>
 						</article>
@@ -32,7 +40,7 @@
 					</section>
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						<button type="submit" class="buy-now-button">Add comment</button>
 					</form>
 					<hr>
 				</div>
@@ -40,5 +48,8 @@
 		</div>
 	</div>
 	<!-- /product detail -->
-
-	<%- include('./partials/footer.ejs') %> 
+	<!-- footer -->
+	<%-include('./partials/footer.ejs')%>
+	<!-- /footer -->
+</body>	
+</html>

@@ -78,41 +78,6 @@ const data = {
     },
    
 ],
-user: {
-    email : '',
-    username : '',
-    password : '',
-    document : '',
-    profilePicture : '',
-
-},
-comments: [
-    {
-        username: '@luis',
-        commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
-        profilePicture : '/images/users/5.png'
-    },
-    {
-        username: '@justinakelly',
-        commentary : 'Amazing!',
-        profilePicture : '/images/users/2.png'
-    },
-    {
-        username: '@candelariatallavi',
-        commentary : 'Where can I buy this?',
-        profilePicture : '/images/users/3.png'
-    },
-    {
-        username: '@justinabsegui',
-        commentary : 'This is crazy (insert emoji aplausos)',
-        profilePicture : '/images/users/1.png'
-    },
-    {
-        username: '@pehuen',
-        commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
-        profilePicture : '/images/users/4.png'
-    }
-]
 }
 
 module.exports = data;

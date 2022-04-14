@@ -1,12 +1,12 @@
 let userLoggedInfo = {
-    email : '',
-    username : '',
-    password : '',
-    document : '',
-    profilePicture : '',
+    email : 'luispehuen@digital.com',
+    username : 'profesdh',
+    password : 'digitalHouse1',
+    document : '22483043',
+    profilePicture : '/public/images/users/5.png',
 
 }
-
+module.exports = userLoggedInfo;
 
 // usuario: contendrá un objeto literal con los datos de un usuario. Serán los datos del usuario logueado. 
 //Los datos deben ser coherentes con la información pedida en el formulario de registro. 
