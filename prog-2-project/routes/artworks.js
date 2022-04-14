@@ -9,7 +9,7 @@ var controller = require('../controllers/artworksController')
 //     res.send(moduleArtworks)
 // });
 
-router.get('/', controller.index);
+//router.get('/', controller.index);
 
 router.get('/:id', controller.show); //product.html
 
