@@ -93,29 +93,29 @@ user: {
 },
 comments: [
     {
-        username: '@hola',
+        username: '@luis',
         commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
-        profilePicture : '/images/users/default-user.jpeg'
+        profilePicture : '/images/users/5.png'
     },
     {
         username: '@justinakelly',
         commentary : 'Amazing!',
-        profilePicture : '/images/users/default-user.jpeg'
+        profilePicture : '/images/users/2.png'
     },
     {
         username: '@candelariatallavi',
         commentary : 'Where can I buy this?',
-        profilePicture : '/images/users/default-user.jpeg'
+        profilePicture : '/images/users/3.png'
     },
     {
         username: '@justinabsegui',
         commentary : 'This is crazy (insert emoji aplausos)',
-        profilePicture : '/images/users/default-user.jpeg'
+        profilePicture : '/images/users/1.png'
     },
     {
-        username: '@user',
+        username: '@pehuen',
         commentary : '#abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
-        profilePicture : '/images/users/default-user.jpeg'
+        profilePicture : '/images/users/4.png'
     }
 ]
 }
@@ -123,8 +123,7 @@ comments: [
 module.exports = data;
 
 
-
-//guardamos la inof en una variable y la exportamos asi la podemos requerir desde otro archivo 
+//guardamos la info en una variable y la exportamos asi la podemos requerir desde otro archivo 
 // Agregar producto:
 // imagen: campo de tipo file.
 // Nombre del producto: campo de tipo texto.
