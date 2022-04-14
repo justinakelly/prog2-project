@@ -18,9 +18,12 @@ const controller = {
             mostCommented: randomArtwork})
 
     },
-    
+    results: function (req,res){
+        res.render ('index', { title: 'Express' });
+    },
+
     login: function(req, res, next) {
-        res.render('index', { title: 'Express' })
+        res.render('index', { title: 'Express' });
     },
     register: function(req, res, next) {
         res.render('index', { title: 'Express' })

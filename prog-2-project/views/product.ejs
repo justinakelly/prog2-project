@@ -10,7 +10,13 @@
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
+		<h1>Artworks</h1>
+		<% for (let i=0; i< artwork.length; i++) { 
+		<li>	<%= artwork [i].name %> </li>
+		<% } %> 
+	</ul> 
+	//hay que seguir recorrienfdo el for
+	<div class="d-flex align-items-center"> 
 			<h2 class="products-title"> <%= artwork.name %> </h2> 
 			<p class="product-detail-description">
 				<a href="/artworks/add">Buy</a>
@@ -30,8 +36,13 @@
 							<img src=" <%= comment[i].profilePicture %> " width="100" alt="">
 							<div class="data">
 								<p class="user">
+<<<<<<< HEAD
 								<strong> <a href="profile.html"> <%= comment[i].username %> </a> </strong>
 								<%= comment[i].comment %> 
+=======
+								<strong> <a href="/profile"> <%= comment[i].username %> </a> </strong>
+								<%= comment[i].commentary %> 
+>>>>>>> eed8b258e4258c001ee800e4ae05e045ecbe0448
 								</p>
 							</div>
 						</article>
