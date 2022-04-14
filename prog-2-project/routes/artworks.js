@@ -10,9 +10,9 @@ var controller = require('../controllers/artworksController')
 // });
 
 //router.get('/', controller.index);
-
+router.get('/add', controller.add); //product-add.html
 router.get('/:id', controller.show); //product.html
 
-router.get('/add', controller.add); //product-add.html
+
 
 module.exports = router;

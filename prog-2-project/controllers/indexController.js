@@ -22,7 +22,7 @@ const controller = {
     register: function(req, res, next) {
         res.render('register', { title: 'Express' })
     }
-};
+}; 
 
 module.exports = controller;
 
