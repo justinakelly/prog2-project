@@ -10,6 +10,8 @@ router.get('/login', controller.login); //login.html
 
  router.get('/register', controller.register); //register.html
 
+ router.get('/results', controller.results);
+
 
 
 /* GET home page. */ //welcome to express
