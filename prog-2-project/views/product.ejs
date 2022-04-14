@@ -4,18 +4,13 @@
 
 <%-include('./partials/head', {title:'DIGITAL ART WORLD'})%>
 <body>
+	
 	<!-- Header -->
 	<%-include('partials/header')%>
 	<!-- Header -->
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
-		<h1>Artworks</h1>
-		<% for (let i=0; i< artwork.length; i++) { 
-		<li>	<%= artwork [i].name %> </li>
-		<% } %> 
-	</ul> 
-	//hay que seguir recorrienfdo el for
 	<div class="d-flex align-items-center"> 
 			<h2 class="products-title"> <%= artwork.name %> </h2> 
 			<p class="product-detail-description">
@@ -31,18 +26,14 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for (let i= 0; i < comment.length; i++) { %>
+
+					<% for (let i= 0; i < comment.length; i++) { %>
 						<article>
 							<img src=" <%= comment[i].profilePicture %> " width="100" alt="">
 							<div class="data">
 								<p class="user">
-<<<<<<< HEAD
-								<strong> <a href="profile.html"> <%= comment[i].username %> </a> </strong>
-								<%= comment[i].comment %> 
-=======
 								<strong> <a href="/profile"> <%= comment[i].username %> </a> </strong>
-								<%= comment[i].commentary %> 
->>>>>>> eed8b258e4258c001ee800e4ae05e045ecbe0448
+								<%= comment[i].comment %> 
 								</p>
 							</div>
 						</article>
@@ -50,7 +41,7 @@
 
 					</section>
 					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+						<input class="form-input" type="text" value="" placeholder="Add comment">
 						<button type="submit" class="buy-now-button">Add comment</button>
 					</form>
 					<hr>
@@ -59,9 +50,11 @@
 		</div>
 	</div>
 	<!-- /product detail -->
+
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
 	<!-- /footer -->
+
 </body>	
 </html>
 

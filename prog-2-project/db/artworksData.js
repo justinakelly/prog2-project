@@ -3,7 +3,8 @@
 // Los datos deben ser coherentes con la información pedida en el formulario de carga de productos.
 
 const data = {
-    artworks: [
+    
+        artworks: [
     {
         image : '/images/products/garden-of-forking-paths.jpeg',
         name : 'GARDEN OF FORKING PATHS',
@@ -77,7 +78,45 @@ const data = {
         date : '22-5',
     },
    
-],
+    ],
+
+    comments: [
+        {
+            username: '@luis',
+            comment : ' Wow thats so cool :) #abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
+            profilePicture : '/images/users/5.png'
+        },
+        {
+            username: '@justinakelly',
+            comment : 'Never seen sthing like this. Amazing!',
+            profilePicture : '/images/users/2.png'
+        },
+        {
+            username: '@candelariatallavi',
+            comment : 'I wanna meet the artist behind this',
+            profilePicture : '/images/users/3.png'
+        },
+        {
+            username: '@justinabsegui',
+            comment: 'How much ETH is it worth? This is crazy (insert emoji aplausos)',
+            profilePicture : '/images/users/1.png'
+        },
+        {
+            username: '@pehuen',
+            comment : 'I offer a secure P2P transaction for this NFT #abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
+            profilePicture : '/images/users/4.png'
+        }
+    ],
+    
+    user: {
+        email : 'luispehuen@digital.com',
+        username : 'profesdh',
+        password : 'digitalHouse1',
+        document : '22483043',
+        profilePicture : '/public/images/users/5.png',
+    
+    }
+
 }
 
 module.exports = data;
