@@ -1,4 +1,6 @@
 var data = require('../db/artworksData')
+var userData = require ('../db/userData')
+var commentsData = require ('../db/commentsData')
 
 const controller = {
     index: function(req, res){ 
@@ -8,6 +10,13 @@ const controller = {
 
          //--> cuando tenga ejs 
         //res.send ('listo')
+        //index: function (req, res) {
+         // res.render('product', {
+           // userData: userData,
+           // data: artworksData,
+          //  commentsData: comentsD,
+          //  idProduct: req.params.id,
+       // }); 
 
 
     }, //no lo entiendo, no serie en index?
