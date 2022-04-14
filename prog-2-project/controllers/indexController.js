@@ -1,13 +1,17 @@
+const { comments } = require('../db/data');
 var data = require('../db/data');
+
 
 const controller = {
 //nos llevamos/cortamos el callback, el segundo argumento de la funcion de las rutas
+
+
     index: function(req, res){
 
         res.render('index', {
             artwork: data.artworks,
             commments: data.commments, 
-            mostCommented: "no se"})
+            mostCommented: 'nada'})
 
     },
     

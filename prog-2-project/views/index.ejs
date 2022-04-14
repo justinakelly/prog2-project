@@ -11,7 +11,7 @@
 	
 	<!-- Banner -->
 	<div class="banner">
-		<img src="/images/banner-index.JPEG" alt="Banner">
+		<img src="/images/hola.JPEG" alt="Banner">
 	</div>
 	<!-- /Banner -->
 
@@ -19,7 +19,7 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Newest</h2>
+				<h2 class="products-title">Artworks</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<% for (let i= 0; i < artwork.length; i++) { %>
@@ -27,12 +27,12 @@
 				<section class="product-box">
 					<a href="/artworks/<%= i+1 %>">
 						<figure class="product-box_image">
-							<img src=" <%= artwork[i].image %> " width="300" alt="artwork image">
+								<img src=" <%= artwork[i].image %> " width="300" alt="artwork image">
 						</figure>
 						<article class="product-box_data">
 							<h2> <%= artwork[i].name %> </h2>
 							<p> <%= artwork[i].description %> </p>
-							<p>Comments: <%= artwork.length %> </p> <!--en realidad quiero comments.length-->
+							<p>Comments: </p> <!--en realidad quiero comments.length-->
 						</article>
 					</a>
 				</section>
