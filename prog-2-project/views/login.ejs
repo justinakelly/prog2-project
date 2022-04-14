@@ -9,19 +9,31 @@
 	<%-include('partials/header')%>
 	<!-- Header -->
 	<!-- Novedades -->
-	<h1>Login</h1>
+	
 	
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Ingresar</h2>
+				<h2 class="products-title">Login</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de login. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
+			<h2 class="col-12"> 
+				<form action="">
+					<div class="logueando"> 
+						<label for="exampleInputEmail1" class="form-label"> Email address</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                     <div id="emailHelp" class="form-text"> We'll always protect your email.</div>   
+					</div>
+					<div class="logueando"> 
+						<label for="exampleInputPassword1" class="form-label"> Password</label>
+						<input type="password" class="form-control" id="exampleInputPassword1" >   
+					</div>
+					<div class="logueando form-check"> 
+						<label for="exampleCheck1" class="form-check-label"> Check me out</label>
+						<input type="checkbox" class="form-check-input" id="exampleCheck1" >
+					</div>
+					<button type="submit" class="btn btn primary"> Submit</button>
+				</form>
 			</h2>
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
