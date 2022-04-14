@@ -76,12 +76,7 @@ const data = {
         description : 'Everyone encounters these magical moments in life that just happen out of nowhere. A moment of awe where time freezes and we only exist in that moment. You cant predict them, you cant chase them. But you can enjoy them as they happen.',
         date : '22-5',
     },
-    {
-        image : '/images/products/default-image.png',
-        name : 'R4G3QU1T',
-        description : '',
-        date : '22-5',
-    }
+   
 ],
 user: {
     email : '',
