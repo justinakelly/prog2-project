@@ -1,6 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
 
-<%- include('./partials/header.ejs') %> 
+<%-include('./partials/head', {title:'DIGITAL ART WORLD'})%>
 
+<body>
+	<!-- Header -->
+	<%-include('partials/header')%>
+	<!-- Header -->
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -14,6 +21,8 @@
 			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
 			////////////////
 			</h2>
-
-
-			<%- include('./partials/footer.ejs') %> 
+	<!-- footer -->
+	<%-include('./partials/footer.ejs')%>
+	<!-- /footer -->
+</body>	
+</html>
