@@ -1,13 +1,25 @@
 var users = require('../db/userData');
+var artworks = require('../db/artworksData');
 
 const controller = {
-    profile: function(req, res, next) {
-        res.send('respond with a resource');
+    register: function (req, res) {
+        res.render('register');
     },
-    edit: function(req, res){
-        res.render()
+    login: function (req, res) {
+        res.render('login');
+    },
+    profile: function (req, res) {
+        res.render('profile', {
+            user: user,
+            artworks: artworksData,
+        });
+    },
+    edit: function (req, res) {
+        res.render('edit', {
+            user: user,
+        });
+    }
     }
 
-}
 
 module.exports = controller;
