@@ -4,7 +4,7 @@
 
 /*====== Variables ======*/
 :root {
-  background-image: url(../images/maalavidaa-background.jpeg);
+  background-color: black;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -32,7 +32,7 @@ body {
   font-weight: 300;
   /* background-color: var(--light-gray); */
   /*background-color: rgb(33, 33, 33);*/
-  background-image: url(../images/maalavidaa-background.jpeg);
+  background-color: black;
 }
 
 ul,
@@ -267,7 +267,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-image: url(../images/maalavidaa-background.jpeg);
+  background-color: black;
   padding: 20px 0;
   margin-top: 80px;
 }
