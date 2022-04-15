@@ -451,6 +451,7 @@ hr {
   display: inline-block;
   font-size:medium;
   margin: 10px 0;
+  align-items: center;
 }
 
 .form-input {
