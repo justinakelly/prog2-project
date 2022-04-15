@@ -11,7 +11,8 @@ const controller = {
         res.render('index', {
             artwork: data.artworks,
             commments: data.commments, 
-            mostCommented: 'nada'})
+            recent: data.artworks.date,
+        });
 
     },
     
