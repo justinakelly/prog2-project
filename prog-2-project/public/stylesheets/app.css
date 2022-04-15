@@ -1,5 +1,5 @@
 /*====== Fonts ======*/
-/*@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
 
 /*====== Variables ======*/
@@ -10,7 +10,7 @@
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --base-font-family: 'Quicksand', sans-serif;
 }
 
 
@@ -28,7 +28,7 @@ body {
 
 body {
   /* font-family: var(--base-font-family); */
-  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 300;
   /* background-color: var(--light-gray); */
   /*background-color: rgb(33, 33, 33);*/
@@ -59,7 +59,7 @@ img {
 
 input,
 textarea {
-  font-family: inherit;
+  font-family: 'Quicksand', sans-serif;
 }
 
 hr {
