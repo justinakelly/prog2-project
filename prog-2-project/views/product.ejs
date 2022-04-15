@@ -12,7 +12,11 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 	<div class="d-flex align-items-center"> 
+			<% if (artwork.image) { %>
 			<h2 class="products-title"> <%= artwork.name %> </h2> 
+			<%	}else { %>
+				<h2 class="products-title">no name available</h2> 
+			<% } %> 
 			<p class="product-detail-description">
 				<a href="add">Add</a>
 			</p>
@@ -20,9 +24,19 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src= "<%= artwork.image %>" width="300" alt="" class="product-detail-img">
-					<p class="product-detail-description">
-						<%= artwork.description %> </p>
+					<% if (artwork.image) { %>
+						<img src= "<%= artwork.image %>" class="product-detail-img">
+						<%	}else { %>
+						<img src="/images/products/default-image.png" class="product-detail-img" >	
+					<% } %> 
+
+					<% if (artwork.description) { %>
+						<p class="product-detail-description">
+							<%= artwork.description %> </p>
+						<%	}else { %>
+						<p class="product-detail-description">no description available</p>	
+					<% } %> 
+					
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">

@@ -17,7 +17,13 @@ const controller = {
     },
     
     results: function (req,res){
-        res.render ('search-results', { artwork: data.artworks });
+        res.render ('search-results', { 
+            artwork: data.artworks,
+            results: req.query
+        });
+        // req.query
+        // if (Object.keys(req.query).length !== 0) return res.render(.findBooksBy(req.query));
+        // res.render('books_index', { books: books.getAll() });
     },
 
     login: function(req, res, next) {

@@ -27,18 +27,30 @@
 				<section class="product-box">
 					<a href="/artworks/<%= i+1 %>">
 						<figure class="product-box_image">
-								<img src=" <%= artwork[i].image %> " width="300" height="350" alt="artwork image">
+							<% if (artwork[i].image) { %>
+							<img src=" <%= artwork[i].image %> " width="300" height="350" alt="artwork image">
+							<%	}else { %>
+							<img src="/images/products/default-image.png" width="300" height="350" alt="artwork image">	
+						<% } %> 
 						</figure>
 						<article class="product-box_data">
-							<h2> <%= artwork[i].name %> </h2>
-							<p> <%= artwork[i].description %> </p>
+							<% if (artwork[i].name) { %>
+								<h2> <%= artwork[i].name %> </h2>
+							<%	}else { %>
+								<h2 class="no-name">no name available</h2>
+							<% } %>
+							
+							<% if (artwork[i].description) { %>
+								<p> <%= artwork[i].description %> </p>
+							<%	}else { %>
+								<p class="no-description">no description available</p>
+							<% } %>
 							<p>Comments: </p> <!--en realidad quiero comments.length-->
 						</article>
 					</a>
 				</section>
 			</div>
 			<% } %>
-
 		</div>
 	</div>
 	<!-- /Novedades -->
