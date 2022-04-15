@@ -497,7 +497,10 @@ textarea.form-input {
   align-items: center;
   width: 100%;
 }
-
+.results{
+  color: white;
+  margin-left: 15px;
+}
 /*====== Profile ======*/
 .info-usuario{
   border-bottom: 1px solid #ccc;
