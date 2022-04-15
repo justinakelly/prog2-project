@@ -7,11 +7,20 @@ const controller = {
 
 
     index: function(req, res){
-
+        
+        artworkRandom = data.artworks
+        function randomNum () {
+            return Math.floor(Math.random() * artworkRandom.length);
+        }
+        
+       let randomArtwork = function getRandomArtwork () {
+            return artworkRandom[randomNum()];
+        }
         res.render('index', {
             artwork: data.artworks,
             commments: data.commments, 
-            recent: data.artworks.date,
+            mostPopular: randomArtwork
+            
         });
 
     },

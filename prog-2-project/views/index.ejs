@@ -62,7 +62,7 @@
 				<h2 class="products-title">Most popular</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-		
+			<% for (let i= 0; i < 5; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="">
@@ -70,13 +70,14 @@
 							<img src="" alt="artwork image">
 						</figure>
 						<article class="product-box_data">
-							<h2> nombre </h2>
-							<p> descriotion </p>
+							<h2> <%= mostPopular.name %>  </h2>
+							<p> <%= mostPopular.description %> </p>
 							<p> 13 </p> <!--en realidad quiero comments.length-->
 						</article> 
 					</a>
 				</section>
 			</div>
+			<% } %>
 		
 		
 		</div>
