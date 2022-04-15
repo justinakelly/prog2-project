@@ -1,7 +1,6 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300&family=Quicksand:wght@300&display=swap');
 /*====== Variables ======*/
 :root {
   background-color: black;
@@ -87,12 +86,14 @@ hr {
 }
 
 .search-form {
+  font-family: 'Jura', sans-serif;
   position: relative;
   display: flex;
   align-items: center;
 }
 
 .search-form_input {
+  font-family: 'Jura', sans-serif;
   border: solid 1px var(--light-gray);
   display: block;
   width: 100%;
