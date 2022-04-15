@@ -9,9 +9,9 @@ var controller = require('../controllers/artworksController')
 //     res.send(moduleArtworks)
 // });
 
-//router.get('/', controller.index);
-router.get('/add', controller.add); //product-add.html
-router.get('/:id', controller.show); //product.html
+//router.get('/', controller.index); muestra todos los productos
+router.get('/add', controller.add); //product-add.ejs
+router.get('/:id', controller.show); //product.ejs muestra detalle
 
 
 

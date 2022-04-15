@@ -6,9 +6,9 @@ var controller = require('../controllers/indexController');
 router.get('/', controller.index);//luego cambiarlo a res.render que muestra html
  //index.html
 
-router.get('/login', controller.login); //login.html
+// router.get('/login', controller.login); //login.html
 
- router.get('/register', controller.register); //register.html
+//  router.get('/register', controller.register); //register.html lo acomode para q te mande desde users/login y register
 
  router.get('/results', controller.results);
 
