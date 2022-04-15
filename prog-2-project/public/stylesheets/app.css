@@ -484,6 +484,11 @@ textarea.form-input {
 
 .foto-perfil{
   border-radius: 50%;
+
+}
+.verified{
+  width: 25px;
+  margin-right: 60px;
 }
 
 .main-title{

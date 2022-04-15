@@ -30,10 +30,10 @@ const data = {
         date : '28-03-2022',
     },
     {
-        image : '/images/products/tied-to-the-past.jpeg',
-        name : 'TIED TO THE PAST',
-        description : 'Past traumas are the metastasis of present behaviors. Finding their way through the stream of unconsciousness, taking control over our train of thought. Overwhelming. Like a heavy mass pinning you down through the darkness of a bygone age while witnessing the distant glimmer of an unreachable light from the future. « Tied To The Past » is an attempt to depict and exorcise the feeling of being chained to unhealed wounds. When acknowledging damages isn’t enough to reach the surface anymore. When the desire to heal can’t compete with recollections. Tearing past, present and future apart in an endless cycle.',
-        date : '14-03-2022',
+        image : '/images/products/the-passion.jpeg',
+        name : 'THE PASSION',
+        description : 'Passion is an impulse of the soul, strong and emotional.',
+        date : '01-01-2022',
     },
     {
         image : '/images/products/zen.jpeg',
@@ -41,11 +41,12 @@ const data = {
         description : '“The only Zen you’ll find on mountain tops is the Zen you bring up there with you.” -- Alan Watts',
         date : '11-02-2022',
     },
+
     {
-        image : '/images/products/the-passion.jpeg',
-        name : 'THE PASSION',
-        description : 'Passion is an impulse of the soul, strong and emotional.',
-        date : '01-01-2022',
+        image : '/images/products/tied-to-the-past.jpeg',
+        name : 'TIED TO THE PAST',
+        description : 'Past traumas are the metastasis of present behaviors. Finding their way through the stream of unconsciousness, taking control over our train of thought. Overwhelming. Like a heavy mass pinning you down through the darkness of a bygone age while witnessing the distant glimmer of an unreachable light from the future. « Tied To The Past » is an attempt to depict and exorcise the feeling of being chained to unhealed wounds. When acknowledging damages isn’t enough to reach the surface anymore. When the desire to heal can’t compete with recollections. Tearing past, present and future apart in an endless cycle.',
+        date : '14-03-2022',
     },
     {
         image : '/images/products/explosion-of-colors.jpeg',
@@ -109,12 +110,13 @@ const data = {
     ],
 
     user: {
-        email : 'luispehuen@digital.com',
-        username : 'profesdh',
-        password : 'digitalHouse1',
-        birthday :  '11/08/99',
-        document : '22483043',
-        profilePicture : '/public/images/users/5.png',
+        email : 'elon@musk.com',
+        username : 'elonmusk.ok',
+        password : 'Emusk1971',
+        birthday :  '28-06-1971',
+        document : '14191102',
+        profilePicture : '/images/users/elon.jpeg',
+        verified:'/images/users/verified.png',
     
     }
 
