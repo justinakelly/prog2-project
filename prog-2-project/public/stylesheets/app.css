@@ -180,6 +180,9 @@ hr {
   background-position: center center;
   height: 100px;
 }
+.circles{
+  width: 400px;
+}
 
 
 /*====== Products ======*/
@@ -187,6 +190,7 @@ hr {
   margin-top: 30px;
   margin-bottom: 30px;;
 }
+
 
 .products-title {
   font-size: 2.4em;
@@ -213,6 +217,12 @@ hr {
 .product-box_data {
   padding: 15px;
   position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.row{
+  
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -477,12 +487,20 @@ textarea.form-input {
   padding: 15px;
 } 
 .col-13 { 
+  margin: 0%;
+  padding:10px;
   max-width: 60;
+  margin-left: 300px;
   font-size: 40px;
-
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
 }
-
+.results{
+  color: white;
+  margin-left: 15px;
+}
 /*====== Profile ======*/
 .info-usuario{
   border-bottom: 1px solid #ccc;
@@ -527,7 +545,6 @@ textarea.form-input {
   .banner {
     height: 320px;
   }
-
   .btn-toggle-navbar {
     display: none;
   }
