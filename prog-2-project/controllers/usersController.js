@@ -19,7 +19,7 @@ const controller = {
 },
     edit: function (req, res) {             
     res.render('profile-edit', {
-        title: "hola" //userData: user,
+        user: data.user //userData: user,
     });
 }
 }

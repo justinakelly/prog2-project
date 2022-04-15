@@ -5,7 +5,7 @@ var controller = require('../controllers/usersController')
 
 router.get('/profile', controller.profile); //profile.ejs
 
-router.get('/profile-edit', controller.edit); //profile-edit.ejs
+router.get('/profile/edit', controller.edit); //profile-edit.ejs
 
 router.get('/register', controller.register); //register.ejs
 
