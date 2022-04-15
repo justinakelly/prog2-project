@@ -72,7 +72,7 @@ const data = {
         date : '22-5',
     },
     {
-        image : '',
+        image : '/images/products/miraculum.jpeg',
         name : 'MIRACULUM',
         description : 'Everyone encounters these magical moments in life that just happen out of nowhere. A moment of awe where time freezes and we only exist in that moment. You cant predict them, you cant chase them. But you can enjoy them as they happen.',
         date : '22-5',

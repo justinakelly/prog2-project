@@ -4,7 +4,7 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  background-image: url(../images/maalavidaa-background.jpeg);
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -70,6 +70,7 @@ hr {
 
 /*====== Main Header ======*/
 .main-header {
+  color: white;
   padding: 15px 0;
   background-color: var(--yellow);
 }
@@ -265,7 +266,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-image: url(../images/maalavidaa-background.jpeg);
   padding: 20px 0;
   margin-top: 80px;
 }
