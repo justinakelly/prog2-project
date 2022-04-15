@@ -137,6 +137,7 @@ hr {
 }
 
 .logout{
+  color: red;
   background: transparent;
   border: 0px;
   cursor: pointer;
@@ -144,7 +145,8 @@ hr {
 }
 
 .logout:hover{
-  color: #1259c3;
+  font-style:italic;
+  font-weight: 100;
 }
 
 .left-navbar a,
@@ -481,7 +483,9 @@ textarea.form-input {
   border-radius: 4px;
   color: #fff;
 }
-
+.fas fa-sign-in-alt{
+  color:red;
+}
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
