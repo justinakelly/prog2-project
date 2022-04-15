@@ -78,6 +78,12 @@ const data = {
         description : 'Everyone encounters these magical moments in life that just happen out of nowhere. A moment of awe where time freezes and we only exist in that moment. You cant predict them, you cant chase them. But you can enjoy them as they happen.',
         date : '14-11-2021',
     },
+    {
+        image : '',
+        name : 'MIRACULUM',
+        description : 'Everyone encounters these magical moments in life that just happen out of nowhere. A moment of awe where time freezes and we only exist in that moment. You cant predict them, you cant chase them. But you can enjoy them as they happen.',
+        date : '14-11-2021',
+    }
    
     ],
 
