@@ -112,6 +112,7 @@ const data = {
         email : 'luispehuen@digital.com',
         username : 'profesdh',
         password : 'digitalHouse1',
+        birthday :  '11/08/99',
         document : '22483043',
         profilePicture : '/public/images/users/5.png',
     
