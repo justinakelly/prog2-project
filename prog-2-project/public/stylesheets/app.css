@@ -4,7 +4,7 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  background-image: url(../images/maalavidaa-background.jpeg);
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -70,6 +70,7 @@ hr {
 
 /*====== Main Header ======*/
 .main-header {
+  color: white;
   padding: 15px 0;
   background-color: var(--yellow);
 }
@@ -136,6 +137,7 @@ hr {
 }
 
 .logout{
+  color: red;
   background: transparent;
   border: 0px;
   cursor: pointer;
@@ -143,7 +145,8 @@ hr {
 }
 
 .logout:hover{
-  color: #1259c3;
+  font-style:italic;
+  font-weight: 100;
 }
 
 .left-navbar a,
@@ -157,7 +160,6 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -265,7 +267,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-image: url(../images/maalavidaa-background.jpeg);
   padding: 20px 0;
   margin-top: 80px;
 }
@@ -481,7 +483,9 @@ textarea.form-input {
   border-radius: 4px;
   color: #fff;
 }
-
+.fas fa-sign-in-alt{
+  color:red;
+}
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {

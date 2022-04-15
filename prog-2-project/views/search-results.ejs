@@ -2,7 +2,7 @@
 <html lang="es">
 <!-- Include Head -->
 
-<%-include('./partials/head', {title:'DIGITAL ART WORLD'})%>
+<%-include('./partials/head', {title:'FINE ART'})%>
 
 <body>
 	<!-- Header -->
@@ -11,15 +11,29 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Resultados de búsqueda</h2>
+				<h2 class="products-title">Search results</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-			////////////////
-			</h2>
+			
+		<% for (let i= 0; i < artwork.length; i++) { %>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+					<a href="/artworks/<%= artwork[i].name %>">
+						<figure class="product-box_image">
+								<img src=" <%= artwork[i].image %> " width="300" alt="artwork image">
+						</figure>
+						<article class="product-box_data">
+							<h2> <%= artwork[i].name %> </h2>
+							<p> <%= artwork[i].description %> </p>
+							<p>Comments: </p> <!--en realidad quiero comments.length-->
+						</article>
+					</a>
+				</section>
+			</div>
+			<% } %>
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
 	<!-- /footer -->
 </body>	
 </html>
+
