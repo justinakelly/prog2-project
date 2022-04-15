@@ -181,9 +181,7 @@ hr {
   height: 100px;
 }
 .circles{
- 
   width: 400px;
-  margin-left: 400px;
 }
 
 
@@ -224,6 +222,7 @@ hr {
   flex-wrap: wrap;
 }
 .row{
+  
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -488,10 +487,15 @@ textarea.form-input {
   padding: 15px;
 } 
 .col-13 { 
+  margin: 0%;
+  padding:10px;
   max-width: 60;
+  margin-left: 300px;
   font-size: 40px;
-
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
 }
 
 /*====== Profile ======*/
