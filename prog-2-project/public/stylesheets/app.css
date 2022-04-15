@@ -475,6 +475,12 @@ textarea.form-input {
   min-height: 140px;
   resize: vertical;
   padding: 15px;
+} 
+.col-13 { 
+  max-width: 60;
+  font-size: 40px;
+
+
 }
 
 /*====== Profile ======*/
