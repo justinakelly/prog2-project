@@ -19,7 +19,9 @@ const controller = {
     let js = data.artworks
     function sortedArtwork () {
         js.sort()
+       
         return Math.random() - 0.5
+        console.log(sortedArtwork(js));
     }
     
    //console.log(js)
