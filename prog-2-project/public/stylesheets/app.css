@@ -620,36 +620,25 @@ textarea.form-input {
 */
 
 .form-control {
-  padding: 13px 20px;
-  padding-left: 55px;
   height: 48px;
   width: 100%;
   font-weight: 500;
-  border-radius: 4px;
-  font-size: 14px;
   line-height: 22px;
   letter-spacing: 0.5px;
-  outline: none;
-  color: #c4c3ca;
-  background-color: #1f2029;
-  border: none;
-  -webkit-transition: all 200ms linear;
+  background-color: transparent;;
   transition: all 200ms linear;
   box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
 }
 
-.form-control:focus,
-.form-control:active {
-  border: none;
-  outline: none;
-  box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
-}
-.form-login {
-  width: 80%;
-  background-color: rgba(250, 250, 250, 0.2);
-  padding: 50px;
-  border-radius: 20px;
-}
+
+
 .logueando {
 color: #39b54a;
 }
@@ -666,4 +655,56 @@ color: #39b54a;
     transition: all 200ms linear;
 }
 
+.form-login-main-div {
+    width: 80%;
+    background-color: rgba(250, 250, 250, 0.12);
+    padding: 50px;
+    border-radius: 20px;
+}
 
+.login-title {
+  text-align: center;
+  color: white;
+}
+
+.button-login {
+  height: 40px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 30px;
+  border: none;
+  border-radius: 10px;
+
+}
+.form-div-container {
+  justify-content: center;
+}
+
+
+.username-black {
+  text-decoration: underline;
+}
+
+.product-div {
+  align-items: flex-start;
+}
+
+.product-detail {
+  background-color: rgba(250, 250, 250, 0.12);
+}
+
+.product-detail-description {
+  color: white;
+}
+
+.comments{
+  color: white;
+}
+
+.products-title{
+  color: white;
+}
+
+.add-product{
+  color: gray;
+}

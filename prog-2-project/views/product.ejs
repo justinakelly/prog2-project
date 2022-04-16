@@ -18,11 +18,11 @@
 				<h2 class="products-title">no name available</h2> 
 			<% } %> 
 			<p class="product-detail-description">
-				<a href="add">Add</a>
+				<a href="add" class="add-product">Add</a>
 			</p>
 		</div>
 		<div class="product-detail">
-			<div class="row">
+			<div class="row product-div">
 				<article class="col-12 col-lg-8 product-detail-info">
 					<% if (artwork.image) { %>
 						<img src= "<%= artwork.image %>" class="product-detail-img">
@@ -46,7 +46,7 @@
 							<img src=" <%= comment[i].profilePicture %> " width="100" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/users/profile"> <%= comment[i].username %> </a> </strong>
+								<strong> <a href="/users/profile" class="username-black"> <%= comment[i].username %> : </a> </strong>
 								<%= comment[i].comment %> 
 								</p>
 							</div>
