@@ -13,7 +13,7 @@ const controller = {
     res.render('profile', {
         user: data.user,
         artwork: data.artworks,
-        commments: data.commments
+        commments: data.comments,
 
     });
 },
