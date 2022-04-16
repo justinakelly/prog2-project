@@ -225,6 +225,7 @@ hr {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  color: white;
 }
 .row{
   
@@ -729,4 +730,12 @@ color: #39b54a;
   background-color: rgba(250, 250, 250, 0.12);
   border-radius: 20px;
   padding: 50px;
+}
+
+.product-box {
+  background-color: rgba(250, 250, 250, 0.12);
+}
+
+.title-index p {
+  color: white;
 }

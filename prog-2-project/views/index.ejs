@@ -62,17 +62,30 @@
 				<h2 class="products-title">Most popular</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<% for (let i= 0; i < mostPopular.length; i++) { %>
+			<% for (let i= 0; i < 4; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="">
+					<a href="/artworks/<%= i+1 %>" class="title-index">
 						<figure class="product-box_image">
-							<img src="<%= mostPopular[i].image %> " width="300" height="350" alt="artwork image">
+							<% if (mostPopular[i].image) { %>
+								<img src=" <%= mostPopular[i].image %> " width="300" height="350" alt="artwork image">
+								<%	}else { %>
+								<img src="/images/products/default-image.png" width="300" height="350" alt="artwork image">	
+							<% } %> 
 						</figure>
 						<article class="product-box_data">
-							<h2> <%= mostPopular[i].name %>  </h2>
-							<p> <%= mostPopular[i].description %> </p>
-							<p>Comments: 13</p> <!--en realidad quiero comments.length-->
+							<% if (mostPopular[i].name) { %>
+								<h2> <%= mostPopular[i].name %> </h2>
+							<%	}else { %>
+								<h2 class="no-name">no name available</h2>
+							<% } %>
+							
+							<% if (mostPopular[i].description) { %>
+								<p> <%= mostPopular[i].description %> </p>
+							<%	}else { %>
+								<p class="no-description">no description available</p>
+							<% } %>
+							<p>Comments: 5 </p>
 						</article> 
 					</a>
 				</section>
