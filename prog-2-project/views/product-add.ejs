@@ -5,22 +5,17 @@
 <%-include('./partials/head', {title:'FINE ART'})%>
 
 <body>
-	<!-- Header -->
-	<%-include('partials/header-logueado')%>
-	<!-- Header -->
-	<!-- Novedades -->
+<!-- Header -->
+<%-include('partials/header-logueado')%>
+<!-- Header -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Agregar productos</h2>
+				<h2 class="products-title">Upload artwork</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
+			<h2 class="col-13"> 
 				<form action="/users/profile">
-					<div class="AddProduct"> 
-						<label for="Image1" class="form-label"> Add Image</label>
-						<input type="file" class="form-control" id="Image1" >
-					</div>
 					<div class="AddProduct"> 
 						<label for="ProductName1" class="form-label"> Product Name</label>
 						<input type="text" class="form-control" id="ProductName1" >   
@@ -30,12 +25,19 @@
 						<input type="text" class="form-control" id="Description1" >   
 					</div>
 					<div class="AddProduct"> 
+						<label for="Image1" class="form-label"> Add Image</label>
+						<input type="file" class="form-control" id="Image1" >
+					</div>
+					<div class="AddProduct"> 
 						<label for="UploadDate" class="form-label"> Upload Date</label>
 						<input type="date" class="form-control" id="UploadDate1" >
 					</div>
 		
 					<button type="submit" class="btn btn primary"> Add your product </button>
 				</form>
+				<div class="circles">
+					<img src="/images/m-05-02.png" alt="image">
+				</div>
 			</h2>
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>

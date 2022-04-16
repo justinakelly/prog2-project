@@ -3,7 +3,9 @@ var data = require('../db/data')
 const controller = {
   
   add: function(req, res){
-    res.render('product-add', {artwork: data.artworks[req.params.id -1]})
+    res.render('product-add', {
+      artwork: data.artworks[req.params.id -1],
+    })
 
  },
 
