@@ -1,6 +1,8 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300&family=Quicksand:wght@300&display=swap');
+
+
 /*====== Variables ======*/
 :root {
   background-color: black;
@@ -64,6 +66,16 @@ textarea {
 hr {
   border: none;
   border-bottom: solid 1px var(--light-gray);
+}
+
+/*====== Forms ======*/
+.form-control {
+  border: 2px solid red;
+  width: 100%;
+  border-radius: 4px;
+}
+.form-login {
+  width: 50%;
 }
 
 
@@ -193,7 +205,7 @@ hr {
 
 
 .products-title {
-  font-size: 2.4em;
+  font-size: 3.5em;
   font-weight: 400;
   color: var(--gray);
 }
@@ -237,6 +249,11 @@ hr {
   font-family: var(--font-family);
 }
 
+.no-name {
+  font-style: italic;
+  color: #666666;
+}
+
 .product-box_data span {
   font-size: 1.5em;
   font-weight: 300;
@@ -252,6 +269,10 @@ hr {
   height: 0;
   transition: 300ms;
   overflow: hidden;
+}
+
+.no-description {
+  font-style: italic;
 }
 
 .product-box_data i {
@@ -490,7 +511,6 @@ textarea.form-input {
   margin: 0%;
   padding:10px;
   max-width: 60;
-  margin-left: 300px;
   font-size: 40px;
   display: flex;
   flex-direction: row;
