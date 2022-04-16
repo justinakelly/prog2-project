@@ -681,6 +681,7 @@ color: #39b54a;
   padding: 0 30px;
   border: none;
   border-radius: 10px;
+  margin-left: 50px;
 
 }
 .form-div-container {
@@ -713,7 +714,7 @@ color: #39b54a;
 }
 
 .add-product{
-  color: white;
+  color: black;
   font-size: small;
   font-weight: lighter;
 }
