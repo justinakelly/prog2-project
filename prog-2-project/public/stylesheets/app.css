@@ -572,7 +572,8 @@ textarea.form-input {
   .main-navbar,
   .left-navbar,
   .right-navbar,
-  .product-box_image{
+  .product-box_image
+  .row{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
