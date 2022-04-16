@@ -740,3 +740,10 @@ color: #39b54a;
 .title-index p {
   color: white;
 }
+
+.form-background {
+  background-color: rgba(250, 250, 250, 0.12);
+  border-radius: 20px;
+  width: 80%;
+  padding: 50px;
+}
