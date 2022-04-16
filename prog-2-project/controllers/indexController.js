@@ -28,7 +28,7 @@ const controller = {
         res.render('index', {
             artwork: data.artworks,
             commments: data.commments, 
-            mostPopular: sortedArtwork()
+            mostPopular: js
             
             
         });

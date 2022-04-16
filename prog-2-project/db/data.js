@@ -95,13 +95,13 @@ const data = {
 
     comments: [
         {
-            username: '@luis',
-            comment : ' Wow thats so cool :) #abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
+            username: '@danwilliams',
+            comment : ' #abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
             profilePicture : '/images/users/5.png'
         },
         {
             username: '@justinakelly',
-            comment : 'Never seen sthing like this. Amazing!',
+            comment : 'Amazing!',
             profilePicture : '/images/users/2.png'
         },
         {
@@ -115,7 +115,7 @@ const data = {
             profilePicture : '/images/users/1.png'
         },
         {
-            username: '@pehuen',
+            username: '@digital_collector',
             comment : 'I offer a secure P2P transaction for this NFT #abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
             profilePicture : '/images/users/4.png'
         }
