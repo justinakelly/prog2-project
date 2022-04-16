@@ -10,14 +10,12 @@
 	<!-- Header -->	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Search results</h2>
-			</div>
+			
 			<!-- Show the "ultimos" products -->
 		<% if (results.search == '') { %>	
-		<h2 class="results">Searcher cannot be empty</h2>
+		<h2 class="products-title results">Searcher cannot be empty</h2>
 		<%	}else { %>
-		<h2 class="results">No results available for '<%= results.search %>'</h2>
+		<h2 class="products-title results">No results available for '<%= results.search %>'</h2>
 		<% } %> 
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
