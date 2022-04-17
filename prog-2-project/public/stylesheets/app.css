@@ -1,17 +1,15 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300&family=Quicksand:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Jura:wght@300&family=Quicksand:wght@300&display=swap');
 
 /*====== Variables ======*/
 :root {
   background-color: black;
   --dark-blue: #03264C;
-  --light-blue: #1259c3;
+  --light-blue: #4642c1;
   --gray: #666666;
   --light-gray: #ebebeb;
-  --green: #39b54a;
-  --base-font-family: 'Quicksand', sans-serif;
 }
 
 
@@ -131,7 +129,19 @@ hr {
   display: block;
   margin: 20px auto 0;
 }
+.btn{
+  background-color: #2f2abd;
+  color: white;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 30px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 100px;
+  margin-top: 20px;
 
+}
 .main-navbar {
   margin-top: 20px;
   display: none;
@@ -516,6 +526,16 @@ textarea.form-input {
   align-items: center;
   width: 100%;
 }
+.col-14 { 
+  margin-left: 125px;
+  padding:10px;
+  max-width: 60;
+  font-size: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
 .results{
   color: white;
   margin-left: 15px;
@@ -541,12 +561,7 @@ textarea.form-input {
   margin-bottom: 10px;
 }
 
-.btn{
-  background-color: #1259c3;
-  padding: 10px 20px;
-  border-radius: 4px;
-  color: #fff;
-}
+
 .fas fa-sign-in-alt{
   color:red;
 }
@@ -678,6 +693,8 @@ color: #39b54a;
 }
 
 .button-login {
+  background-color: #2f2abd;
+  color: white;
   height: 40px;
   font-size: 13px;
   font-weight: 600;
@@ -695,6 +712,9 @@ color: #39b54a;
 
 .username-black {
   text-decoration: underline;
+  font-family: 'Akshar', sans-serif;
+  font-weight: bold;
+
 }
 
 .product-div {
@@ -744,6 +764,10 @@ color: #39b54a;
 .form-background {
   background-color: rgba(250, 250, 250, 0.12);
   border-radius: 20px;
-  width: 80%;
+  width: 70%;
   padding: 50px;
+  margin-left: 175px;
+}
+addproduct{
+  margin-left: 100px;
 }
