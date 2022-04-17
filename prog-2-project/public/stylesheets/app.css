@@ -89,14 +89,14 @@ hr {
 }
 
 .search-form {
-  font-family: 'Jura', sans-serif;
+  font-family: 'Akshar', sans-serif;
   position: relative;
   display: flex;
   align-items: center;
 }
 
 .search-form_input {
-  font-family: 'Jura', sans-serif;
+  font-family: 'Akshar', sans-serif;
   border: solid 1px var(--light-gray);
   display: block;
   width: 100%;
@@ -130,6 +130,7 @@ hr {
   margin: 20px auto 0;
 }
 .btn{
+  font-family: 'Jura', sans-serif;
   background-color: #2f2abd;
   color: white;
   height: 40px;
@@ -150,6 +151,7 @@ hr {
 .left-navbar,
 .right-navbar {
   font-size: 1.5em;
+  font-family: 'Jura', sans-serif;
 }
 
 .logout{
@@ -214,6 +216,7 @@ hr {
 }
 
 .product-box {
+  font-family: 'Jura', sans-serif;
   background-color: #ffffff;
   border-radius: 5px;
   overflow: hidden;
@@ -536,6 +539,9 @@ textarea.form-input {
   align-items: center;
   width: 100%;
 }
+.a{
+  font-family: 'Jura', sans-serif;
+}
 .results{
   color: white;
   margin-left: 15px;
@@ -563,6 +569,7 @@ textarea.form-input {
 
 
 .fas fa-sign-in-alt{
+  font-family: 'Jura', sans-serif;
   color:red;
 }
 .fas fa-cog{
@@ -584,7 +591,9 @@ textarea.form-input {
   .btn-toggle-navbar {
     display: none;
   }
-
+.left-navbar{
+  font-family: 'Jura', sans-serif;
+}
   .main-navbar,
   .left-navbar,
   .right-navbar,
@@ -693,6 +702,7 @@ color: #39b54a;
 }
 
 .button-login {
+  font-family: 'Jura', sans-serif;
   background-color: #2f2abd;
   color: white;
   height: 40px;
@@ -712,7 +722,6 @@ color: #39b54a;
 
 .username-black {
   text-decoration: underline;
-  font-family: 'Akshar', sans-serif;
   font-weight: bold;
 
 }
