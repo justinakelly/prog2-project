@@ -122,7 +122,7 @@ const data = {
     ],
 
     user: {
-        email : 'elon@musk.com',
+        email : 'elonmusk@gmail.com',
         username : 'elonmusk.ok',
         password : 'Emusk1971',
         birthday :  '28-06-1971',

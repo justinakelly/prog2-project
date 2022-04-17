@@ -567,7 +567,9 @@ textarea.form-input {
   margin-bottom: 10px;
 }
 
-
+.email {
+  margin-bottom: 10px;
+}
 .fas fa-sign-in-alt{
   font-family: 'Jura', sans-serif;
   color:red;
@@ -577,6 +579,7 @@ textarea.form-input {
 }
 .circles{
   margin-left: 150px;
+
 }
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
