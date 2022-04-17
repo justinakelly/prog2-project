@@ -1,10 +1,7 @@
-// productos: contendrá un array de objetos literales con los datos de los productos. Debe tener al menos 10 productos. 
-//Debe ser coherente con la información pedida en el formulario de carga de productos. 
-// Los datos deben ser coherentes con la información pedida en el formulario de carga de productos.
-
 const data = {
     
-        artworks: [
+    artworks: [
+
     {
         image : '/images/products/garden-of-forking-paths.jpeg',
         name : 'GARDEN OF FORKING PATHS',
@@ -94,6 +91,7 @@ const data = {
     ],
 
     comments: [
+
         {
             username: '@danwilliams',
             comment : ' #abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
@@ -128,39 +126,9 @@ const data = {
         birthday :  '28-06-1971',
         document : '14191102',
         profilePicture : '/images/users/elon.jpeg',
-        verified:'/images/users/verified.png',
-    
+        verified:'/images/users/verified.png'
     }
 
 }
 
 module.exports = data;
-
-
-
-//guardamos la info en una variable y la exportamos asi la podemos requerir desde otro archivo 
-// Agregar producto:
-// imagen: campo de tipo file.
-// Nombre del producto: campo de tipo texto.
-// descripción: campo de tipo texto.
-// Fecha de carga: campo de tipo fecha.
-
-
-
-// usuario: contendrá un objeto literal con los datos de un usuario. Serán los datos del usuario logueado. 
-//Los datos deben ser coherentes con la información pedida en el formulario de registro. 
-// Los datos del usuario deben mostrarse en todos los lugares donde aparezca el header logueado y en “mi perfil”.
-
-// email: campo de tipo email.
-// usuario: campo de tipo texto.
-// contraseña: campo de tipo contraseña.
-// fecha de nacimiento: campo de tipo fecha.
-// nro de documento: campo de tipo numérico.
-// foto de perfil: campo de tipo file.
-
-
-// comentarios: contendrá un array de objetos literales con los datos de los comentarios que se ven en el detalle de un producto.
-// La información de cada comentario debe ser:
-// nombre de usuario.
-// texto del comentario.
-// imagen de perfil: no es necesario que coloques una imagen de perfil. Podés dejar la que está ahora en la maqueta.

@@ -5,22 +5,18 @@ const controller = {
   
   add: function(req, res){
     res.render('product-add', {
-      artwork: data.artworks[req.params.id -1],
-      user: data.user
-    })
+                                user: data.user
+                              });
 
  },
 
     show: function(req, res){
       res.render ('product', {
-          artwork: data.artworks[req.params.id -1],
-          comment: data.comments
-        })
+                                artwork: data.artworks[req.params.id -1],
+                                comment: data.comments
+                              });
 
     }
-
-  
-   
 
 };
 

@@ -644,24 +644,8 @@ textarea.form-input {
 }
 
 
+/*====== css ======*/
 
-
-
-
-
-
-
-/*====== Forms ======*/
-/*.form-control {
-  border: 2px solid red;
-  width: 100%;
-  border-radius: 12px;
-  font-size: 18px;
-  height: 100%;
-  padding: 10px 20px 10px;
-}
-
-*/
 
 .form-control {
   height: 48px;
