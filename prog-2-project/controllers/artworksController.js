@@ -1,3 +1,4 @@
+const { user } = require('../db/data');
 var data = require('../db/data')
 
 const controller = {
@@ -5,6 +6,7 @@ const controller = {
   add: function(req, res){
     res.render('product-add', {
       artwork: data.artworks[req.params.id -1],
+      user: data.user
     })
 
  },

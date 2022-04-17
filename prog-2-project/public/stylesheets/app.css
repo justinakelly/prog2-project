@@ -804,3 +804,8 @@ color: #39b54a;
 .fas.fa-cog{
   margin-left: 120px;
 }
+
+.main-header_credit-link img {
+  width: 35px;
+  margin-right: 5px;
+}

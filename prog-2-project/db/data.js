@@ -111,13 +111,13 @@ const data = {
         },
         {
             username: '@justinabsegui',
-            comment: 'How much ETH is it worth? This is crazy (insert emoji aplausos)',
+            comment: 'This is crazy!',
             profilePicture : '/images/users/1.png'
         },
         {
             username: '@digital_collector',
-            comment : 'I offer a secure P2P transaction for this NFT #abstract #colorful #digitalart #nft #surrealism #psychedelic #trippy',
-            profilePicture : '/images/users/4.png'
+            comment : 'Stunnin! ;). Such great artwork',
+            profilePicture : ''
         }
     ],
 

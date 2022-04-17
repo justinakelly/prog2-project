@@ -16,7 +16,6 @@ const controller = {
         function getRandomArtwork () {
             return randomArtwork[randomNum()];
         }
-
     
         // let mixedArtworks = data.artworks
         // function getMixedArtwork () {
