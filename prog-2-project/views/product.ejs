@@ -5,9 +5,9 @@
 <%-include('./partials/head', {title:'ARTWORK'})%>
 <body>
 	
-	<!-- Header -->
+	<!-- header -->
 	<%-include('partials/header')%>
-	<!-- Header -->
+	<!-- header -->
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
@@ -54,7 +54,7 @@
 						<% } %> 
 
 					</section>
-					<form action="/artworks/add" class="form-login" > 
+					<form action="/users/login" class="form-login" > 
 						<input class="form-input" type="text" value="" placeholder="Add comment">
 						<button type="submit" class="btn" > Add comment</button>
 					</form>
@@ -63,11 +63,11 @@
 			</div>
 		</div>
 	</div>
-	<!-- /product detail -->
+	<!-- product detail -->
 
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
-	<!-- /footer -->
+	<!-- footer -->
 
 </body>	
 </html>

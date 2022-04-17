@@ -7,16 +7,23 @@
 <body>
 	<!-- Header -->
 	<%-include('partials/header')%>
-	<!-- Header -->	<!-- Novedades -->
+	<!-- Header -->	
+	
+	<!-- results -->
 	<div class="container products-wrapper">
 		<div class="row">
-			
-			<!-- Show the "ultimos" products -->
+		
 		<% if (results.search == '') { %>	
-		<h2 class="products-title results">Searcher cannot be empty</h2>
+			<h2 class="products-title results">Searcher cannot be empty</h2>
 		<%	}else { %>
-		<h2 class="products-title results">No results available for '<%= results.search %>'</h2>
+			<h2 class="products-title results">No results available for '<%= results.search %>'</h2>
 		<% } %> 
+
+		</div>
+	</div>
+	<!-- results -->
+
+
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
 	<!-- /footer -->

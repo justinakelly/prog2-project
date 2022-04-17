@@ -5,102 +5,154 @@
 
 <body>
 
-	<!-- Header -->
+	<!-- header -->
 	<%-include('partials/header')%>
-	<!-- Header -->
+	<!-- header -->
 	
-	<!-- Banner -->
+	<!-- banner -->
 	<div class="banner">
-		<img src="/images/hola.JPEG" alt="Banner">
+		<img src="/images/banner-index.JPEG" alt="Banner">
 	</div>
-	<!-- /Banner -->
+	<!-- banner -->
 
-	<!-- Novedades -->
+	<!-- artworks -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Artworks</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
+			
+			
+			<!-- show all products -->
 			<% for (let i= 0; i < artwork.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
+					
 					<a href="/artworks/<%= i+1 %>" class="title-index">
-						<figure class="product-box_image">
-							<% if (artwork[i].image) { %>
+						
+					<figure class="product-box_image">
+						<% if (artwork[i].image) { %>
 							<img src=" <%= artwork[i].image %> " width="300" height="350" alt="artwork image">
-							<%	}else { %>
-							<img src="/images/products/default-image.png" width="300" height="350" alt="artwork image">	
+						<%	}else { %>
+							<img src="/images/products/default-image.png" width="300" height="350" alt="default image">	
 						<% } %> 
-						</figure>
-						<article class="product-box_data title-index">
-							<% if (artwork[i].name) { %>
-								<h2> <%= artwork[i].name %> </h2>
-							<%	}else { %>
-								<h2 class="no-name">no name available</h2>
-							<% } %>
+					</figure>
+						
+					<article class="product-box_data title-index">
+						<% if (artwork[i].name) { %>
+							<h2> <%= artwork[i].name %> </h2>
+						<%	}else { %>
+							<h2 class="no-name">no name available</h2>
+						<% } %>
 							
-							<% if (artwork[i].description) { %>
-								<p> <%= artwork[i].description %> </p>
-							<%	}else { %>
-								<p class="no-description">no description available</p>
-							<% } %>
-							<p>Comments: 5 </p> <!--en realidad quiero comments.length-->
-						</article>
+						<% if (artwork[i].description) { %>
+							<p class="artwork-description"> <%= artwork[i].description %> </p>
+						<%	}else { %>
+							<p class="no-description">no description available</p>
+						<% } %>
+
+						<p class="artwork-description">Comments: 5 </p>  <!--en realidad quiero comments.length-->
+					</article>
+					
 					</a>
+
 				</section>
 			</div>
 			<% } %>
+			<!-- show all products -->
+
 		</div>
 	</div>
-	<!-- /Novedades -->
+	<!-- artworks -->
 	
-	<!-- Más comentados -->
+	<!-- most popular -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Most popular</h2>
 			</div>
 			
-			<!-- Show the "ultimos" products -->
-			<% for (let i= 0; i < 4; i++) { %>
+			<!-- show the random product -->
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/artworks/<%= i+1 %>" class="title-index">
+
+					<a href="/artworks/<%= randomArtwork.id %>" class="title-index">
+
 						<figure class="product-box_image">
-							<% if (mostPopular[i].image) { %>
-								<img src=" <%= mostPopular[i].image %> " width="300" height="350" alt="artwork image">
-								<%	}else { %>
+							<% if (randomArtwork.image) { %>
+								<img src=" <%= randomArtwork.image %> " width="300" height="350" alt="artwork image">
+							<%	}else { %>
 								<img src="/images/products/default-image.png" width="300" height="350" alt="artwork image">	
 							<% } %> 
 						</figure>
+
 						<article class="product-box_data">
-							<% if (mostPopular[i].name) { %>
-								<h2> <%= mostPopular[i].name %> </h2>
+							<% if (randomArtwork.name) { %>
+								<h2> <%= randomArtwork.name %> </h2>
 							<%	}else { %>
 								<h2 class="no-name">no name available</h2>
 							<% } %>
 							
-							<% if (mostPopular[i].description) { %>
-								<p> <%= mostPopular[i].description %> </p>
+							<% if (randomArtwork.description) { %>
+								<p> <%= randomArtwork.description %> </p>
 							<%	}else { %>
 								<p class="no-description">no description available</p>
 							<% } %>
+
 							<p>Comments: 5 </p>
-						</article> 
+						</article>
+
 					</a>
+
 				</section>
 			</div>
-			<% } %>
-		
+			<!-- show the random product -->
+
+			<!--show sorted products --		
+			< for (let i= 0; i < 4; i++) { %>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+					
+					<a href="/artworks/<= i+1 %>" class="title-index">
+
+						<figure class="product-box_image">
+							< if (mostPopular[i].image) { %>
+								<img src=" <= mostPopular[i].image %> " width="300" height="350" alt="artwork image">
+							<	}else { %>
+								<img src="/images/products/default-image.png" width="300" height="350" alt="artwork image">	
+							< } %> 
+						</figure>
+
+						<article class="product-box_data">
+							< if (mostPopular[i].name) { %>
+								<h2> <= mostPopular[i].name %> </h2>
+							<	}else { %>
+								<h2 class="no-name">no name available</h2>
+							< } %>
+							
+							< if (mostPopular[i].description) { %>
+								<p> <= mostPopular[i].description %> </p>
+							<	}else { %>
+								<p class="no-description">no description available</p>
+							< } %>
+							
+							<p>Comments: 5 </p>
+						</article> 
+
+					</a>
+
+				</section>
+			</div>
+			< } %>    
+			show sorted products -->
 		
 		</div>
 	</div>
-	<!-- /Más comentados -->
+	<!-- most popular --> 
 	
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
-	<!-- /footer -->
+	<!-- footer -->
 </body>	
 </html>
 

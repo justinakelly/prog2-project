@@ -8,29 +8,30 @@ const controller = {
 
     index: function(req, res){
         
-       // artworkRandom = data.artworks
-    //     function randomNum () {
-    //         return Math.floor(Math.random() * artworkRandom.length);
-    //     }
+        randomArtwork = data.artworks
+        function randomNum () {
+            return Math.floor(Math.random() * randomArtwork.length);
+        }
         
-    //    function getRandomArtwork () {
-    //         return artworkRandom[randomNum()];
-    //     }
-    let js = data.artworks
-    function sortedArtwork () {
-        js.sort()
-       
-        return Math.random() - 0.5
-        console.log(sortedArtwork(js));
-    }
+        function getRandomArtwork () {
+            return randomArtwork[randomNum()];
+        }
+
     
-   //console.log(js)
-    
-        //console.log(sortedArtwork())
+        // let mixedArtworks = data.artworks
+        // function getMixedArtwork () {
+        //     mixedArtworks.sort()
+        //     return Math.random() - 0.5
+        // }
+        // console.log(mixedArtworks)
+        // console.log(getMixedArtwork())
+        
+        
         res.render('index', {
             artwork: data.artworks,
             commments: data.commments, 
-            mostPopular: js
+            randomArtwork: getRandomArtwork()
+         // mostPopular: getMixedArtwork()
             
             
         });

@@ -19,7 +19,7 @@ const controller = {
 },
     edit: function (req, res) {             
     res.render('profile-edit', {
-        user: data.user //userData: user,
+        user: data.user
     });
 }
     

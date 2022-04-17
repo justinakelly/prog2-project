@@ -170,6 +170,8 @@ hr {
   color: white;
   font-size: small;
   font-weight: lighter;
+  display: flex;
+  flex-direction: column;
 }
 .data-container{
   color: white;
@@ -271,7 +273,7 @@ hr {
 .product-box_data p {
   font-size: 1.5em;
   width: 100%;
-  color: var(--gray);
+ /* color: var(--gray);*/
   margin: 0;
   height: 0;
   transition: 300ms;
@@ -280,6 +282,7 @@ hr {
 
 .no-description {
   font-style: italic;
+  color: #666666;
 }
 
 .product-box_data i {
@@ -316,6 +319,11 @@ hr {
 .product-box:hover i {
   transform: rotate(360deg);
   box-shadow: 0 0 5px var(--green);
+}
+
+.no-description {
+  font-style: italic;
+  color: #666666;
 }
 
 /*====== Footer ======*/
@@ -559,7 +567,6 @@ textarea.form-input {
 }
 .verified{
   width: 25px;
-  margin-right: 60px;
 }
 
 .main-title{
@@ -769,7 +776,7 @@ color: #39b54a;
   background-color: rgba(250, 250, 250, 0.12);
 }
 
-.title-index p {
+.artwork-description {
   color: white;
 }
 
@@ -780,6 +787,20 @@ color: #39b54a;
   padding: 50px;
   margin-left: 175px;
 }
-addproduct{
+.addproduct{
   margin-left: 100px;
+}
+.no-description {
+  font-style: italic;
+  color: #666666;
+}
+
+.profile-pic {
+  width: 100px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+.fas.fa-cog{
+  margin-left: 120px;
 }
