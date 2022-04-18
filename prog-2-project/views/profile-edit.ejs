@@ -5,51 +5,69 @@
 <%-include('./partials/head', {title:'EDIT PROFILE'})%>
 
 <body>
-	<!-- Header -->
+	<!-- header -->
 	<%-include('partials/header-logueado')%>
-	<!-- Header -->
-	<!-- Novedades -->
+	<!-- header -->
+
+	
 	<div class="container products-wrapper">
+		
 		<div class="row">
+
 			<div class="col-12">
 				<h2 class="products-title">Edit profile</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
+			
+			<!-- form -->
 			<div class=" col-13"> 
-				<form action="/users/profile">
-					<div class="registrando"> 
-						<label for="exampleInputEmail1" class="form-label" > Email address</label>
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="elonmusk@gmail.com">
-                     <div id="emailHelp" class="form-text"> </div>   
-					</div>
-					<div class="registrando"> 
-						<label for="exampleInputUsername1" class="form-label"> Username </label>
-						<input type="username" class="form-control" id="exampleInputUsername1" placeholder="elonmusk.ok ">   
-					</div>
-					<div class="registrando"> 
-						<label for="exampleInputPassword1" class="form-label"> Password</label>
-						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="********" >   
-					</div>
-					<div class="registrando"> 
-						<label for="exampleBirthDate1" class="form-label"> Birth Date</label>
-						<input type="date" class="form-control" id="exampleBirthDate1"  >
-					</div>
-					<div class="registrando"> 
-						<label for="exampleId1" class="form-label"> ID </label>
-						<input type="number" class="form-control" id="exampleId1" placeholder="17584088">
-					</div>
-					<div class="registrando"> 
-						<label for="exampleProfilePicture1" class="form-label">  Change profile picture</label>
-						<input type="file" class="form-control" id="exampleProfilePicture1" >
-					</div>
-					<button type="submit" class="btn btn primary"> Save changes </button>
+				
+			<form action="/users/profile">
+
+				<div class="registrando"> 
+					<img src="<%= user.profilePicture %>" class="profile-pic" width="100">
+					<label for="exampleProfilePicture1" class="form-label">  Change profile picture</label>
+					<input type="file" class="form-control" id="exampleProfilePicture1">
+				</div>
+
+				<div class="registrando"> 
+					<label for="exampleInputEmail1" class="form-label" > Email address</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder= "<%= user.email %>">
+				</div>
+
+				<div class="registrando"> 
+					<label for="exampleInputUsername1" class="form-label"> Username </label>
+					<input type="username" class="form-control" id="exampleInputUsername1" placeholder="<%= user.username %>">   
+				</div>
+
+				<div class="registrando"> 
+					<label for="exampleInputPassword1" class="form-label"> Password</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="<%= user.password %>" >   
+				</div>
+
+				<div class="registrando"> 
+					<label for="exampleBirthDate1" class="form-label"> Birth Date</label>
+					<input type="date" class="form-control" id="exampleBirthDate1" placeholder="<%= user.birthday %>">
+				</div>
+
+				<div class="registrando"> 
+					<label for="exampleId1" class="form-label"> ID </label>
+					<input type="number" class="form-control" id="exampleId1" placeholder="<%= user.document %>">
+				</div>
+					
+				<button type="submit" class="btn btn primary"> Save changes </button>
+				
 				</form>
 				<div class="circles">
 					<img src="/images/m-05-02.png" alt="image">
 				</div>
 			</div>
+			<!-- form -->
+
+		</div>
+
+	</div>
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
-	<!-- /footer -->
+	<!-- footer -->
 </body>	
 </html>

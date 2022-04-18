@@ -5,36 +5,39 @@
 <%-include('./partials/head', {title:'LOG IN'})%>
 
 <body class="login-body">
-	<!-- Header -->
+	<!-- header -->
 	<%-include('partials/header')%>
-	<!-- Header -->
-	<!-- Novedades -->
-	
-	
+	<!-- header -->
+
+	<!-- login -->
 	<div class="container products-wrapper">
 		<div class="row form-div-container">	
 		
-
-	
 			<div class="form-login-main-div">
+
 				<h2 class="products-title login-title">Log In</h2>
+
 				<form action="/users/profile" class="form-login">
 					<div> 
-						<input type="email" class="form-control" placeholder="Email address">	</div>
+						<input type="email" class="form-control" placeholder="Email address">	
+					</div>
 					<div>
 					     <input type="password" class="form-control" placeholder=" Password"> 
 				    </div>
 					<div class="logueando form-check"> 
 						<label for="exampleCheck1" class="form-check-label"> Keep me signed</label>
-						<input type="checkbox" class="form-check-input" id="exampleCheck1"  > 
+						<input type="checkbox" class="form-check-input" id="exampleCheck1" > 
 					</div>
 					<button type="submit" class="button-login"> Submit </button>
 				</form>
 			</div>
 
-			
+		</div>
+	</div>
+	<!-- login -->
+
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
-	<!-- /footer -->
+	<!-- footer -->
 </body>	
 </html>

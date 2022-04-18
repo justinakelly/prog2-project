@@ -5,20 +5,31 @@
 <%-include('./partials/head', {title:'PROFILE'})%>
 
 <body>
-	<!-- Header -->
+	<!-- header -->
 	<%-include('partials/header-logueado')%>
-	<!-- Header -->
-	<!-- Datos del usuario -->
+	<!-- header -->
+
+
+	<!-- user info -->
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
+
 			<div class="img-container offset-3 col-2">
-				<img src="<%= user.profilePicture  %> " alt="foto de perfil" class="foto-perfil">
+				<% if (user.profilePicture) { %>
+					<img src="<%= user.profilePicture  %> " alt="foto de perfil" class="foto-perfil">
+				<%	}else { %>
+					<img src="/images/users/default-user.JPEG" alt="foto de perfil" class="foto-perfil">
+				<% } %> 
 			</div>
+
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title">
 						<a href="/users/profile/edit" class="a"> <%= user.username  %> 
+							<% if (user.verified) { %>
 							<img src="<%= user.verified  %> " alt="foto de perfil" class="verified">
+							<%	}else { %>
+							<% } %> 
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
@@ -31,55 +42,63 @@
 						
 					<ul>
 						<li>3 artworks</li>
-						<li>200 followers</li>
+						<li>2,1M followers</li>
 						<li>300 comments</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- /Datos del usuario -->
+	<!-- user info -->
 
-	<!-- Mis productos -->
+	<!-- my artworks -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">My artworks</h2>
 			</div>
-			<!-- Show mis productos -->
+
 			<% for (let i= 0; i < 3; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/artworks/<%= i+1 %>">
-							<figure class="product-box_image">
-								<% if (artwork[i].image) { %>
+				<section class="product-box">
+
+					<a href="/artworks/<%= i+1 %>">
+
+						<figure class="product-box_image">
+							<% if (artwork[i].image) { %>
 								<img src=" <%= artwork[i].image %> " width="300" height="350" alt="artwork image">
-								<%	}else { %>
+							<%	}else { %>
 								<img src="/images/products/default-image.png" width="300" height="350" alt="artwork image">	
 							<% } %> 
-							</figure>
-							<article class="product-box_data">
-								<% if (artwork[i].name) { %>
-									<h2> <%= artwork[i].name %> </h2>
-								<%	}else { %>
-									<h2 class="no-name">no name available</h2>
-								<% } %>
+						</figure>
+
+						<article class="product-box_data">
+							<% if (artwork[i].name) { %>
+								<h2> <%= artwork[i].name %> </h2>
+							<%	}else { %>
+								<h2 class="no-name">no name available</h2>
+							<% } %>
 								
-								<% if (artwork[i].description) { %>
-									<p> <%= artwork[i].description %> </p>
-								<%	}else { %>
-									<p class="no-description">no description available</p>
-								<% } %>
-								<p>Comments: </p> <!--en realidad quiero comments.length-->
+							<% if (artwork[i].description) { %>
+								<p> <%= artwork[i].description %> </p>
+							<%	}else { %>
+								<p class="no-description">no description available</p>
+							<% } %>
+
+							<p>Comments: 5</p> <!--en realidad quiero comments.length-->
 							</article>
-						</a>
-					</section>
+					</a>
+
+				</section>
 			</div>
 			<% } %>
-		
-	<!-- /Mis productos -->
+
+		</div>
+	</div>
+	<!-- my artworks -->
+
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
-	<!-- /footer -->
+	<!-- footer -->
 </body>	
 </html>

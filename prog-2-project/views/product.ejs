@@ -5,9 +5,9 @@
 <%-include('./partials/head', {title:'ARTWORK'})%>
 <body>
 	
-	<!-- Header -->
+	<!-- header -->
 	<%-include('partials/header')%>
-	<!-- Header -->
+	<!-- header -->
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
@@ -26,27 +26,35 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<% if (artwork.image) { %>
 						<img src= "<%= artwork.image %>" class="product-detail-img">
-						<%	}else { %>
+					<%	}else { %>
 						<img src="/images/products/default-image.png" class="product-detail-img" >	
 					<% } %> 
 
 					<% if (artwork.description) { %>
-						<p class="product-detail-description">
-							<%= artwork.description %> </p>
-						<%	}else { %>
+						<p class="product-detail-description"><%= artwork.description %> </p>
+					<%	}else { %>
 						<p class="product-detail-description">no description available</p>	
 					<% } %> 
 					
 				</article>
+	<!-- product detail -->
+
+	<!-- comments section -->
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 
 					<% for (let i= 0; i < comment.length; i++) { %>
 						<article>
-							<img src=" <%= comment[i].profilePicture %> " width="100" alt="">
+							<% if (comment[i].profilePicture) { %>
+								<img src=" <%= comment[i].profilePicture %> " width="100">
+							<%	}else { %>
+								<img src="/images/users/default-user.JPEG " width="100">
+							<% } %> 
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/users/profile" class="username-black a"> <%= comment[i].username %> : </a> </strong>
+								<strong> 
+									<a href="/users/profile" class="username-black a"> <%= comment[i].username %> : </a> 
+								</strong>
 								<%= comment[i].comment %> 
 								</p>
 							</div>
@@ -54,20 +62,23 @@
 						<% } %> 
 
 					</section>
-					<form action="/artworks/add" class="form-login" > 
+
+					<form action="/users/login" class="form-login" > 
 						<input class="form-input" type="text" value="" placeholder="Add comment">
 						<button type="submit" class="btn" > Add comment</button>
 					</form>
 					<hr>
+
 				</div>
+	<!-- comment section -->
 			</div>
 		</div>
 	</div>
-	<!-- /product detail -->
+
 
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
-	<!-- /footer -->
+	<!-- footer -->
 
 </body>	
 </html>
