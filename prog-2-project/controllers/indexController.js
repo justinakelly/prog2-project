@@ -1,4 +1,3 @@
-const { comments } = require('../db/data');
 var data = require('../db/data');
 
 

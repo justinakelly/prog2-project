@@ -1,14 +1,6 @@
 var data = require('../db/data')
 
 const controller = {
-    
-    register: function (req, res) {
-        res.render('register');
-},
-
-    login: function (req, res) {
-        res.render('login');
-},
 
     profile: function (req, res) {
         res.render('profile', {
@@ -17,14 +9,20 @@ const controller = {
                                 comments: data.comments,
 
                                 });
-},
+    },
 
     edit: function (req, res) {             
         res.render('profile-edit', { user: data.user });
+    },
+
+    register: function (req, res) {
+        res.render('register');
+    },
+
+    login: function (req, res) {
+        res.render('login');
+    }
+
 }
-
-
-}
-
 
 module.exports = controller;
