@@ -1,4 +1,3 @@
-const { user } = require('../db/data');
 var data = require('../db/data')
 
 const controller = {
