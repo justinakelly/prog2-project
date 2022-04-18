@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<!-- Include Head -->
-
+<!-- head -->
 <%-include('./partials/head', {title:'SEARCH RESULTS'})%>
+<!-- head -->
+
 
 <body>
-	<!-- eader -->
+	<!-- header -->
 	<%-include('partials/header')%>
-	<!-- eader -->	
+	<!-- header -->	
 	
 	<!-- results -->
 	<div class="container products-wrapper">
 		<div class="row">
 		
 		<% if (results.search == '') { %>	
-			<h2 class="products-title results">Searcher cannot be empty</h2>
+			<h2 class="products-title results">Searcher can't be empty</h2>
 		<%	}else { %>
 			<h2 class="products-title results">No results available for '<%= results.search %>'</h2>
 		<% } %> 
@@ -27,6 +26,3 @@
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
 	<!-- footer -->
-</body>	
-</html>
-
