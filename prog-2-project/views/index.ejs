@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<!-- Include Head -->
+<!-- head -->
 <%-include('./partials/head', {title:'FINE ART'})%>
+<!-- head -->
+
 
 <body>
 
@@ -27,7 +27,7 @@
 			<% for (let i= 0; i < artwork.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					
+					<!-- queremos que el array empieze de la posicion 1 -->
 					<a href="/artworks/<%= i+1 %>" class="title-index">
 						
 					<figure class="product-box_image">
@@ -76,7 +76,7 @@
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 
-					<a href="/artworks/7>" class="title-index">
+					<a href="/artworks/7" class="title-index">
 
 						<figure class="product-box_image">
 							<% if (randomArtwork.image) { %>
@@ -117,6 +117,4 @@
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
 	<!-- footer -->
-</body>	
-</html>
 
