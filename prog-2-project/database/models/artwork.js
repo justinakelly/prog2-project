@@ -24,6 +24,13 @@ module.exports = function (sequelize, dataTypes) {
 
     const Artwork = sequelize.define (alias , cols, configs);
 
+Artwork.associate = function(models) {
+     Artwork.belongsTo(models.User, {
+         as: 'owner' ,
+         foreignKey: 'user_id'
+     } )
+}
+
     return Artwork;
 
 }
