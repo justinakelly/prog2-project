@@ -58,7 +58,7 @@ db.artworks.findByPk(req.params.id)
     })
 },
 update: function(req, res) {
-if (req.file) req.body.cover = (req.file.path).replace('public', '');
+if (req.file) req.body.Image1 = (req.file.path).replace('public', '');
 db.artworks.update(req.body, { where: { id: req.params.id } })
     .then(function(product) {
         res.redirect('/')
