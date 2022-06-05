@@ -16,36 +16,36 @@ const controller = {
         });
     }
   //   index: function(req, res) {
-  //     db.Book.findAll()
-  //         .then(function (books) {
-  //             res.render('books_index', { books });
+  //     db.artworks.findAll()
+  //         .then(function (product) {
+  //             res.render('product', { product });
   //         })
   //         .catch(function (error) {
   //             res.send(error)
   //         });
   // },
   // author: function(req, res) {
-  //     db.Book.findAll({
+  //     db.artworks.findAll({
   //         'where': {'author': req.params.author}
   //     }).then(function (result) {
-  //         res.render('books_index', { books: result });
+  //         res.render('product', { product: result });
   //     }).catch(function (error) {
   //         res.send(error);
   //     })
   // },
 //show: function(req, res) {
-//   db.Book.findByPk(req.params.id)
-//   .then(function (book) {
-//       res.render('books_show', { book });
+//   db.artworks.findByPk(req.params.id)
+//   .then(function (product) {
+//       res.render('product', { product });
 //   })
 //   .catch(function (error) {
 //       res.send(error);
 //   })
 // },
 // store: function(req, res) {
-//   req.body.user_id = req.session.user.id;
-//   if (req.file) req.body.cover = (req.file.path).replace('public', '');
-//   db.Book.create(req.body)
+// // req.body.user_id = req.session.user.id;
+//   if (req.file) req.body.Image1 = (req.file.path).replace('public', '');
+//   db.artworks.create(req.body)
 //       .then(function() {
 //           res.redirect('/')
 //       })
@@ -54,7 +54,7 @@ const controller = {
 //       })
 // },
 // delete: function(req, res) {
-//   db.Book.destroy({ where: { id: req.params.id } })
+//   db.artworks.destroy({ where: { id: req.params.id } })
 //       .then(function() {
 //           res.redirect('/')
 //       })
@@ -63,9 +63,9 @@ const controller = {
 //       })
 // },
 // edit: function(req, res) {
-//   db.Book.findByPk(req.params.id)
-//       .then(function (book) {
-//           res.render('books_edit', { book });
+//   db.artworks.findByPk(req.params.id)
+//       .then(function (product) {
+//           res.render('product-edit', { product });
 //       })
 //       .catch(function (error) {
 //           res.send(error);
@@ -73,8 +73,8 @@ const controller = {
 // },
 // update: function(req, res) {
 //   if (req.file) req.body.cover = (req.file.path).replace('public', '');
-//   db.Book.update(req.body, { where: { id: req.params.id } })
-//       .then(function(book) {
+//   db.artworks.update(req.body, { where: { id: req.params.id } })
+//       .then(function(product) {
 //           res.redirect('/')
 //       })
 //       .catch(function(error) {
