@@ -6,8 +6,10 @@ const upload= multer ({dest:'public/images/uploads'}); //inicializar multer
 
 router.get('/add', controller.add); //product-add.ejs
 router.post('/add', upload.single('Image1'), controller.store);
+
 // router.get('/', controller.index);
 // router.get('/author/:author', controller.author);
+
 router.get('/:id', controller.edit);
 router.post('/:id', upload.single('Image1'), controller.update);
 
