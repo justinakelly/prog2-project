@@ -11,7 +11,9 @@ module.exports = function (sequelize, dataTypes) {
      primaryKey: true,
      type: dataTypes.INTEGER } ,
 
-    comment: { type: dataTypes.STRING}
+    comment: { type: dataTypes.STRING}, 
+    user_id: {type: dataTypes.INTEGER},
+    artwork_id: {type: dataTypes.INTEGER}
     
  }
     
