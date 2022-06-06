@@ -30,6 +30,11 @@ Artwork.associate = function(models) {
          as: 'owner' ,
          foreignKey: 'user_id'
      })
+    Artwork.hasMany(models.Comment,{
+        as: 'comments', 
+        foreignKey: 'artwork_id'
+    })
+
 }
 
     return Artwork;
