@@ -1,9 +1,5 @@
 var db = require('../database/models');
-<<<<<<< HEAD
-
-=======
 const artwork = db.Artwork;
->>>>>>> 92f8261fd2b8b03737227eb07177c2d60af9ff2e
 
 const controller = {
 //nos llevamos/cortamos el callback, el segundo argumento de la funcion de las rutas
