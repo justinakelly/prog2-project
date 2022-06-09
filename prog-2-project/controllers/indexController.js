@@ -1,19 +1,24 @@
 var db = require('../database/models');
-
+const artwork = db.Artwork;
 
 const controller = {
 //nos llevamos/cortamos el callback, el segundo argumento de la funcion de las rutas
 
     index: function(req, res){
+        artwork.findAll()
+        .then(
+            data=> res.send(data)
+        )  
+        .catch(error=>console.log(error))
+
+        // randomArtwork = data.artworks
+        // function randomNum () {
+        //     return Math.floor(Math.random() * randomArtwork.length);
+        // }
         
-        randomArtwork = data.artworks
-        function randomNum () {
-            return Math.floor(Math.random() * randomArtwork.length);
-        }
-        
-        function getRandomArtwork () {
-            return randomArtwork[randomNum()];
-        }
+        // function getRandomArtwork () {
+        //     return randomArtwork[randomNum()];
+        // }
     
         // let mixedArtworks = data.artworks
         // function getMixedArtwork () {
@@ -23,13 +28,13 @@ const controller = {
         // console.log(mixedArtworks)
         // console.log(getMixedArtwork())
         
-        res.render('index', {
-                                artwork: data.artworks,
-                                commments: data.commments, 
-                                randomArtwork: getRandomArtwork()
-                                // mostPopular: getMixedArtwork()
+        // res.render('index', {
+        //                         artwork: data.artworks,
+        //                         commments: data.commments, 
+        //                         randomArtwork: getRandomArtwork()
+        //                         // mostPopular: getMixedArtwork()
             
-                            });
+        //                     });
 
     },
     
