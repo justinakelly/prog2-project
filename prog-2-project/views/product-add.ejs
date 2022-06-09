@@ -20,7 +20,7 @@
 
 			<!-- form -->
 			<h2 class="col-14"> 
-				<form action="/users/profile">
+				<form method="post" enctype="multipart/form-data" action="/users/profile"> 
 
 					<div class="AddProduct"> 
 						<label for="ProductName1" class="form-label">Product Name</label>
@@ -34,7 +34,7 @@
 
 					<div class="AddProduct"> 
 						<label for="Image1" class="form-label">Add Image</label>
-						<input type="file" class="form-control" id="Image1" >
+						<input type="file" class="form-control" name="Image1" id="Image1" >
 					</div>
 
 					<div class="AddProduct"> 

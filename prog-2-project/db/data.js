@@ -123,7 +123,7 @@ const data = {
         email : 'elonmusk@gmail.com',
         username : 'elonmusk.ok',
         password : 'Emusk1971',
-        birthday :  '28-06-1971',
+        birthdate :  '28-06-1971',
         document : '14191102',
         profilePicture : '/images/users/elon.jpeg',
         verified:'/images/users/verified.png'

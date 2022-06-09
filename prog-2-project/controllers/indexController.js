@@ -1,4 +1,4 @@
-var data = require('../db/data');
+var db = require('../database/models');
 
 
 const controller = {
@@ -41,6 +41,14 @@ const controller = {
     
     },
 
+
+    prueba: function (req, res){
+       db.Artwork.findAll()
+        .then(function(artworks){
+            res.send(artworks);
+        } )
+        
+    }
 }; 
 
 module.exports = controller;

@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require ('express-session');
+var db = require('./database/models');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -10,15 +12,44 @@ var artworksRouter = require('./routes/artworks') //la requiero
 
 var app = express();
 
+app.use(session( {
+  secret: 'a_secret_word',// llave que encripta, me permite guar datos y traerlos de vuelta
+  resave: false,
+  saveUninitialized: true
+}))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+// Cookie middleware pasa a todas las vistas una variable
+app.use(function(req, res, next) {
+  if (!req.session.user && req.cookies.userId) {
+    // Find the user
+    db.User.findByPk(req.cookies.userId)
+      .then(function(data) {
+        // Act as login
+        req.session.user = data;
+        next();
+      })
+  } else {
+    next();
+  }
+})
+
+// Session middleware
+app.use(function(req, res, next) {
+  res.locals.user = req.session.user;//callback que a req.locals en el lugar de user le setea lo q esta en session
+  next();
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
