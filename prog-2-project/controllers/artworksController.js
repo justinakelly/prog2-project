@@ -2,7 +2,7 @@ var data = require('../db/data')
 
 const controller = {
 index: function(req, res) {
-    db.artworks.findAll()
+    db.artworks.findAll({ include: [ { association: 'owner' } ] })
         .then(function (product) {
             res.render('product', { product });
         })
@@ -11,7 +11,10 @@ index: function(req, res) {
         });
 },
 add: function(req, res) {
-  res.render('product-add');
+    if (!req.session.user) { 
+        throw Error('Not authorized.')
+    }
+    res.render('product-add');
 },
 author: function(req, res) {
     db.artworks.findAll({
@@ -23,19 +26,22 @@ author: function(req, res) {
     })
 },
 show: function(req, res) {
-    db.artworks.findByPk(req.params.id)
-    .then(function (product) {
-        res.render('product', { product });
-    })
-    .catch(function (error) {
-        res.send(error);
-    })
+    db.artworks.findByPk(req.params.id, { include: { all: true, nested: true } })
+        .then(function (product) {
+            res.render('product', { product });
+        })
+        .catch(function (error) {
+            res.send(error);
+        })
 },
 store: function(req, res) {
-    // req.body.user_id = req.session.user.id;
-    if (req.file) req.body.Image1 = (req.file.path).replace('public', '');
+    if (!req.session.user) { 
+        return res.render('product-add', { error: 'Not authorized.' });
+    }
+    req.body.user_id = req.session.user.id; // agrega campo user_id con valor userid de la sesion (estando logueado)
+    if (req.file) req.body.Image1 = (req.file.path).replace('public', '');// cambia nombre de foto que subo para sacar que sea public
     db.artworks.create(req.body)
-        .then(function() {
+        .then(function() { 
             res.redirect('/')
         })
         .catch(function(error) {
@@ -43,6 +49,9 @@ store: function(req, res) {
         })
 },
 delete: function(req, res) {
+    if (!req.session.user) {
+        throw Error('Not authorized.')
+    }
     db.artworks.destroy({ where: { id: req.params.id } })
         .then(function() {
             res.redirect('/')
@@ -73,18 +82,3 @@ update: function(req, res) {
 };
 
 module.exports = controller;
-
-// esto era lo que teniamos antes
-// add: function(req, res){
-//   res.render('product-add', {
-//     user: data.user
-//     });
-
-// },
-
-//   show: function(req, res){
-//     res.render ('product', {
-//       artwork: data.artworks[req.params.id -1],
-//       comment: data.comments
-//       });
-//   }

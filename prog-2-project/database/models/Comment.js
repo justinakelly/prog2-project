@@ -2,9 +2,7 @@ const sequelize = require ('sequelize');
 
 
 module.exports = function (sequelize, dataTypes) {
-    
     const alias = "Comment";
-
     const cols = {
   id: {
      autoincrement: true,
@@ -14,7 +12,6 @@ module.exports = function (sequelize, dataTypes) {
     comment: { type: dataTypes.STRING}, 
     user_id: {type: dataTypes.INTEGER},
     artwork_id: {type: dataTypes.INTEGER}
-    
  }
     
     const configs = {
@@ -22,15 +19,18 @@ module.exports = function (sequelize, dataTypes) {
         timestamps : false
     }
 
-    const Comment = sequelize.define (alias , cols, configs);
+    const Comment = sequelize.define('Comment', cols, configs);
 
     Comment.associate = function(models) {
         Comment.belongsTo(models.User, {
-            as: 'owner' ,
+            as: 'owner',
             foreignKey: 'user_id'
-        } )
-   }
-
+        });
+        Comment.belongsTo(models.Artwork, {
+            as: 'book',
+            foreignKey: 'book_id'
+        })
+    }
     return Comment;
 
 }

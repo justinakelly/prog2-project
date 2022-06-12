@@ -1,10 +1,6 @@
 const sequelize = require ('sequelize'); 
-
-
 module.exports = function (sequelize, dataTypes) {
-    
     const alias = "User";
-
     const cols = {
   id: {
      autoincrement: true,
@@ -25,13 +21,14 @@ module.exports = function (sequelize, dataTypes) {
         timestamps : false
     }
 
-    const User = sequelize.define (alias , cols, configs);
-    // User.associate = function(models) {
-        // User.hasMany(models.Artworks, {
-            // as: 'artworks',
-            // foreignKey: 'user_id'
-        // })
-    // }
+    const User = sequelize.define (User , cols, configs);
+    
+    User.associate = function(models) {
+        User.hasMany(models.Artworks, {// 1 usuario has many artworks
+            as: 'artworks',// campo donde va a vivir el otro recurso
+            foreignKey: 'user_id'
+        })
+    }
     
     return User;
 }

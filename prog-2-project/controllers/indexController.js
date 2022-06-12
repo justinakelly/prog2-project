@@ -38,14 +38,29 @@ const controller = {
 
     },
     
-    results: function (req,res){
-        res.render ('search-results', { 
-                                        artwork: data.artworks,
-                                        results: req.query
-                                    });
+    // results: function (req,res){
+    //     res.render ('search-results', { 
+    //                                     artwork: data.artworks,
+    //                                     results: req.query
+    //                                 });
     
+    // },
+    results: function(req, res) {
+        db.Artwork.findAll({ 
+            where: {
+                [op.or]: [
+                    { title: { [op.like]: "%"+req.query.criteria+"%"} },
+                    { author: { [op.like]: "%"+req.query.criteria+"%"} }
+                ]
+            },
+            include: [ { association: 'owner' } ] 
+        }).then(function (books) {
+                res.render('search-results', { books });
+            })
+            .catch(function (error) {
+                res.send(error)
+            });
     },
-
 
     prueba: function (req, res){
        db.Artwork.findAll()

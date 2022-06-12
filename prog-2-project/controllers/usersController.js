@@ -3,27 +3,22 @@ var data = require('../db/data')
 const controller = {
 
     profile: function (req, res) {
-        res.render('profile', {
-            user: data.user,
-            artwork: data.artworks,
-            comments: data.comments,
-            // o algo asi
-            // db.User.findByPk(req.session.user.id, { include: [ { association: 'products' } ] })
-            // .then(function (user) {
-            //     res.render('profile', { user });
-            // })
-            // .catch(function (error) {
-            //     res.send(error)
-                                });
+            db.User.findByPk(req.session.user.id, { include: [ { association: 'artworks' } ] })
+            .then(function (user) {
+                res.render('profile', { user });
+            })
+            .catch(function (error) {
+                res.send(error)
+            });                                    
     },
     access: function(req, res, next) {
-        db.User.findOne({ where: { username: req.body.username }})
-            .then(function(user) {
-                if (!user) throw Error('User not found.')
-                if (hasher.compareSync(req.body.password, user.password)) {
-                    req.session.user = user;
-                    if (req.body.rememberme) {
-                        res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
+        db.User.findOne({ where: { username: req.body.username }}) // busco usuario en db, en where busco lo que se mando por formulario de login
+            .then(function(user) { //resultado de promesa=usuario
+                if (!user) throw Error('User not found.') 
+                if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
+                    req.session.user = user; //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
+                    if (req.body.rememberme) { //si apreta boton
+                        res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })// cookie nueva que se guarda en cliente por 7 hs
                     }
                     res.redirect('/');
                 } else {

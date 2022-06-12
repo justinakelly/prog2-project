@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// Cookie middleware pasa a todas las vistas una variable
+// Cookie middleware por si cerras ventana, para recuperar sesion, pasa a todas las vistas una variable
 app.use(function(req, res, next) {
   if (!req.session.user && req.cookies.userId) {
     // Find the user
@@ -45,7 +45,7 @@ app.use(function(req, res, next) {
   }
 })
 
-// Session middleware
+// Session middleware, manda info de usauario a todas las vistas
 app.use(function(req, res, next) {
   res.locals.user = req.session.user;//callback que a req.locals en el lugar de user le setea lo q esta en session
   next();
