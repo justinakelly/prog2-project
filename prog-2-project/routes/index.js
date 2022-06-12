@@ -5,5 +5,6 @@ var controller = require('../controllers/indexController');
 
 router.get('/', controller.index);  //index.ejs
 router.get('/results', controller.results); //search-results.ejs
+router.get('/prueba', controller.prueba); 
 
 module.exports = router;
