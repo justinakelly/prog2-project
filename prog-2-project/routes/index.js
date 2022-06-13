@@ -7,6 +7,6 @@ var db = require('../database/models');
 
 router.get('/', controller.index);  //index.ejs
 router.get('/results', controller.results); //search-results.ejs
-router.get('/prueba', controller.prueba); 
+// router.get('/prueba', controller.prueba); 
 
 module.exports = router;
