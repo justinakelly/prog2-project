@@ -8,7 +8,7 @@ const controller = {
     index:  function (req, res){
            db.Artwork.findAll()
             .then(function(artworks){
-                res.send(artworks);
+                res.render('index',{artworks:artworks});
             } )
         // function(req, res){
         // artwork.findAll()
