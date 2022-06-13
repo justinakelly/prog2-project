@@ -13,7 +13,6 @@ module.exports = function (sequelize, dataTypes) {
      password: { type: dataTypes.STRING},
      document: { type: dataTypes.INTEGER}, 
      birthdate: { type: dataTypes.DATE},
-     verified: { type: dataTypes.STRING},
     }
     
     const configs = {
@@ -21,10 +20,10 @@ module.exports = function (sequelize, dataTypes) {
         timestamps : false
     }
 
-    const User = sequelize.define (User , cols, configs);
+    const User = sequelize.define (alias , cols, configs);
     
     User.associate = function(models) {
-        User.hasMany(models.Artworks, {// 1 usuario has many artworks
+        User.hasMany(models.Artwork, {// 1 usuario has many artworks
             as: 'artworks',// campo donde va a vivir el otro recurso
             foreignKey: 'user_id'
         })
