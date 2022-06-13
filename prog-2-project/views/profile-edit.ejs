@@ -5,7 +5,7 @@
 
 <body>
 	<!-- header -->
-	<%-include('partials/header-logueado')%>
+
 	<!-- header -->
 
 	
@@ -23,7 +23,7 @@
 				<form method="post" enctype="multipart/form-data" action="/users/profile"></form>>
 
 				<div class="registrando"> 
-					<img src="<%= user.profilePicture %>" class="profile-pic" width="100">
+					<img src="<%= users.profilepicture %>" class="profile-pic" width="100">
 					<label for="exampleProfilePicture1" class="form-label">  Change profile picture</label>
 					<input type="file" class="form-control" id="exampleProfilePicture1">
 				</div>
@@ -35,12 +35,12 @@
 
 				<div class="registrando"> 
 					<label for="exampleInputUsername1" class="form-label"> Username </label>
-					<input type="username" class="form-control" id="exampleInputUsername1" value="<%= user.username %>">   
+					<input type="username" class="form-control" id="exampleInputUsername1" value="<%= users.username %>">   
 				</div>
 
 				<div class="registrando"> 
 					<label for="exampleInputPassword1" class="form-label"> Password</label>
-					<input type="password" class="form-control" id="exampleInputPassword1" value="<%= user.password %>" >   
+					<input type="password" class="form-control" id="exampleInputPassword1" value="<%= users.password %>" >   
 				</div>
 
 				<div class="registrando"> 
@@ -50,7 +50,7 @@
 
 				<div class="registrando"> 
 					<label for="exampleId1" class="form-label"> ID </label>
-					<input type="number" class="form-control" id="exampleId1" value="<%= user.document %>">
+					<input type="number" class="form-control" id="exampleId1" value="<%= users.document %>">
 				</div>
 					
 				<button type="submit" class="btn btn primary"> Save changes </button>

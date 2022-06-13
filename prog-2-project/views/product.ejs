@@ -11,8 +11,8 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 	<div class="d-flex align-items-center"> 
-			<% if (artwork.image) { %>
-			<h2 class="products-title"> <%= artwork.name %> </h2> 
+			<% if (artworks.image) { %>
+			<h2 class="products-title"> <%= artworks.name %> </h2> 
 			<%	}else { %>
 				<h2 class="products-title">no name available</h2> 
 			<% } %> 
@@ -23,14 +23,14 @@
 		<div class="product-detail">
 			<div class="row product-div">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<% if (artwork.image) { %>
-						<img src= "<%= artwork.image %>" class="product-detail-img">
+					<% if (artworks.image) { %>
+						<img src= "<%= artworks.image %>" class="product-detail-img">
 					<%	}else { %>
 						<img src="/images/products/default-image.png" class="product-detail-img" >	
 					<% } %> 
 
-					<% if (artwork.description) { %>
-						<p class="product-detail-description"><%= artwork.description %> </p>
+					<% if (artworks.description) { %>
+						<p class="product-detail-description"><%= artworks.description %> </p>
 					<%	}else { %>
 						<p class="product-detail-description">no description available</p>	
 					<% } %> 
@@ -42,19 +42,19 @@
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 
-					<% for (let i= 0; i < comment.length; i++) { %>
+					<% for (let i= 0; i < comments.length; i++) { %>
 						<article>
-							<% if (comment[i].profilePicture) { %>
-								<img src=" <%= comment[i].profilePicture %> " width="100">
+							<% if (comments[i].profilePicture) { %>
+								<img src=" <%= comments[i].profilePicture %> " width="100">
 							<%	}else { %>
 								<img src="/images/users/default-user.JPEG " width="100">
 							<% } %> 
 							<div class="data">
 								<p class="user">
 								<strong> 
-									<a href="/users/profile" class="username-black a"> <%= comment[i].username %> : </a> 
+									<a href="/users/profile" class="username-black a"> <%= comments[i].username %> : </a> 
 								</strong>
-								<%= comment[i].comment %> 
+								<%= comments[i].comment %> 
 								</p>
 							</div>
 						</article>
