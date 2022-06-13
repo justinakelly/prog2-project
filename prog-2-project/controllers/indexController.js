@@ -9,6 +9,7 @@ const controller = {
             .then(function(artworks){
                 res.render('index',{artworks:artworks});
             } )
+        }
         // function(req, res){
         // artwork.findAll()
         // .then(
