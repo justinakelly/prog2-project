@@ -1,4 +1,4 @@
-var data = require('../database/models')
+var db = require('../database/models');
 
 const controller = {
 index: function(req, res) {
@@ -14,7 +14,7 @@ add: function(req, res) {
     if (!req.session.user) { 
         throw Error('Not authorized.')
     }
-    res.render('product-add');
+    res.render('artworks-add');
 },
 author: function(req, res) {
     db.artworks.findAll({
