@@ -2,7 +2,7 @@ var data = require('../database/models')
 
 const controller = {
 index: function(req, res) {
-    db.artworks.findAll({ include: [ { association: 'owner' } ] })
+    db.artworks.findAll({ include:{ all: true, nested: false } })
         .then(function (product) {
             res.render('product', { product });
         })
@@ -79,6 +79,22 @@ update: function(req, res) {
             res.send(error);
         })
     },
+comment: function(req, res) {
+     if (!req.session.user) { 
+         throw Error('Not authorized.')
+     }
+     // Set user from session user
+    req.body.user_id = req.session.user.id;
+    // Set book from url params
+    req.body.book_id = req.params.id;
+    db.Comment.create(req.body)
+            .then(function() {
+             res.redirect('/books/' + req.params.id)
+        })
+        .catch(function(error) {
+            res.send(error);
+         })
+ },
 };
 
 module.exports = controller;
