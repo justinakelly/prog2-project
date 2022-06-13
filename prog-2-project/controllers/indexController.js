@@ -33,7 +33,7 @@ const controller = {
                 if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
                     req.session.user = user; //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
                     if (req.body.rememberme) { //si apreta boton
-                        res.cookie('userId', user.id, { maxAge: 1000  60  60 * 7 })// cookie nueva que se guarda en cliente por 7 hs
+                        res.cookie('userId', user.id, { maxAge: 1000  ,60  :60 * 7 })// cookie nueva que se guarda en cliente por 7 hs
                     }
                     res.redirect('/');
                 } else {
