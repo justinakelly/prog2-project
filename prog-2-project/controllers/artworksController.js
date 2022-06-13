@@ -89,7 +89,7 @@ comment: function(req, res) {
     req.body.book_id = req.params.id;
     db.Comment.create(req.body)
             .then(function() {
-             res.redirect('/books/' + req.params.id)
+             res.redirect('/product/' + req.params.id)
         })
         .catch(function(error) {
             res.send(error);

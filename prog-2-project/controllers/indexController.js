@@ -3,13 +3,19 @@ const artwork = db.Artwork;
 
 const controller = {
 //nos llevamos/cortamos el callback, el segundo argumento de la funcion de las rutas
+   
 
-    index: function(req, res){
-        artwork.findAll()
-        .then(
-            data=> res.send(data)
-        )  
-        .catch(error=>console.log(error))
+    index:  function (req, res){
+           db.Artwork.findAll()
+            .then(function(artworks){
+                res.send(artworks);
+            } )
+        // function(req, res){
+        // artwork.findAll()
+        // .then(
+        //     data=> res.render(data)
+        // )  
+        // .catch(error=>console.log(error))
 
         // randomArtwork = data.artworks
         // function randomNum () {
@@ -54,21 +60,21 @@ const controller = {
                 ]
             },
             include: [ { association: 'owner' } ] 
-        }).then(function (books) {
-                res.render('search-results', { books });
+        }).then(function (artworks) {
+                res.render('search-results', { artworks });
             })
             .catch(function (error) {
                 res.send(error)
             });
     },
 
-    prueba: function (req, res){
-       db.Artwork.findAll()
-        .then(function(artworks){
-            res.send(artworks);
-        } )
+    // prueba: function (req, res){
+    //    db.Artwork.findAll()
+    //     .then(function(artworks){
+    //         res.render(artworks);
+    //     } )
         
-    }
+    // }
 }; 
 
 module.exports = controller;

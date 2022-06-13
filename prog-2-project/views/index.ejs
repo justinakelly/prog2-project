@@ -24,29 +24,29 @@
 			
 			
 			<!-- show all products -->
-			<% for (let i= 0; i < artwork.length; i++) { %>
+			<% for (let i= 0; i < artworks.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<!-- queremos que el array empieze de la posicion 1 -->
 					<a href="/artworks/<%= i+1 %>" class="title-index">
 						
 					<figure class="product-box_image">
-						<% if (artwork[i].image) { %>
-							<img src=" <%= artwork[i].image %> " width="300" height="350" alt="artwork image">
+						<% if (artworks[i].image) { %>
+							<img src=" <%= artworks[i].image %> " width="300" height="350" alt="artwork image">
 						<%	}else { %>
 							<img src="/images/products/default-image.png" width="300" height="350" alt="default image">	
 						<% } %> 
 					</figure>
 						
 					<article class="product-box_data title-index">
-						<% if (artwork[i].name) { %>
-							<h2> <%= artwork[i].name %> </h2>
+						<% if (artworks[i].name) { %>
+							<h2> <%= artworks[i].name %> </h2>
 						<%	}else { %>
 							<h2 class="no-name">no name available</h2>
 						<% } %>
 							
-						<% if (artwork[i].description) { %>
-							<p class="artwork-description"> <%= artwork[i].description %> </p>
+						<% if (artworks[i].description) { %>
+							<p class="artwork-description"> <%= artworks[i].description %> </p>
 						<%	}else { %>
 							<p class="no-description">no description available</p>
 						<% } %>
