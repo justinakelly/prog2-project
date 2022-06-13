@@ -1,4 +1,4 @@
-var data = require('../database/models')
+var db = require('../database/models');
 
 const controller = {
 

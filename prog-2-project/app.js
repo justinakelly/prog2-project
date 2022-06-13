@@ -8,7 +8,7 @@ var db = require('./database/models');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var artworksRouter = require('./routes/artworks') //la requiero
+var artworksRouter = require('./routes/artworks'); //la requiero
 
 var app = express();
 
