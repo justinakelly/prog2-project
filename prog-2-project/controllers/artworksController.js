@@ -63,7 +63,7 @@ delete: function(req, res) {
 edit: function(req, res) {
     db.Artwork.findByPk(req.params.id)
         .then(function (artworks) {
-            res.render('profile-edit', { artworks });
+            res.render('artworks-edit', { artworks });
         })
         .catch(function (error) {
             res.send(error);
