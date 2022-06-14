@@ -2,18 +2,18 @@
 
 <header class="main-header">
 		<div class="container">
-			
+
 			<div class="row align-items-center">
-				<div class="col-5 col-md-2">
+				 <div class="col-5 col-md-2">
 					<a href="/" class="main-header_home-link">
 						<img src="/images/logo.jpeg">
 					</a>
-				</div>
+				 </div>
 	
 				<div class="col-7 col-md-6">
 					<form action="/results" method="GET" class="search-form">
 						<input type="text" name="search" placeholder="Search items, collections and accounts" class="search-form_input">
-						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>	
+						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
 					</form>
 				</div>
 	
@@ -24,40 +24,57 @@
 					</a>
 				</div>
 			</div>
-
+	
 			<button class="btn-toggle-navbar">
 				<i class="fas fa-bars"></i>
 			</button>
 	
-			<nav class="main-navbar a">
-				<ul class="left-navbar a">
-					<li><a href="/" class="a">All Artworks</a></li>
-					<!-- ONLY LOGGED: <li><a href="">Cargar productos</a></li> -->
+			<nav class="main-navbar">
+				<ul class="left-navbar">
+					<li><a href="/">All Artworks</a></li>
+					<li><a href="/artworks/add">Add artworks</a></li>
 				</ul>
 	
 				<ul class="right-navbar">
-					<!-- ONLY LOGGED: <li><a href="/views/profile.ejs">
-							Nombre del usuario <i class="fas fa-user"></i>
-						</a>
+					<% if (locals.me) { %>
+					<li>
+						<a class="fas fa-user" href="/users/me"> Hello <%= me.username %></a>
 					</li>
 					<li>
-						<form action="" method="post">
+						<a class="fas fa-user" href="/artworks/add"> Add Artwork></a>
+					</li>
+					<li>
+						<a class="fas fa-user" href="/users/logout"> Log Out</a>
+					</li>
+					<% } else { %>
+						<li>
+							<a class="fas fa-user" href="/users/login"> Log In</a>
+						</li>
+						<li>
+							<a class="fas fa-user" href="/users/register"> Register</a>
+						</li>
+					<% } %>
+					<!-- <li>
+						<form action="" method="post" >
 							<button class="logout" type="submit">
-								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+								<a href="/users/login" class="a"> Log out <i class="fas fa-sign-in-alt"></i> </a>
 							</button>
 						</form>
 					</li> -->
-					<li>
-						<a href="/users/register">Create account <i class="far fa-address-card"></i>
+					<!-- ONLY UNLOGGED <li>
+						<a href="register.html">Creá tu cuenta <i class="far fa-address-card"></i>
 						</a>
 					</li>
 					<li>
-						<a href="/users/login">Log in <i class="fas fa-sign-in-alt"></i></a>
-					</li>
+						<a href="login.html">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+					</li> -->
 				</ul>
 			</nav>
-			
 		</div>
 	</header>
-
+	
 <!-- header -->
+	
+
+
+
