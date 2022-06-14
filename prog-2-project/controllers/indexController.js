@@ -7,24 +7,38 @@ const controller = {
     index:  function (req, res){
            db.Artwork.findAll()
             .then(function(artworks){
-                res.render('index',{artworks:artworks});
-            })
-        },
-    results: function(req, res) {
-        db.Artwork.findAll({ 
-            where: {
-                 [op.or]: [
-                    { title: { [op.like]: "%"+req.query.criteria+"%"} },
-                    { username: { [op.like]: "%"+req.query.criteria+"%"} }
-                ]
-            },
-            include: [ { association: 'owner' } ] 
-        }).then(function (artworks) {
-                 res.render('search-results', { artworks });
+                res.render('index', {artworks:artworks});
             })
             .catch(function (error) {
                 res.send(error)
             });
+        },
+
+    results: function(req, res) {
+        db.Artwork.findAll({ 
+            where: [{ title: {[op.like]: '%'+req.query.criteria+'%'} }] 
+        })
+        .then(function(data) {
+            res.send(data);
+        })
+        .catch(function (error) {
+            res.send(error)
+        });
+
+        //     where: {
+        //          [op.or]: [
+        //             { title: { [op.like]: "%"+req.query.criteria+"%"} },
+        //             { username: { [op.like]: "%"+req.query.criteria+"%"} }
+        //         ]
+        //     },
+        //     include: [ { association: 'owner' } ] 
+        // }).then(function (artworks) {
+        //          res.render('search-results', { artworks });
+        //     })
+        //     .catch(function (error) {
+        //         res.send(error)
+        //     });
+
      },
     
     
@@ -81,4 +95,3 @@ const controller = {
 }; 
 
 module.exports = controller;
-

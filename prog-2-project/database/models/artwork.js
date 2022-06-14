@@ -1,4 +1,5 @@
 const sequelize = require ('sequelize'); 
+
 module.exports = function (sequelize, dataTypes) {
     
     const alias = "Artwork";
@@ -8,10 +9,10 @@ module.exports = function (sequelize, dataTypes) {
         primaryKey: true,
         type: dataTypes.INTEGER 
     } ,
-        name: { type: dataTypes.STRING},
-        image: { type: dataTypes.STRING},
-        description: { type: dataTypes.STRING}, 
-        date: { type: dataTypes.DATE}
+     name: { type: dataTypes.STRING},
+     image: { type: dataTypes.STRING},
+     description: { type: dataTypes.STRING}, 
+     date: { type: dataTypes.DATE}
     }
     
     const configs = {
