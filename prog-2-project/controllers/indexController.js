@@ -1,5 +1,6 @@
 var db = require('../database/models');
 const artwork = db.Artwork;
+var op = db.Sequelize.Op;  //para los finds
 
 const controller = {
 //nos llevamos/cortamos el callback, el segundo argumento de la funcion de las rutas
