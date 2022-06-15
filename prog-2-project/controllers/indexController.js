@@ -1,5 +1,6 @@
 var db = require('../database/models');
 const artwork = db.Artwork;
+const hasher = require('bcryptjs')
 var op = db.Sequelize.Op;  //para los finds
 
 const controller = {
