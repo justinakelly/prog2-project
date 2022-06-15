@@ -1,4 +1,5 @@
 var db = require('../database/models');
+var hasher = require('bcryptjs');
 
 const controller = {
 

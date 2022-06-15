@@ -10,12 +10,7 @@ index: function(req, res) {
             res.send(error)
         });
 },
-add: function(req, res) {
-    // if (!req.session.user) { 
-    //     throw Error('Not authorized.')
-    // }
-    res.render('artworks-add');
-},
+
 username: function(req, res) {
     db.Artwork.findAll({
         'where': {'username': req.params.username}
@@ -28,11 +23,18 @@ username: function(req, res) {
 show: function(req, res) {
     db.Artwork.findByPk(req.params.id, { include: { all: true, nested: true } })
         .then(function (artworks) {
-            res.render('product', { artworks: artworks});
+            res.render('product', { artworks});
         })
         .catch(function (error) {
             res.send(error);
         })
+},
+
+add: function(req, res) {
+    // if (!req.session.user) { 
+    //     throw Error('Not authorized.')
+    // }
+    res.render('artworks-add');
 },
 store: function(req, res) {
     res.send(req.file);
