@@ -2,9 +2,9 @@ var db = require('../database/models');
 
 const controller = {
 index: function(req, res) {
-    db.artworks.findAll({ include:{ all: true, nested: false } })
-        .then(function (product) {
-            res.render('product', { product });
+    db.Artwork.findAll({ include:{ all: true, nested: false } })
+        .then(function (artworks) {
+            res.render('index', { artworks });
         })
         .catch(function (error) {
             res.send(error)
@@ -32,7 +32,7 @@ show: function(req, res) {
 
 add: function(req, res) {
     if (!req.session.user) { 
-        res.redirect('/login');
+        // res.redirect('/login'); //aca pondria register y en register pondria: all ready have an acount? Login here y el link
         throw Error('Not authorized.')
     }
     res.render('artworks-add');
@@ -52,37 +52,38 @@ store: function(req, res) {
             res.send(error);
         })
 },
-// delete: function(req, res) {
-//     if (!req.session.user) {
-//         throw Error('Not authorized.')
-//     }
-//     db.Artwork.destroy({ where: { id: req.params.id } })
-//         .then(function() {
-//             res.redirect('/')
-//         })
-//         .catch(function(error) {
-//             res.send(error);
-//         })
-// },
-// edit: function(req, res) {
-//     db.Artwork.findByPk(req.params.id)
-//         .then(function (artworks) {
-//             res.render('artworks-edit', { artworks });
-//         })
-//         .catch(function (error) {
-//             res.send(error);
-//         })
-// },
-// update: function(req, res) {
-//     if (req.file) req.body.Image1 = (req.file.path).replace('public', '');
-//     db.Artwork.update(req.body, { where: { id: req.params.id } })
-//         .then(function(artworks) {
-//             res.redirect('/')
-//         })
-//         .catch(function(error) {
-//             res.send(error);
-//         })
-//     },
+delete: function(req, res) {
+    if (!req.session.user) {
+        throw Error('Not authorized.')
+    }
+    db.Artwork.destroy({ where: { id: req.params.id } })
+        .then(function() {
+            res.redirect('/')
+        })
+        .catch(function(error) {
+            res.send(error);
+        })
+},
+edit: function(req, res) {
+    db.Artwork.findByPk(req.params.id)
+        .then(function (artworks) {
+            res.render('artworks-edit', { artworks });
+        })
+        .catch(function (error) {
+            res.send(error);
+        })
+},
+update: function(req, res) {
+    if (req.file) req.body.Image1 = (req.file.path).replace('public', '');
+    db.Artwork.update(req.body, { where: { id: req.params.id } })
+        .then(function(artworks) {
+            res.redirect('/')
+        })
+        .catch(function(error) {
+            res.send(error);
+        })
+    },
+
 comment: function(req, res) {
      if (!req.session.user) { 
          throw Error('Not authorized.')
