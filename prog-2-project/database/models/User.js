@@ -27,6 +27,11 @@ module.exports = function (sequelize, dataTypes) {
             as: 'artworks',// campo donde va a vivir el otro recurso
             foreignKey: 'user_id'
         })
+        User.hasMany(models.Comment, {
+            as: 'comments', 
+            foreignKey: 'user_id'
+        })
+        
     }
     
     return User;

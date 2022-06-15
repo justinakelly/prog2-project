@@ -27,8 +27,8 @@ module.exports = function (sequelize, dataTypes) {
             foreignKey: 'user_id'
         });
         Comment.belongsTo(models.Artwork, {
-            as: 'book',
-            foreignKey: 'book_id'
+            as: 'artworks',
+            foreignKey: 'artwork_id'
         })
     }
     return Comment;
