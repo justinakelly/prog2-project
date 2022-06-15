@@ -10,8 +10,9 @@ router.post('/add', upload.single('Image1'), controller.store);
 // router.get('/', controller.index);
 router.get('/user/:username', controller.username);
 
-router.get('/:id', controller.edit);
+router.get('/:id', controller.show);
 router.post('/:id', upload.single('Image1'), controller.update);
+router.get('/:id', controller.edit);
 
 router.post('/:id/delete', controller.delete);
 
