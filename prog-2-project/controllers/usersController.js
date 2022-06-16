@@ -21,22 +21,35 @@ const controller = {
         res.render('profile-edit', { users: data.users });
     },
     access: function(req, res, next) {
-        db.User.findOne({ where: { username: req.body.username }}) // busco usuario en db, en where busco lo que se mando por formulario de login
-            .then(function(users) { //resultado de promesa=usuario
-                if (!users) throw Error('User not found.') 
-                if (hasher.compareSync(req.body.password, users.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
-                    req.session.users = users; //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
-                    if (req.body.rememberme) { //si apreta boton
-                        res.cookie('usersId', users.id, { maxAge: 1000  ,60  :60 * 7 })// cookie nueva que se guarda en cliente por 7 hs
-                    }
-                    res.redirect('/');
-                } else {
-                    throw Error('Invalid credentials.')
-                }
-            })
-            .catch(function (error) {
-                next(error)
-            })
+
+        const user = db.User.findOne({where: {username: req.body.username}}) //lo que nos manda el usuario
+        .then(function (user) {
+            if (user.password == req.body.password){
+                res.redirect('/')
+            } else {
+               res.send("mal contrasena")
+            }
+        })
+        .catch(function (error) {
+            res.send(error)
+        });    
+       
+        // db.User.findOne({ where: { username: req.body.username }}) // busco usuario en db, en where busco lo que se mando por formulario de login
+        //     .then(function(users) { //resultado de promesa=usuario
+        //         if (!users) throw Error('User not found.') 
+        //         if (hasher.compareSync(req.body.password, users.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
+        //             req.session.users = users; //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
+        //             if (req.body.rememberme) { //si apreta boton
+        //                 res.cookie('usersId', users.id, { maxAge: 1000  ,60  :60 * 7 })// cookie nueva que se guarda en cliente por 7 hs
+        //             }
+        //             res.redirect('/');
+        //         } else {
+        //             throw Error('Invalid credentials.')
+        //         }
+        //     })
+        //     .catch(function (error) {
+        //         next(error)
+        //     })
     },
     
 
