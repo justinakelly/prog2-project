@@ -42,8 +42,8 @@ index: function(req, res) {
         db.Artwork.findAll({ 
             where: [{ name: {[op.like]: '%'+req.query.search+'%'} }] 
         })
-        .then(function(data) {
-            res.send(data);
+        .then(function(artworks) {
+            res.render('search-results', {artworks});
         })
         .catch(function (error) {
             res.send(error)

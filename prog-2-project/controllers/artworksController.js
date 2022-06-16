@@ -4,13 +4,13 @@ const controller = {
 
 
 username: function(req, res) {
-    db.Artwork.findAll({
-        'where': {'username': req.params.username}
-    }).then(function (result) {
-        res.render('product', { artworks: result });
-    }).catch(function (error) {
-        res.send(error);
-    })
+    // db.Artwork.findAll({
+    //     'where': {'username': req.params.username}
+    // }).then(function (result) {
+    //     res.render('product', { artworks: result });
+    // }).catch(function (error) {
+    //     res.send(error);
+    // })
 },
 show: function(req, res) {
     db.Artwork.findByPk(req.params.id, { include: { all: true, nested: true } })
@@ -54,16 +54,16 @@ add: function(req, res) {
     //     })
 },
 delete: function(req, res) {
-    if (!req.session.users) {
-        throw Error('Not authorized.')
-    }
-    db.Artwork.destroy({ where: { id: req.params.id } })
-        .then(function() {
-            res.redirect('/')
-        })
-        .catch(function(error) {
-            res.send(error);
-        })
+    // if (!req.session.users) {
+    //     throw Error('Not authorized.')
+    // }
+    // db.Artwork.destroy({ where: { id: req.params.id } })
+    //     .then(function() {
+    //         res.redirect('/')
+    //     })
+    //     .catch(function(error) {
+    //         res.send(error);
+    //     })
 },
 edit: function(req, res) {
     db.Artwork.findByPk(req.params.id)
@@ -86,20 +86,20 @@ update: function(req, res) {
     },
 
 comment: function(req, res) {
-     if (!req.session.users) { 
-         throw Error('Not authorized.')
-     }
-     // Set user from session user
-    req.body.user_id = req.session.users.id;
-    // Set book from url params
-    req.body.artwork_id = req.params.id;
-    db.Comment.create(req.body)
-            .then(function() {
-             res.redirect('/product/' + req.params.id)
-        })
-        .catch(function(error) {
-            res.send(error);
-         })
+    //  if (!req.session.users) { 
+    //      throw Error('Not authorized.')
+    //  }
+    //  // Set user from session user
+    // req.body.user_id = req.session.users.id;
+    // // Set book from url params
+    // req.body.artwork_id = req.params.id;
+    // db.Comment.create(req.body)
+    //         .then(function() {
+    //          res.redirect('/product/' + req.params.id)
+    //     })
+    //     .catch(function(error) {
+    //         res.send(error);
+    //      })
  },
 };
 

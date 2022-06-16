@@ -21,12 +21,12 @@ const controller = {
         res.render('profile-edit', { users: data.users });
     },
     access: function(req, res, next) {
-
         const user = db.User.findOne({where: {username: req.body.username}}) //lo que nos manda el usuario
         .then(function (user) {
-            if (user.password == req.body.password){
+            if (user.password == req.body.password){ // if (hasher.compareSync(req.body.password, user.password))
                 res.redirect('/')
             } else {
+               //throw Error('Invalid credentials')
                res.send("mal contrasena")
             }
         })
@@ -64,6 +64,7 @@ const controller = {
     
     store: function(req, res) {
        // res.send(req.body)
+      // const hashedPassword = hasher.hashSync(req.body.password, 10);
         db.User.create(req.body)
         .then(function(){
             res.redirect('/') //que nos mande a my profile 

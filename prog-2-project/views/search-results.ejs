@@ -12,11 +12,56 @@
 	<div class="container products-wrapper">
 		<div class="row">
 		
-		<% if (results.search == '') { %>	
+		<% if (artworks.search == '') { %>	
 			<h2 class="products-title results">Searcher can't be empty</h2>
-		<%	}else { %>
-			<h2 class="products-title results">No results available for '<%= results.search %>'</h2>
+			<!-- no me esta tomando el condicional este de artworks.search -->
+			<!-- hacer un else if que me diga que si tengo mas de tres caracteres no me deje mandar formulario -->
+
+		<% } else { %>
+				<!-- products result -->
+			<% for (let i= 0; i < artworks.length; i++) { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<!-- queremos que el array empieze de la posicion 1 -->
+						<a href="/artworks/<%= artworks[i].id %>" class="title-index">
+							
+						<figure class="product-box_image">
+							<% if (artworks[i].image) { %>
+								<img src=" <%= artworks[i].image %> " width="300" height="350" alt="artwork image">
+							<%	}else { %>
+								<img src="/images/products/default-image.png" width="300" height="350" alt="default image">	
+							<% } %> 
+						</figure>
+							
+						<article class="product-box_data title-index">
+							<% if (artworks[i].name) { %>
+								<h2> <%= artworks[i].name %> </h2>
+							<%	}else { %>
+								<h2 class="no-name">no name available</h2>
+							<% } %>
+								
+							<% if (artworks[i].description) { %>
+								<p class="artwork-description"> <%= artworks[i].description %> </p>
+							<%	}else { %>
+								<p class="no-description">no description available</p>
+							<% } %>
+							
+							<p class="artwork-description">Comments: 5 </p>  <!--en realidad quiero comments.length-->
+						</article>
+						
+						</a>
+	
+					</section>
+				</div>
+				<% } %>
+				<!-- products result -->
+
+
 		<% } %> 
+
+
+			
+
 
 		</div>
 	</div>
