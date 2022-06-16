@@ -42,13 +42,13 @@
 						<%	}else { %>
 							<h2 class="no-name">no name available</h2>
 						<% } %>
-							<h2>Public by: <%= artworks[i].owner %> </h2>
+							
 						<% if (artworks[i].description) { %>
 							<p class="artwork-description"> <%= artworks[i].description %> </p>
 						<%	}else { %>
 							<p class="no-description">no description available</p>
 						<% } %>
-						<p><a class="btn btn-secondary" href="/artworks/<%= artworks[i].id %>">View details »</a></p>
+						
 						<p class="artwork-description">Comments: 5 </p>  <!--en realidad quiero comments.length-->
 					</article>
 					
