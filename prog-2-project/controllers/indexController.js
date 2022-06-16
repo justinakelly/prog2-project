@@ -1,13 +1,33 @@
 var db = require('../database/models');
-const artwork = db.Artwork;
+//const artwork = db.Artwork;
 const hasher = require('bcryptjs')
 var op = db.Sequelize.Op;  //para los finds
 
 const controller = {
 //nos llevamos/cortamos el callback, el segundo argumento de la funcion de las rutas
-    index: function(req, res) {
-        res.redirect('/artworks');
-    },
+index: function(req, res) {
+    db.Artwork.findAll()
+        .then(function (artworks) {
+            res.render('index', { artworks });
+        })
+        .catch(function (error) {
+            res.send(error)
+        });
+},
+// index: function(req, res) {
+//     db.Artwork.findAll({ include:{ all: true, nested: false } })
+//         .then(function (artworks) {
+//             res.render('index', { artworks });
+//         })
+//         .catch(function (error) {
+//             res.send(error)
+//         });
+// },
+    // index: function(req, res) {
+    //     res.redirect('/artworks');
+    // },
+
+
     // index:  function (req, res){
     //        db.Artwork.findAll()
     //         .then(function(artworks){

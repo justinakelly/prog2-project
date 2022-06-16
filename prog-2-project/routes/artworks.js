@@ -5,7 +5,7 @@ var multer = require ('multer');
 const upload= multer ({dest:'public/images/uploads'}); //inicializar multer
 const path = require('path');
 
-router.get('/', controller.index); 
+// router.get('/', controller.index); 
 router.get('/user/:username', controller.username);
 
 router.get('/add', controller.add); //product-add.ejs
