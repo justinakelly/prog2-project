@@ -29,14 +29,14 @@ add: function(req, res) {
 //     }
     res.render('artworks-add');
 },
-store: function(req, res) {
-    // db.Artwork.create(req.body)
-    //     .then(function(){
-    //         res.redirect('/')
-    //     })
-    //     .catch(function (error) {
-    //         res.send(error);
-    //     })
+    store: function(req, res) {
+        // db.Artwork.create(req.body)
+        //     .then(function(){
+        //         res.redirect('/')
+        //     })
+        //     .catch(function (error) {
+        //         res.send(error);
+        //     })
     res.send(req.body);
     
     // res.send(req.file);
