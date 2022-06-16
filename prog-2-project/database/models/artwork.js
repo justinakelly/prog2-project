@@ -23,13 +23,13 @@ module.exports = function (sequelize, dataTypes) {
     const Artwork = sequelize.define (alias , cols, configs);
 
     Artwork.associate = function(models) { //callback que recibe como param models
-    Artwork.belongsTo(models.User, { // ol donde explico relacion
+        Artwork.belongsTo(models.User, { // ol donde explico relacion
          as: 'owner', // usuario que carga artwork, campo donde vive modelo asociado
          foreignKey: 'user_id'// columna que conecta al artwork con id de usuario
      })
-    Artwork.hasMany(models.Comment,{
-        as: 'comments', 
-        foreignKey: 'artwork_id'
+        Artwork.hasMany(models.Comment,{
+         as: 'comments', 
+         foreignKey: 'artwork_id'
     })
 }
     return Artwork;

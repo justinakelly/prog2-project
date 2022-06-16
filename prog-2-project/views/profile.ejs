@@ -13,8 +13,8 @@
 		<div class="row">
 
 			<div class="img-container offset-3 col-2">
-				<% if (user.profilePicture) { %>
-					<img src="<%= user.profilePicture  %> " alt="foto de perfil" class="foto-perfil">
+				<% if (users.profilepicture) { %>
+					<img src="<%= users.profilepicture  %> " alt="foto de perfil" class="foto-perfil">
 				<%	}else { %>
 					<img src="/images/users/default-user.JPEG" alt="foto de perfil" class="foto-perfil">
 				<% } %> 
@@ -23,11 +23,8 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title">
-						<a href="/users/profile/edit" class="a"> <%= user.username  %> 
-							<% if (user.verified) { %>
-							<img src="<%= user.verified  %> " alt="foto de perfil" class="verified">
-							<%	}else { %>
-							<% } %> 
+						<a href="/users/profile/edit" class="a"> <%= users.username  %> 
+							
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
@@ -35,7 +32,7 @@
 				</div>
 				<div>
 					<ul class="email">
-						<li><%= user.email  %> </li>
+						<li><%= users.email  %> </li>
 					</ul>
 						
 					<ul>
@@ -63,22 +60,22 @@
 					<a href="/artworks/<%= i+1 %>">
 
 						<figure class="product-box_image">
-							<% if (artwork[i].image) { %>
-								<img src=" <%= artwork[i].image %> " width="300" height="350" alt="artwork image">
+							<% if (artworks[i].image) { %>
+								<img src=" <%= artworks[i].image %> " width="300" height="350" alt="artwork image">
 							<%	}else { %>
 								<img src="/images/products/default-image.png" width="300" height="350" alt="artwork image">	
 							<% } %> 
 						</figure>
 
 						<article class="product-box_data">
-							<% if (artwork[i].name) { %>
-								<h2> <%= artwork[i].name %> </h2>
+							<% if (artworks[i].name) { %>
+								<h2> <%= artworks[i].name %> </h2>
 							<%	}else { %>
 								<h2 class="no-name">no name available</h2>
 							<% } %>
 								
-							<% if (artwork[i].description) { %>
-								<p> <%= artwork[i].description %> </p>
+							<% if (artworks[i].description) { %>
+								<p> <%= artworks[i].description %> </p>
 							<%	}else { %>
 								<p class="no-description">no description available</p>
 							<% } %>
