@@ -6,7 +6,7 @@ router.get('/me', controller.profile);
 router.get('/me/edit', controller.edit); 
 // router.post('/me/edit', controller.edit);
 
-// router.get('/:id', controller.profile); //profile.ejs
+router.get('/:id', controller.profile); //profile.ejs
 
 
 
