@@ -19,6 +19,11 @@
 			<p class="product-detail-description">
 				<a href="add" class="add-product a">Add</a>
 			</p>
+			<a class="product-detail-description" href="/artworks/<%= artwork.id %>/edit">Edit</a>
+			<br></br>
+			<form action="/artworks/<%= artwork.id %>/delete" method="post">
+				<input class="product-detail-description" type="submit" value="Delete">
+			</form>
 		</div>
 		<div class="product-detail">
 			<div class="row product-div">
@@ -28,7 +33,11 @@
 					<%	}else { %>
 						<img src="/images/products/default-image.png" class="product-detail-img" >	
 					<% } %> 
-
+					<% if (artworks.username) { %>
+						<p class="product-detail-description"><%= artworks.username %> </p>
+					<%	}else { %>
+						<p class="product-detail-description">Unknown username</p>	
+					<% } %> 
 					<% if (artworks.description) { %>
 						<p class="product-detail-description"><%= artworks.description %> </p>
 					<%	}else { %>

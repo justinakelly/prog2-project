@@ -24,25 +24,25 @@
 
 					<div class="AddProduct"> 
 						<label for="name" class="form-label">Product Name</label>
-						<input type="text" class="form-control" id="name" name="name" >   
+						<input type="text" class="form-control" id="name" name="name" value="<%= artworks.name%>">   
 					</div>
 
 					<div class="AddProduct"> 
 						<label for="description" class="form-label">Description </label>
-						<input type="text" class="form-control" id="description" name="description" placeholder="Make sure your description is as representative as possible...">   
+						<input type="text" class="form-control" id="description" name="description" value="<%= artworks.description%>" placeholder="Make sure your description is as representative as possible...">   
 					</div>
 
 					<div class="AddProduct"> 
 						<label for="image" class="form-label">Add Image</label>
-						<input type="file" class="form-control" name="image" id="image" >
+						<input type="file" class="form-control" name="image" id="image" value="<%= artworks.image%>">
 					</div>
 
 					<div class="AddProduct"> 
 						<label for="date" class="form-label">Upload Date</label>
-						<input type="date" class="form-control" id="date" name="date" >
+						<input type="date" class="form-control" id="date" name="date" value="<%= artworks.date%>" >
 					</div>
 		
-					<button type="submit" class="btn btn primary"> Add artwork </button>
+					<button type="submit" class="btn btn primary"> Update artwork </button>
 				</form>
 			</h2>
 			<!-- form -->
