@@ -31,26 +31,29 @@ show: function(req, res) {
 },
 
 add: function(req, res) {
-    if (!req.session.user) { 
-        // res.redirect('/login'); //aca pondria register y en register pondria: all ready have an acount? Login here y el link
-        throw Error('Not authorized.')
-    }
+//     if (!req.session.user) { 
+//         // res.redirect('/login'); //aca pondria register y en register pondria: all ready have an acount? Login here y el link
+//         throw Error('Not authorized.')
+//     }
     res.render('artworks-add');
 },
 store: function(req, res) {
-    res.send(req.file);
-    if (!req.session.user) { 
-        return res.render('artworks-add', { error: 'Not authorized.' });
-    }
-    req.body.user_id = req.session.user.id; // agrega campo user_id con valor userid de la sesion (estando logueado)
-    if (req.file) req.body.image = (req.file.path).replace('public', '');// cambia nombre de foto que subo para sacar que sea public
-    db.Artwork.create(req.body)
-        .then(function() { 
-            res.redirect('/')
-        })
-        .catch(function(error) {
-            res.send(error);
-        })
+
+    res.send(req.body);
+    
+    // res.send(req.file);
+    // if (!req.session.user) { 
+    //     return res.render('artworks-add', { error: 'Not authorized.' });
+    // }
+    // req.body.user_id = req.session.user.id; // agrega campo user_id con valor userid de la sesion (estando logueado)
+    // if (req.file) req.body.image = (req.file.path).replace('public', '');// cambia nombre de foto que subo para sacar que sea public
+    // db.Artwork.create(req.body)
+    //     .then(function() { 
+    //         res.redirect('/')
+    //     })
+    //     .catch(function(error) {
+    //         res.send(error);
+    //     })
 },
 delete: function(req, res) {
     if (!req.session.users) {
