@@ -31,10 +31,10 @@ show: function(req, res) {
 },
 
 add: function(req, res) {
-    if (!req.session.user) { 
-        // res.redirect('/login'); //aca pondria register y en register pondria: all ready have an acount? Login here y el link
-        throw Error('Not authorized.')
-    }
+//     if (!req.session.user) { 
+//         // res.redirect('/login'); //aca pondria register y en register pondria: all ready have an acount? Login here y el link
+//         throw Error('Not authorized.')
+//     }
     res.render('artworks-add');
 },
 store: function(req, res) {

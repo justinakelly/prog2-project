@@ -3,7 +3,7 @@ var router = express.Router();
 var controller = require('../controllers/artworksController')
 var multer = require ('multer');
 const upload= multer ({dest:'public/images/uploads'}); //inicializar multer
-const path = require('path')
+const path = require('path');
 
 router.get('/', controller.index); 
 router.get('/username/:username', controller.username);
