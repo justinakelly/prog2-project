@@ -15,7 +15,7 @@ router.post('/register', controller.store);
 
 // router.post('/me/edit', controller.edit);
 
-// router.get('/:id', controller.profile); //profile.ejs
+router.get('/:id', controller.profile); //profile.ejs
 
 
 module.exports = router;
