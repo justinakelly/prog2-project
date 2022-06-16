@@ -18,10 +18,4 @@ router.post('/register', controller.store);
 // router.get('/:id', controller.profile); //profile.ejs
 
 
-
-
-
-
-
-
 module.exports = router;
