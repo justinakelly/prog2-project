@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var controller = require('../controllers/usersController');
+var multer = require ('multer');
+const upload= multer ({dest:'public/images/uploads'}); //inicializar multer
 
 router.get('/me', controller.profile); 
 router.get('/me/edit', controller.edit); 

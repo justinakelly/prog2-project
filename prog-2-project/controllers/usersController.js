@@ -50,17 +50,17 @@ const controller = {
     },
     
     store: function(req, res) {
-        res.send(req.body)
-        // db.User.create(req.body)
-        // .then(function(){
-        //     res.redirect('/')
-        // })
-        // .catch(function(error){
-        //     res.send(error)
-        // })
+       // res.send(req.body)
+        db.User.create(req.body)
+        .then(function(){
+            res.redirect('/') //que nos mande a my profile 
+        })
+        .catch(function(error){
+            res.send(error)
+        })
 
 
-        
+
         // if (!req.body.email) { throw Error('No email provided.') }
         // const hashedPassword = hasher.hashSync(req.body.password, 10);
         // db.User.create({
