@@ -43,7 +43,7 @@ store: function(req, res) {
         return res.render('artworks-add', { error: 'Not authorized.' });
     }
     req.body.user_id = req.session.user.id; // agrega campo user_id con valor userid de la sesion (estando logueado)
-    if (req.file) req.body.Image1 = (req.file.path).replace('public', '');// cambia nombre de foto que subo para sacar que sea public
+    if (req.file) req.body.image = (req.file.path).replace('public', '');// cambia nombre de foto que subo para sacar que sea public
     db.Artwork.create(req.body)
         .then(function() { 
             res.redirect('/')
@@ -53,7 +53,7 @@ store: function(req, res) {
         })
 },
 delete: function(req, res) {
-    if (!req.session.user) {
+    if (!req.session.users) {
         throw Error('Not authorized.')
     }
     db.Artwork.destroy({ where: { id: req.params.id } })
@@ -74,7 +74,7 @@ edit: function(req, res) {
         })
 },
 update: function(req, res) {
-    if (req.file) req.body.Image1 = (req.file.path).replace('public', '');
+    if (req.file) req.body.image = (req.file.path).replace('public', '');
     db.Artwork.update(req.body, { where: { id: req.params.id } })
         .then(function(artworks) {
             res.redirect('/')
@@ -85,11 +85,11 @@ update: function(req, res) {
     },
 
 comment: function(req, res) {
-     if (!req.session.user) { 
+     if (!req.session.users) { 
          throw Error('Not authorized.')
      }
      // Set user from session user
-    req.body.user_id = req.session.user.id;
+    req.body.user_id = req.session.users.id;
     // Set book from url params
     req.body.artwork_id = req.params.id;
     db.Comment.create(req.body)
