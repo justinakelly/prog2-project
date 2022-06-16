@@ -1,15 +1,7 @@
 var db = require('../database/models');
 
 const controller = {
-index: function(req, res) {
-    db.Artwork.findAll({ include:{ all: true, nested: false } })
-        .then(function (artworks) {
-            res.render('index', { artworks });
-        })
-        .catch(function (error) {
-            res.send(error)
-        });
-},
+
 
 username: function(req, res) {
     db.Artwork.findAll({
