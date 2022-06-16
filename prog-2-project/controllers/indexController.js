@@ -20,7 +20,7 @@ index: function(req, res) {
 
     results: function(req, res) {
         db.Artwork.findAll({ 
-            where: [{ title: {[op.like]: '%'+req.query.criteria+'%'} }] 
+            where: [{ title: {[op.like]: '%'+req.query.search+'%'} }] 
         })
         .then(function(data) {
             res.send(data);

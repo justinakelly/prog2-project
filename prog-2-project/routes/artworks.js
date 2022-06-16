@@ -8,11 +8,14 @@ const path = require('path')
 router.get('/', controller.index); 
 router.get('/username/:username', controller.username);
 
+router.get('/add', controller.add); //artworks-add.ejs
+router.post('/add', controller.store); 
+// router.post('/add', upload.single('image'), controller.store);
+
 router.get('/:id/edit', controller.edit);
 router.post('/:id/edit', upload.single('image'), controller.update);
 
-router.get('/add', controller.add); //artworks-add.ejs
-router.post('/add', upload.single('image'), controller.store);
+
 
 router.post('/:id/delete', controller.delete);
 
