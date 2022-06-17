@@ -11,7 +11,7 @@ const controller = {
 
     },
     profile: function (req, res) {
-        res.render('profile');
+        res.render('profile'); // { user: req.session.user}
         //    db.User.findByPk(req.session.users.id, { include: [ { association: 'artworks' } ] })
         //     .then(function (users) {
         //         res.render('profile', { users });
@@ -29,7 +29,11 @@ const controller = {
         const user = db.User.findOne({where: {username: req.body.username}}) //lo que nos manda el usuario
         .then(function (user) {
             if (user.password == req.body.password){ // if (hasher.compareSync(req.body.password, user.password))
-                res.redirect('/')
+                req.session.user = user
+                if (req.body.rememberme){
+                    res.cookie('userId', user.id, {maxAge: 1000 * 60 * 60 * 7})
+                }
+                res.redirect('/users/profile')
             } else {
                //throw Error('Invalid credentials')
                res.send("mal contrasena")
@@ -59,9 +63,9 @@ const controller = {
     
 
     logout: function (req, res, next) {
-        // req.session.users = null;
-        // res.clearCookie('usersId');
-        // res.redirect('/')
+        req.session.user = null;
+        res.clearCookie('userId');
+        res.redirect('/users/login')
     },
     register: function(req, res) {
         res.render('register');

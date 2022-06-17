@@ -31,13 +31,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Cookie middleware por si cerras ventana, para recuperar sesion, pasa a todas las vistas una variable
+// app.use(function(req, res, next) {
+//   if (!req.session.user && req.cookies.userId) {
+//     // Find the user
+//     db.User.findByPk(req.cookies.userId)
+//       .then(function(data) {
+//         // Act as login
+//         req.session.user = data;
+//         next();
+//       })
+//   } else {
+//     next();
+//   }
+// })
+
 app.use(function(req, res, next) {
-  if (!req.session.user && req.cookies.userId) {
+  if (!req.session.user) {
     // Find the user
     db.User.findByPk(req.cookies.userId)
-      .then(function(data) {
+      .then(function(user) {
         // Act as login
-        req.session.user = data;
+        req.session.user = user;
         next();
       })
   } else {

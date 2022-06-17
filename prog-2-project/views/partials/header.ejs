@@ -28,7 +28,8 @@
 			<button class="btn-toggle-navbar">
 				<i class="fas fa-bars"></i>
 			</button>
-	
+			
+			<% if (locals.user) { %>
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					<li><a href="/">All Artworks</a></li>
@@ -36,23 +37,22 @@
 				</ul>
 	
 				<ul class="right-navbar">
-					<% if (locals.me) { %>
-					<li>
-						<a class="fas fa-user" href="/users/me"> Hello <%= me.username %></a>
-					</li>
-					<li>
-						<a class="fas fa-user" href="/artworks/add"> Add Artwork></a>
-					</li>
-					<li>
-						<a class="fas fa-user" href="/users/logout"> Log Out</a>
-					</li>
-					<% } else { %>
-						<li>
-							<a class="fas fa-user" href="/users/login"> Log In</a>
-						</li>
-						<li>
-							<a class="fas fa-user" href="/users/register"> Register</a>
-						</li>
+					<li><a class="fas fa-user" href="/users/me"> @<%= user.username %></a></li>
+					<li><a class="fas fa-user" href="/artworks/add"> Add Artwork</a></li>
+					<li><a class="fas fa-user" href="/users/logout"> Log Out </a></li>
+				</ul>
+			</nav>
+			<% } else { %>
+			<nav class="main-navbar">
+				<ul class="left-navbar">
+					<li><a href="/">All Artworks</a></li>
+					<!-- <li><a href="/artworks/add">Add artworks</a></li> -->
+				</ul>
+				<ul class="right-navbar">
+					<li><a class="fas fa-user" href="/users/login"> Log In </a></li>
+					<li><a class="fas fa-user" href="/users/register"> Register </a></li>
+				</ul>
+			</nav>
 					<% } %>
 					<!-- <li>
 						<form action="" method="post" >
@@ -68,8 +68,6 @@
 					<li>
 						<a href="login.html">Ingresá <i class="fas fa-sign-in-alt"></i></a>
 					</li> -->
-				</ul>
-			</nav>
 		</div>
 	</header>
 	
