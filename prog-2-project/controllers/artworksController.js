@@ -4,13 +4,13 @@ const controller = {
 
 
 creator: function(req, res) {
-    // db.Artwork.findAll({
-    //     'where': {'username': req.params.username}
-    // }).then(function (result) {
-    //     res.render('product', { artworks: result });
-    // }).catch(function (error) {
-    //     res.send(error);
-    // })
+    db.Artwork.findAll({
+        'where': {'username': req.params.username}
+    }).then(function (result) {
+        res.render('product', { artworks: result });
+    }).catch(function (error) {
+        res.send(error);
+    })
 },
 show: function(req, res) {
     db.Artwork.findByPk(req.params.id, {

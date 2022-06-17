@@ -41,7 +41,7 @@
 						<img src="/images/products/default-image.png" class="product-detail-img" >	
 					<% } %> 
 					<% if (artworks.creator.username) { %>
-						<p class="product-detail-description"><%= artworks.creator.username %> </p>
+						<a href="/artworks/creator/<%= artworks.creator %> "><p class="product-detail-description"><%= artworks.creator.username %> </p></a>
 					<%	}else { %>
 						<p class="product-detail-description">Unknown creator</p>	
 					<% } %> 

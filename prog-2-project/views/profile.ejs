@@ -47,7 +47,50 @@
 	<!-- user info -->
 
 	<!-- my artworks -->
-	
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">My artworks</h2>
+			</div>
+  
+			<% for (let i= 0; i < user.artwork.length; i++) { %>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+  
+					<a href="/artworks/<%= i+1 %>">
+  
+						<figure class="product-box_image">
+							<% if (artworks[i].image) { %>
+								<img src=" <%= user.artwork[i].image %> " width="300" height="350" alt="artwork image">
+							<%  }else { %>
+								<img src="/images/products/default-image.png" width="300" height="350" alt="artwork image">
+							<% } %>
+						</figure>
+  
+						<article class="product-box_data">
+							<% if (artworks[i].name) { %>
+								<h2> <%= artworks[i].name %> </h2>
+							<%  }else { %>
+								<h2 class="no-name">no name available</h2>
+							<% } %>
+							   
+							<% if (artworks[i].description) { %>
+								<p> <%= artworks[i].description %> </p>
+							<%  }else { %>
+								<p class="no-description">no description available</p>
+							<% } %>
+  
+							<p>Comments: 5</p> <!--en realidad quiero comments.length-->
+							</article>
+					</a>
+  
+				</section>
+			</div>
+			<% } %>
+  
+		</div>
+	</div>
+ 
 	<!-- my artworks -->
 
 	<!-- footer -->
