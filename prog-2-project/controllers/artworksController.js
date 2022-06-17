@@ -30,6 +30,7 @@ add: function(req, res) {
     res.render('artworks-add');
 },
     store: function(req, res) {
+        req.body.user_id = req.session.user.id;
         db.Artwork.create(req.body)
             .then(function(){
                 res.redirect('/')
