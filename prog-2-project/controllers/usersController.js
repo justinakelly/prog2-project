@@ -7,19 +7,24 @@ const controller = {
         res.render('login', { title: 'Login'});
     },
 
+    update: function(req, res){
+
+    },
     profile: function (req, res) {
-            db.User.findByPk(req.session.users.id, { include: [ { association: 'artworks' } ] })
-            .then(function (users) {
-                res.render('profile', { users });
-            })
-            .catch(function (error) {
-                res.send(error)
-            });                                    
+        res.render('profile');
+        //    db.User.findByPk(req.session.users.id, { include: [ { association: 'artworks' } ] })
+        //     .then(function (users) {
+        //         res.render('profile', { users });
+        //     })
+        //     .catch(function (error) {
+        //         res.send(error)
+        //     });                                    
     },
 
     edit: function (req, res) {             
         res.render('profile-edit', { users: data.users });
     },
+
     access: function(req, res, next) {
         const user = db.User.findOne({where: {username: req.body.username}}) //lo que nos manda el usuario
         .then(function (user) {
@@ -54,9 +59,9 @@ const controller = {
     
 
     logout: function (req, res, next) {
-        req.session.users = null;
-        res.clearCookie('usersId');
-        res.redirect('/')
+        // req.session.users = null;
+        // res.clearCookie('usersId');
+        // res.redirect('/')
     },
     register: function(req, res) {
         res.render('register');

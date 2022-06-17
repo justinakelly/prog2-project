@@ -5,17 +5,14 @@ var multer = require ('multer');
 const upload= multer ({dest:'public/images/uploads'}); //inicializar multer
 const path = require('path');
 
-// router.get('/', controller.index); 
 router.get('/user/:username', controller.username);
 
 router.get('/add', controller.add); //product-add.ejs
-//router.post('/add', upload.single('Image1'), controller.store);
 router.post('/add', controller.store)
+//router.post('/add', upload.single('Image1'), controller.store);
 
 router.get('/:id/edit', controller.edit);
 router.post('/:id/edit', upload.single('image'), controller.update);
-
-
 
 router.post('/:id/delete', controller.delete);
 
