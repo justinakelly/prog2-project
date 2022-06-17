@@ -22,13 +22,15 @@ module.exports = function (sequelize, dataTypes) {
     const Comment = sequelize.define('Comment', cols, configs);
 
     Comment.associate = function(models){
+        Comment.belongsTo( models.User, { 
+            as: 'commenter', 
+            foreignKey: 'user_id'
+        })
         Comment.belongsTo( models.Artwork, { 
-            as: 'comments', 
+            as: 'artwork', 
             foreignKey: 'artwork_id'
         })
-        Comment.belongsTo( models.User, { 
-            as: 'creator', 
-            foreignKey: 'user_id'});
+       
     }
     // Comment.associate = function(models) {
     //     Comment.belongsTo(models.User, {

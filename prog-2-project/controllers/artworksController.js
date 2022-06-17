@@ -3,7 +3,7 @@ var db = require('../database/models');
 const controller = {
 
 
-username: function(req, res) {
+creator: function(req, res) {
     // db.Artwork.findAll({
     //     'where': {'username': req.params.username}
     // }).then(function (result) {
@@ -100,20 +100,26 @@ update: function(req, res) {
     },
 
 comment: function(req, res) {
-    //  if (!req.session.users) { 
-    //      throw Error('Not authorized.')
-    //  }
-    //  // Set user from session user
-    // req.body.user_id = req.session.users.id;
-    // // Set book from url params
-    // req.body.artwork_id = req.params.id;
-    // db.Comment.create(req.body)
-    //         .then(function() {
-    //          res.redirect('/product/' + req.params.id)
-    //     })
-    //     .catch(function(error) {
-    //         res.send(error);
-    //      })
+     
+    if (!req.session.user) { 
+         throw Error('Not authorized.')
+     }
+     // Set user from session user
+    req.body.user_id = req.session.user.id;
+    // Set book from url params
+    req.body.artwork_id = req.params.id;
+    db.Comment.create(req.body, {
+        include: [
+        {association: 'commenter'},
+        {association: 'artwork'}
+        ]
+        })
+            .then(function() {
+             res.redirect('/artworks/' + req.params.id)
+        })
+        .catch(function(error) {
+            res.send(error);
+         })
  },
 };
 

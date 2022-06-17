@@ -55,7 +55,45 @@
 	<!-- product detail -->
 
 	<!-- comments section -->
-				<!-- va lo de comments -->
+				<div class="col-12 col-lg-4">
+					<section class="comments">
+  
+					<% for (let i= 0; i < artworks.comments.length; i++) { %>
+						<article>
+							<% if (artworks.comments[i].profilepicture) { %>
+								<img src=" <%= artworks.comments[i].profilepicture %> " width="100">
+							<%  }else { %>
+								<img src="/images/users/default-user.JPEG " width="100">
+							<% } %>
+							<div class="data">
+								<p class="user">
+								<strong>
+									<a href="/users/profile" class="username-black a"> @  <!-- artworks.comments[i].commenter.email-->: </a>
+								</strong>
+								<%= artworks.comments[i].comment %>
+								</p>
+							</div>
+						</article>
+					<% } %> 
+  
+					</section>
+  
+					<% if(locals.user) { %>
+					<form action="/artworks/<%= artworks.id %>/comment" method="post" class="form-login" >
+						<input name="comment" id="comment" class="form-input" type="text" value="" placeholder="Add comment">
+						<button type="submit" class="btn" > Add comment</button>
+					</form>
+					<hr>
+					<%	}else { %>
+					<form action="/users/login" class="form-login" method="post">
+						<input name="comment" id="comment" class="form-input" type="text" value="" placeholder="Add comment">
+						<button type="submit" class="btn" > Add comment</button>
+					</form>
+						<hr>
+					<% } %>
+  
+				</div>
+ 
 	<!-- comment section -->
 			</div>
 		</div>
