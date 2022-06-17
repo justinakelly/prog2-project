@@ -16,14 +16,21 @@
 			<%	}else { %>
 				<h2 class="products-title">no name available</h2> 
 			<% } %> 
+			<% if(locals.user) { %>
 			<p class="product-detail-description">
 				<a href="add" class="add-product a">Add</a>
 			</p>
-			<a class="product-detail-description" href="/artworks/<%= artworks.id %>/edit">Edit</a>
+			<% } %> 
+			<% if(locals.user && user.id == artworks.user_id) { %>
+			<p class="product-detail-description">
+			<a class="add-product a" href="/artworks/<%= artworks.id %>/edit">Edit</a>
+			</p>
 			<br></br>
 			<form action="/artworks/<%= artworks.id %>/delete" method="post">
 				<input class="product-detail-description" type="submit" value="Delete">
 			</form>
+			<% } %> 
+
 		</div>
 		<div class="product-detail">
 			<div class="row product-div">
