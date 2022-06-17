@@ -21,16 +21,25 @@ module.exports = function (sequelize, dataTypes) {
 
     const Comment = sequelize.define('Comment', cols, configs);
 
-    Comment.associate = function(models) {
-        Comment.belongsTo(models.User, {
-            as: 'owner',
-            foreignKey: 'user_id'
-        });
-        Comment.belongsTo(models.Artwork, {
-            as: 'artworks',
+    Comment.associate = function(models){
+        Comment.belongsTo( models.Artwork, { 
+            as: 'comments', 
             foreignKey: 'artwork_id'
         })
+        Comment.belongsTo( models.User, { 
+            as: 'creator', 
+            foreignKey: 'user_id'});
     }
+    // Comment.associate = function(models) {
+    //     Comment.belongsTo(models.User, {
+    //         as: 'owner',
+    //         foreignKey: 'user_id'
+    //     });
+    //     Comment.belongsTo(models.Artwork, {
+    //         as: 'artworks',
+    //         foreignKey: 'artwork_id'
+    //     })
+    // }
     return Comment;
 
 }

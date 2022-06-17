@@ -13,13 +13,26 @@ username: function(req, res) {
     // })
 },
 show: function(req, res) {
-    db.Artwork.findByPk(req.params.id, { include: { all: true, nested: true } })
+    db.Artwork.findByPk(req.params.id, {
+        include: [
+        {association: 'creator'},
+        {association: 'comments'}
+        ]
+        })
         .then(function (artworks) {
             res.render('product', { artworks});
         })
         .catch(function (error) {
             res.send(error);
         })
+
+        // db.Artwork.findByPk(req.params.id, { include: { all: true, nested: true } })
+        // .then(function (artworks) {
+        //     res.render('product', { artworks});
+        // })
+        // .catch(function (error) {
+        //     res.send(error);
+        // })
 },
 
 add: function(req, res) {

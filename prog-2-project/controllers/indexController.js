@@ -6,7 +6,13 @@ var op = db.Sequelize.Op;  //para los finds
 const controller = {
 //nos llevamos/cortamos el callback, el segundo argumento de la funcion de las rutas
 index: function(req, res) {
-    db.Artwork.findAll()
+    db.Artwork.findAll(
+        {
+            include: [
+            {association: 'comments'}
+            ]
+            }
+    )
         .then(function (artworks) {
             res.render('index', { artworks });
         })
