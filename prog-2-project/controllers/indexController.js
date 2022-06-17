@@ -13,7 +13,22 @@ index: function(req, res) {
         .catch(function (error) {
             res.send(error)
         });
+
 },
+// recent: function(req, res) {
+//     db.Artwork.findAll({
+//         order: [
+//            ['date', 'DESC'] 
+//         ],
+//         //limit: 10
+//     })
+//     .then(function (recentArtworks) {
+//         res.render('index', { recentArtworks });
+//     })
+//     .catch(function (error) {
+//         res.send(error)
+//     });
+// },
 // index: function(req, res) {
 //     db.Artwork.findAll({ include:{ all: true, nested: false } })
 //         .then(function (artworks) {

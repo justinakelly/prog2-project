@@ -55,16 +55,16 @@ add: function(req, res) {
     //     })
 },
 delete: function(req, res) {
-    // if (!req.session.users) {
-    //     throw Error('Not authorized.')
-    // }
-    // db.Artwork.destroy({ where: { id: req.params.id } })
-    //     .then(function() {
-    //         res.redirect('/')
-    //     })
-    //     .catch(function(error) {
-    //         res.send(error);
-    //     })
+    if (!req.session.user) {
+        throw Error('Not authorized.') //creo que ya es medio al pedo porque directamente no te aparece el boton de delete
+    }
+    db.Artwork.destroy({ where: { id: req.params.id } })
+        .then(function() {
+            res.redirect('/')
+        })
+        .catch(function(error) {
+            res.send(error);
+        })
 },
 edit: function(req, res) {
     db.Artwork.findByPk(req.params.id)
