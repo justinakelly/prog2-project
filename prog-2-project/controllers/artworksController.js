@@ -5,7 +5,7 @@ const controller = {
 
 creator: function(req, res) {
     db.Artwork.findAll({
-        'where': {'username': req.params.username}
+        'where': {'email': req.params.email}
     }).then(function (result) {
         res.render('product', { artworks: result });
     }).catch(function (error) {
@@ -39,12 +39,12 @@ show: function(req, res) {
 },
 
 add: function(req, res) {
-//     if (!req.session.user) { 
+//   if (!req.session.user) { 
 //         // res.redirect('/login'); //aca pondria register y en register pondria: all ready have an acount? Login here y el link
-//         throw Error('Not authorized.')
-//     }
-    res.render('artworks-add');
-},
+//   throw Error('Not authorized.')
+//   }
+   res.render('artworks_add');
+ },
     store: function(req, res) {
         req.body.user_id = req.session.user.id;
         db.Artwork.create(req.body)

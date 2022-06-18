@@ -26,8 +26,8 @@ const controller = {
     access: function(req, res) {
        db.User.findOne({where: {email: req.body.email}}) //busco usuario en db, en where busco lo que se mando por formulario de login
         .then(function (user) {//resultado de promesa=usuario
-            // if (!user) throw Error('User not found.') 
-           // if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
+            //  if (!user) throw Error('User not found.') 
+            // if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
            if(req.body.password == user.password){
            // if (user.password == req.body.password){
                 req.session.user = user //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
@@ -37,7 +37,7 @@ const controller = {
                 }
                 res.redirect('/users/profile');
             } else {
-                //throw Error('Invalid credentials')
+                // throw Error('Invalid credentials')
                 res.send("mal contrasena")
              }
          })
