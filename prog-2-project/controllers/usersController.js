@@ -9,10 +9,8 @@ const controller = {
 
     },
     profile: function (req, res) {
-        res.render('profile'); // { user: req.session.user} si no me funciona el codigo de abajo poner el res.render
-        db.User.findByPk(req.session.user.id, //{ include: [ { association: 'artworks' }, { association: 'comments' } ] }
-        { include: { all: true, nested: true } }
-        )
+        // res.render('profile'); // { user: req.session.user} si no me funciona el codigo de abajo poner el res.render
+        db.User.findByPk(req.session.user.id, { include: [ { association: 'artworks' }, { association: 'comments' } ] })
         .then(function (user) {
             res.render('profile', { user });
         })
@@ -22,7 +20,6 @@ const controller = {
 },
 edit: function (req, res) {     
     res.render('profile-edit', { user: data.user });
-    // res.render('edit', { title: 'Edit' });
 },
 //con el access pasa que le das submit y te lleva a la pag en negro con {}
 access: function(req, res) {

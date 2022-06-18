@@ -9,7 +9,6 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-<<<<<<< HEAD
 				<% if (user.profilepicture) { %>
 					<img src="<%= user.profilepicture  %> " alt="foto de perfil" class="foto-perfil">
 				<%	}else { %>
@@ -19,125 +18,35 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title">
-						<a href="/users/profile-edit" class="a"> <%= user.username  %> 
+						<a href="/users/profile/edit" class="a"> <%= user.username  %> 
 							
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
 					
-=======
-				<% if (locals.me) { %>
-					<% if (me.profilepicture) { %>
-						<img src="<%= me.profilepicture  %> " alt="foto de perfil" class="foto-perfil">
-					<%	}else { %>
-						<img src="/images/users/default-user.JPEG" alt="foto de perfil" class="foto-perfil">
-					<% } %> 
->>>>>>> 09a6a05fc38a2b3ec6579d2abcfa88d4c198d3f9
 				</div>
-				<div class="data-container col-6">
-					<div class="d-flex align-items-center ">
-						<h1 class="main-title">
-							<a href="/users/profile/edit" class="a"> <%= me.username  %> 
-								
-								<i class="fas fa-cog"></i>
-							</a>
-						</h1>
+				<div>
+					<ul class="email">
+						<li><%= user.email  %> </li>
+					</ul>
 						
-					</div>
-					<div>
-						<ul class="email">
-							<li><%= me.email  %> </li>
-						</ul>
-							
-						<ul>
-							<li>  me.artworks.length %> artworks</li>
-							<li>2,1M followers</li>
-							<li>  me.comments.length %> comments </li>
-						</ul>
-					</div>
+					<ul>
+						<li> <%= user.artworks.length %> artworks</li>
+						<li>2,1M followers</li>
+						<li> <%= user.comments.length %> comments </li>
+					</ul>
 				</div>
 			</div>
-		</section>
-		<!-- user info -->
-	
-		<!-- my artworks -->
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">My artworks</h2>
-				</div>
-	  
-				<% for (let i= 0; i < me.artworks.length; i++) { %>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-	  
-						<a href="/artworks/<%= me.artworks[i].id %>">
-	  
-							<figure class="product-box_image">
-								<% if (me.artworks[i].image) { %>
-									<img src=" <%= me.artworks[i].image %> " width="300" height="350" alt="artwork image">
-								<%  }else { %>
-									<img src="/images/products/default-image.png" width="300" height="350" alt="artwork image">
-								<% } %>
-							</figure>
-	  
-							<article class="product-box_data">
-								<% if (me.artworks[i].name) { %>
-									<h2> <%= me.artworks[i].name %> </h2>
-								<%  }else { %>
-									<h2 class="no-name">no name available</h2>
-								<% } %>
-								   
-								<% if (me.artworks[i].description) { %>
-									<p> <%= me.artworks[i].description %> </p>
-								<%  }else { %>
-									<p class="no-description">no description available</p>
-								<% } %>
-	  
-								<p>Comments: <%= me.artworks[i].comments.length %> </p> <!--en realidad quiero comments.length-->
-								</article>
-						</a>
-	  
-					</section>
-				</div>
-				<% } %>
-	  
-			</div>
-		</div> 
-		<!-- my artworks -->
+		</div>
+	</section>
+	<!-- user info -->
 
-				<%	}else { %>
-
-					<% if (user.profilepicture) { %>
-						<img src="<%= user.profilepicture  %> " alt="foto de perfil" class="foto-perfil">
-					<%	}else { %>
-						<img src="/images/users/default-user.JPEG" alt="foto de perfil" class="foto-perfil">
-					<% } %> 
-				</div>
-				<div class="data-container col-6">
-					<div class="d-flex align-items-center ">
-						<h1 class="main-title">
-							<a href="/users/profile/edit" class="a"> <%= user.username  %> 
-								
-								<i class="fas fa-cog"></i>
-							</a>
-						</h1>
-						
-					</div>
-					<div>
-						<ul class="email">
-							<li><%= user.email  %> </li>
-						</ul>
-							
-						<ul>
-							<li> <%= user.artworks.length %> artworks</li>
-							<li>2,1M followers</li>
-							<li> <%= user.comments.length %> comments </li>
-						</ul>
-					</div>
-				</div>
+	<!-- my artworks -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">My artworks</h2>
 			</div>
-<<<<<<< HEAD
   
 			<% for (let i= 0; i < user.artworks.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
@@ -165,65 +74,17 @@
 							<%  }else { %>
 								<p class="no-description">no description available</p>
 							<% } %>
+  
 							</article>
 					</a>
   
 				</section>
-=======
-		</section>
-		<!-- user info -->
-	
-		<!-- my artworks -->
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">My artworks</h2>
-				</div>
-	  
-				<% for (let i= 0; i < user.artworks.length; i++) { %>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-	  
-						<a href="/artworks/<%= user.artworks[i].id %>">
-	  
-							<figure class="product-box_image">
-								<% if (user.artworks[i].image) { %>
-									<img src=" <%= user.artworks[i].image %> " width="300" height="350" alt="artwork image">
-								<%  }else { %>
-									<img src="/images/products/default-image.png" width="300" height="350" alt="artwork image">
-								<% } %>
-							</figure>
-	  
-							<article class="product-box_data">
-								<% if (user.artworks[i].name) { %>
-									<h2> <%= user.artworks[i].name %> </h2>
-								<%  }else { %>
-									<h2 class="no-name">no name available</h2>
-								<% } %>
-								   
-								<% if (user.artworks[i].description) { %>
-									<p> <%= user.artworks[i].description %> </p>
-								<%  }else { %>
-									<p class="no-description">no description available</p>
-								<% } %>
-	  
-								<p>Comments: <%= user.artworks[i].comments.length %> </p> <!--en realidad quiero comments.length-->
-								</article>
-						</a>
-	  
-					</section>
-				</div>
-				<% } %>
-	  
->>>>>>> 09a6a05fc38a2b3ec6579d2abcfa88d4c198d3f9
 			</div>
-		</div> 
-		<!-- my artworks -->
-
-				<% } %> 
-
-
-				
+			<% } %>
+  
+		</div>
+	</div> 
+	<!-- my artworks -->
 
 	<!-- footer -->
 	<%-include('./partials/footer.ejs')%>
