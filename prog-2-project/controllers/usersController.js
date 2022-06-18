@@ -9,8 +9,10 @@ const controller = {
 
     },
     profile: function (req, res) {
-        // res.render('profile'); // { user: req.session.user} si no me funciona el codigo de abajo poner el res.render
-        db.User.findByPk(req.session.user.id, { include: [ { association: 'artworks' }, { association: 'comments' } ] })
+        res.render('profile'); // { user: req.session.user} si no me funciona el codigo de abajo poner el res.render
+        db.User.findByPk(req.session.user.id, //{ include: [ { association: 'artworks' }, { association: 'comments' } ] }
+        { include: { all: true, nested: true } }
+        )
         .then(function (user) {
             res.render('profile', { user });
         })

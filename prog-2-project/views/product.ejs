@@ -16,7 +16,16 @@
 			<%	}else { %>
 				<h2 class="products-title">no name available</h2> 
 			<% } %> 
+<<<<<<< HEAD
 			<% if(locals.user && user.id == artworks.user_id) { %>
+=======
+			<% if(locals.me) { %>
+			<p class="product-detail-description">
+				<a href="add" class="add-product a">Add</a>
+			</p>
+			<% } %> 
+			<% if(locals.me && me.id == artworks.user_id) { %>
+>>>>>>> 09a6a05fc38a2b3ec6579d2abcfa88d4c198d3f9
 			<p class="product-detail-description">
 			<a class="add-product a" href="/artworks/<%= artworks.id %>/edit">Edit</a>
 			</p>
