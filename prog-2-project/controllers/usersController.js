@@ -20,11 +20,11 @@ const controller = {
     },
 
     edit: function (req, res) {             
-        res.render('profile-edit', { users: data.users });
+        res.render('profile-edit', { user: data.user });
     },
 //con el access pasa que le das submit y te lleva a la pag en negro con {}
-    access: function(req, res, next) {
-       db.User.findOne({where: {username: req.body.username}}) //busco usuario en db, en where busco lo que se mando por formulario de login
+    access: function(req, res) {
+       db.User.findOne({where: {email: req.body.email}}) //busco usuario en db, en where busco lo que se mando por formulario de login
         .then(function (user) {//resultado de promesa=usuario
             // if (!user) throw Error('User not found.') 
            // if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
