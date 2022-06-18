@@ -6,7 +6,6 @@ const controller = {
         res.render('login', { title: 'Login'});
     },
     update: function(req, res){
-
     },
     profile: function (req, res) {
         // res.render('profile'); // { user: req.session.user} si no me funciona el codigo de abajo poner el res.render
@@ -23,7 +22,7 @@ edit: function (req, res) {
 },
 //con el access pasa que le das submit y te lleva a la pag en negro con {}
 access: function(req, res) {
-db.User.findOne({where: {email: req.body.email}}) //busco usuario en db, en where busco lo que se mando por formulario de login
+    db.User.findOne({where: {email: req.body.email}}) //busco usuario en db, en where busco lo que se mando por formulario de login
  .then(function (user) {//resultado de promesa=usuario
      // if (!user) throw Error('User not found.') 
     if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
@@ -100,4 +99,4 @@ store: function(req, res) {
             });
     },
 }
-module.exports = controller;
+module.exports = controller; 

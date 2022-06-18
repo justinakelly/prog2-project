@@ -16,16 +16,9 @@
 			<%	}else { %>
 				<h2 class="products-title">no name available</h2> 
 			<% } %> 
-<<<<<<< HEAD
-			<% if(locals.user && user.id == artworks.user_id) { %>
-=======
 			<% if(locals.me) { %>
-			<p class="product-detail-description">
-				<a href="add" class="add-product a">Add</a>
-			</p>
 			<% } %> 
 			<% if(locals.me && me.id == artworks.user_id) { %>
->>>>>>> 09a6a05fc38a2b3ec6579d2abcfa88d4c198d3f9
 			<p class="product-detail-description">
 			<a class="add-product a" href="/artworks/<%= artworks.id %>/edit">Edit</a>
 			</p>
@@ -89,7 +82,7 @@
 					</form>
 					<hr>
 					<%	}else { %>
-					<form action="/users/login" class="form-login">
+					<form action="/artworks/<%= artworks.id %>/comment" class="form-login">
 						<input name="comment" id="comment" class="form-input" type="text" value="" placeholder="Add comment">
 						<button type="submit" class="btn" > Add comment</button>
 					</form>
