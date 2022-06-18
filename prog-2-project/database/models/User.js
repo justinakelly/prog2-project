@@ -9,6 +9,7 @@ module.exports = function (sequelize, dataTypes) {
 
     username: { type: dataTypes.STRING},
      profilepicture: { type: dataTypes.STRING},
+    //  profilepicture:{type:dataTypes.BLOB},//aca hay q acomodar el tipo de dato q segun google es blob
      email: { type: dataTypes.STRING}, 
      password: { type: dataTypes.STRING},
      document: { type: dataTypes.INTEGER}, 
