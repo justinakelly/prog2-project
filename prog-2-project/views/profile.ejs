@@ -1,17 +1,13 @@
 <!-- head -->
 <%-include('./partials/head', {title:'PROFILE'})%>
 <!-- head -->
-
-
 <body>
 	<!-- header -->
 	<%-include('partials/header')%>
 	<!-- header -->
-
 	<!-- user info -->
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
-
 			<div class="img-container offset-3 col-2">
 				<% if (user.profilepicture) { %>
 					<img src="<%= user.profilepicture  %> " alt="foto de perfil" class="foto-perfil">
@@ -19,7 +15,6 @@
 					<img src="/images/users/default-user.JPEG" alt="foto de perfil" class="foto-perfil">
 				<% } %> 
 			</div>
-
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title">
@@ -45,9 +40,6 @@
 		</div>
 	</section>
 	<!-- user info -->
-
-	<!-- my artworks -->
- 
 	<!-- my artworks -->
 
 	<!-- footer -->
