@@ -22,7 +22,7 @@ const controller = {
     },
 
     edit: function (req, res) {             
-        res.render('profile-edit', { user: data.user }); //dice que data is not defined en users/me/edit
+        res.render('profile-edit', { users: data.users });
         
     },
 
