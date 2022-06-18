@@ -1,14 +1,11 @@
 var db = require('../database/models');
 var hasher = require('bcryptjs');
-
 const controller = {
    
     login: function(req, res) {
         res.render('login', { title: 'Login'});
     },
-
     update: function(req, res){
-
     },
     profile: function (req, res) {
         res.render('profile'); // { user: req.session.user}
@@ -20,10 +17,8 @@ const controller = {
         //         res.send(error)
         //     });                                    
     },
-
     edit: function (req, res) {             
         res.render('profile-edit', { users: data.users });
-        
     },
 
     access: function(req, res, next) {
@@ -35,46 +30,45 @@ const controller = {
                 if (req.body.rememberme){ //si apreta boton
                     res.cookie('userId', user.id, {maxAge: 1000 * 60 * 60 * 7})// cookie nueva que se guarda en cliente por 7 hs
                 }
-                res.redirect('/users/profile')
+                res.redirect('/users/profile');
             } else {
-               //throw Error('Invalid credentials')
-               res.send("mal contrasena")
-            }
-        })
-        .catch(function (error) {
-            res.send(error)
-        });    
-    },
-    
+                //throw Error('Invalid credentials')
+                res.send("mal contrasena")
+             }
+         })
+         .catch(function (error) {
+             res.send(error)
+         });    
+        },
 
-    logout: function (req, res, next) {
-        req.session.user = null;
-        res.clearCookie('userId');
-        res.redirect('/users/login')
-    },
-    register: function(req, res) {
-        res.render('register');
-    },
-    
-    store: function(req, res) {
-        if (!req.body.email) { throw Error('No email provided.') }
-        const hashedPassword = hasher.hashSync(req.body.password, 8);
-        db.User.create({
-                    username: req.body.username,
-                    password: hashedPassword,
-                    email: req.body.email,
-                    document: req.body.document,
-                    birthdate: req.body.birthdate,
-                    profilepicture: req.body.profilepicture,
-                })
-        .then(function(){
+
+        logout: function (req, res, next) {
+            req.session.user = null;
+            res.clearCookie('userId');
             res.redirect('/users/login')
-        })
-        .catch(function(error){
-            res.send(error)
-        })
-    },
+        },
+        register: function(req, res) {
+            res.render('register');
+        },
     
-}
+        store: function(req, res) {
+            if (!req.body.email) { throw Error('No email provided.') }
+            const hashedPassword = hasher.hashSync(req.body.password, 8);
+            db.User.create({
+                        username: req.body.username,
+                        password: hashedPassword,
+                        email: req.body.email,
+                        document: req.body.document,
+                        birthdate: req.body.birthdate,
+                        profilepicture: req.body.profilepicture,
+                    })
+            .then(function(){
+                res.redirect('/users/login')
+            })
+            .catch(function(error){
+                res.send(error)
+            })
+        },
 
-module.exports = controller;
+    }
+    module.exports = controller;
