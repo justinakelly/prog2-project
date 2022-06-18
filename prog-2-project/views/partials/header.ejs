@@ -29,7 +29,7 @@
 				<i class="fas fa-bars"></i>
 			</button>
 			
-			<% if (locals.user) { %>
+			<% if (locals.user && user.id == locals.user.id) { %>
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					<li><a href="/">All Artworks</a></li>
