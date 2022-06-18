@@ -68,7 +68,7 @@
 							<div class="data">
 								<p class="user">
 								<strong>
-									<a href="/users/profile" class="username-black a"> @  <!-- artworks.comments[i].commenter.email-->: </a>
+									<a href="/users/<%= artworks.comments[i].commenter.id %> " class="username-black a"> @  <%= artworks.comments[i].commenter.username %>: </a>
 								</strong>
 								<%= artworks.comments[i].comment %>
 								</p>
@@ -85,7 +85,7 @@
 					</form>
 					<hr>
 					<%	}else { %>
-					<form action="/users/login" class="form-login" method="post">
+					<form action="/users/login" class="form-login">
 						<input name="comment" id="comment" class="form-input" type="text" value="" placeholder="Add comment">
 						<button type="submit" class="btn" > Add comment</button>
 					</form>

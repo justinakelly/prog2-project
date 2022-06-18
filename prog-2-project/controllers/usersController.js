@@ -8,14 +8,14 @@ const controller = {
     update: function(req, res){
     },
     profile: function (req, res) {
-        res.render('profile'); // { user: req.session.user}
-        //    db.User.findByPk(req.session.users.id, { include: [ { association: 'artworks' } ] })
-        //     .then(function (users) {
-        //         res.render('profile', { users });
-        //     })
-        //     .catch(function (error) {
-        //         res.send(error)
-        //     });                                    
+       // res.render('profile'); // { user: req.session.user} si no me funciona el codigo de abajo poner el res.render
+           db.User.findByPk(req.session.user.id, { include: [ { association: 'artworks' }, { association: 'comments' } ] })
+            .then(function (user) {
+                res.render('profile', { user });
+            })
+            .catch(function (error) {
+                res.send(error)
+            });                                    
     },
     edit: function (req, res) {             
         res.render('profile-edit', { users: data.users });
@@ -25,8 +25,11 @@ const controller = {
         db.User.findOne({where: {username: req.body.username}}) //busco usuario en db, en where busco lo que se mando por formulario de login
         .then(function (user) {//resultado de promesa=usuario
             // if (!user) throw Error('User not found.') 
-            if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
+           // if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
+           // if(req.body.password == user.password){
+            if (user.password == req.body.password){
                 req.session.user = user //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
+
                 if (req.body.rememberme){ //si apreta boton
                     res.cookie('userId', user.id, {maxAge: 1000 * 60 * 60 * 7})// cookie nueva que se guarda en cliente por 7 hs
                 }
@@ -68,6 +71,18 @@ const controller = {
             .catch(function(error){
                 res.send(error)
             })
+        },
+        stocking: function(req, res) {
+            //res.render('profile');
+            db.User.findByPk(req.params.id, { include: { all: true, nested: true } }
+               // { include: [ { association: 'artworks' }, { association: 'comments' } ] }
+                )
+                .then(function (user) {
+                    res.render('profile', { user });
+                })
+                .catch(function (error) {
+                    res.send(error)
+                });
         },
 
     }
