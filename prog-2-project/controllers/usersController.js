@@ -26,12 +26,13 @@ const controller = {
     },
 
     access: function(req, res, next) {
-        const user = db.User.findOne({where: {username: req.body.username}}) //lo que nos manda el usuario
-        .then(function (user) {
-            if (user.password == req.body.password){ // if (hasher.compareSync(req.body.password, user.password))
-                req.session.user = user
-                if (req.body.rememberme){
-                    res.cookie('userId', user.id, {maxAge: 1000 * 60 * 60 * 7})
+        db.User.findOne({where: {username: req.body.username}}) //busco usuario en db, en where busco lo que se mando por formulario de login
+        .then(function (user) {//resultado de promesa=usuario
+            // if (!user) throw Error('User not found.') 
+            if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
+                req.session.user = user //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
+                if (req.body.rememberme){ //si apreta boton
+                    res.cookie('userId', user.id, {maxAge: 1000 * 60 * 60 * 7})// cookie nueva que se guarda en cliente por 7 hs
                 }
                 res.redirect('/users/profile')
             } else {
@@ -42,23 +43,6 @@ const controller = {
         .catch(function (error) {
             res.send(error)
         });    
-       
-        // db.User.findOne({ where: { username: req.body.username }}) // busco usuario en db, en where busco lo que se mando por formulario de login
-        //     .then(function(users) { //resultado de promesa=usuario
-        //         if (!users) throw Error('User not found.') 
-        //         if (hasher.compareSync(req.body.password, users.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
-        //             req.session.users = users; //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
-        //             if (req.body.rememberme) { //si apreta boton
-        //                 res.cookie('usersId', users.id, { maxAge: 1000  ,60  :60 * 7 })// cookie nueva que se guarda en cliente por 7 hs
-        //             }
-        //             res.redirect('/');
-        //         } else {
-        //             throw Error('Invalid credentials.')
-        //         }
-        //     })
-        //     .catch(function (error) {
-        //         next(error)
-        //     })
     },
     
 
@@ -72,31 +56,22 @@ const controller = {
     },
     
     store: function(req, res) {
-       // res.send(req.body)
-      // const hashedPassword = hasher.hashSync(req.body.password, 10);
-        db.User.create(req.body)
+        if (!req.body.email) { throw Error('No email provided.') }
+        const hashedPassword = hasher.hashSync(req.body.password, 8);
+        db.User.create({
+                    username: req.body.username,
+                    password: hashedPassword,
+                    email: req.body.email,
+                    document: req.body.document,
+                    birthdate: req.body.birthdate,
+                    profilepicture: req.body.profilepicture,
+                })
         .then(function(){
-            res.redirect('/') //que nos mande a my profile 
+            res.redirect('/users/login')
         })
         .catch(function(error){
             res.send(error)
         })
-
-
-
-        // if (!req.body.email) { throw Error('No email provided.') }
-        // const hashedPassword = hasher.hashSync(req.body.password, 10);
-        // db.User.create({
-        //         username: req.body.username,
-        //         password: hashedPassword,
-        //         email: req.body.email,
-        //     })
-        //     .then(function () {
-        //         res.redirect('/');
-        //     })
-        //     .catch(function (error) {
-        //         res.send(error);
-        //     })
     },
     
 }
