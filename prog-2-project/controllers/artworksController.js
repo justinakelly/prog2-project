@@ -1,4 +1,6 @@
 var db = require('../database/models');
+
+
 const controller = {
 creator: function(req, res) {
     db.Artwork.findAll({
@@ -41,7 +43,8 @@ add: function(req, res) {
    res.render('artworks-add');
 
  },
-    store: function(req, res) {
+store: function(req, res) {
+   // res.send(req.file)
         req.body.user_id = req.session.user.id;
         db.Artwork.create(req.body)
             .then(function(){
