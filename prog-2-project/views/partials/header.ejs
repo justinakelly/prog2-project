@@ -29,7 +29,8 @@
 				<i class="fas fa-bars"></i>
 			</button>
 			
-			<% if (locals.user && user.id == locals.user.id) { %>
+			 <!-- if (locals.user && user.id == locals.user.id) {  -->
+			<% if (locals.me) { %>
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					<li><a href="/">All Artworks</a></li>
@@ -37,7 +38,7 @@
 				</ul>
 	
 				<ul class="right-navbar">
-					<li><a class="fas fa-user" href="/users/me"> @<%= user.username %></a></li>
+					<li><a class="fas fa-user" href="/users/profile"> @<%= me.username %></a></li>
 					<li><a class="fas fa-user" href="/users/logout"> Log Out </a></li>
 				</ul>
 			</nav>

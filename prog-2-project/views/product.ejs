@@ -16,12 +16,12 @@
 			<%	}else { %>
 				<h2 class="products-title">no name available</h2> 
 			<% } %> 
-			<% if(locals.user) { %>
+			<% if(locals.me) { %>
 			<p class="product-detail-description">
 				<a href="add" class="add-product a">Add</a>
 			</p>
 			<% } %> 
-			<% if(locals.user && user.id == artworks.user_id) { %>
+			<% if(locals.me && me.id == artworks.user_id) { %>
 			<p class="product-detail-description">
 			<a class="add-product a" href="/artworks/<%= artworks.id %>/edit">Edit</a>
 			</p>

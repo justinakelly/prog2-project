@@ -61,7 +61,7 @@ app.use(function(req, res, next) {
 
 // Session middleware, manda info de usauario a todas las vistas
 app.use(function(req, res, next) {
-  res.locals.user = req.session.user;//callback que a req.locals en el lugar de user le setea lo q esta en session
+  res.locals.me = req.session.user;//callback que a req.locals en el lugar de user le setea lo q esta en session
   next();
 })
 

@@ -43,7 +43,7 @@ add: function(req, res) {
 //         // res.redirect('/login'); //aca pondria register y en register pondria: all ready have an acount? Login here y el link
 //   throw Error('Not authorized.')
 //   }
-   res.render('artworks_add');
+   res.render('artworks-add');
  },
     store: function(req, res) {
         req.body.user_id = req.session.user.id;
