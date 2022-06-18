@@ -75,14 +75,14 @@
   
 					</section>
   
-					<% if(locals.user) { %>
+					<% if(locals.me) { %>
 					<form action="/artworks/<%= artworks.id %>/comment" method="post" class="form-login" >
 						<input name="comment" id="comment" class="form-input" type="text" value="" placeholder="Add comment">
 						<button type="submit" class="btn" > Add comment</button>
 					</form>
 					<hr>
 					<%	}else { %>
-					<form action="/artworks/<%= artworks.id %>/comment" class="form-login">
+					<form action="/users/login" class="form-login">
 						<input name="comment" id="comment" class="form-input" type="text" value="" placeholder="Add comment">
 						<button type="submit" class="btn" > Add comment</button>
 					</form>

@@ -10,7 +10,7 @@ const path = require('path');
 router.get('/creator/:creator', controller.creator);
 
 router.get('/add', controller.add); //product-add.ejs
-router.post('/add', controller.store)
+//router.post('/add', controller.store)
 router.post('/add', upload.single('image'), controller.store) //middleware que si recibe 1 archivo lo sube a la carpeta de uploads y le da nombre
 
 

@@ -38,7 +38,7 @@ add: function(req, res) {
 //         // res.redirect('/login'); //aca pondria register y en register pondria: all ready have an acount? Login here y el link
 //   throw Error('Not authorized.')
 //   }
-   res.render('artworks_add');
+   res.render('artworks-add');
 
  },
     store: function(req, res) {
@@ -79,7 +79,7 @@ delete: function(req, res) {
         })
 },
 edit: function(req, res) {
-    db.Artwork.findByPk(req.params.id)
+   db.Artwork.findByPk(req.params.id)
         .then(function (artworks) {
             res.render('artworks-edit', { artworks });
         })
@@ -92,7 +92,7 @@ update: function(req, res) {
     if (req.file) req.body.image = (req.file.path).replace('public', '');
     db.Artwork.update(req.body, { where: { id: req.params.id } })
         .then(function(artworks) {
-            res.redirect('/')
+            res.redirect('/artworks/' + req.params.id)
         })
         .catch(function(error) {
             res.send(error);

@@ -1,5 +1,6 @@
 var db = require('../database/models');
 var hasher = require('bcryptjs');
+//const { locals } = require('../app');
 const controller = {
    
     login: function(req, res) {
@@ -30,24 +31,28 @@ stocking: function(req, res) {
         });
 },
 edit: function (req, res) {     
-    db.User.findOne({
-        where: [{ id: req.session.id}]
-    })
-  .then(function (me) {
-        res.render('profile-edit', { me });
-   })
-    .catch(function (error) {
-        res.send(error);
-    })
+   
+        //res.render('profile-edit', {user: locals.me});
+       // req.body.user_id = req.session.user.id;
+  // db.Comment.create(req.body)
+        db.User.findByPk(req.session.user.id)
+        .then(function (my) {
+           // req.session.user = user
+            res.render('profile-edit', { my });
+        })
+        .catch(function (error) {
+            res.send(error);
+        })
 
    // res.render('profile-edit', req.body);
    
 },
 
 update: function(req, res) {
-     if (req.file) req.body.image = (req.file.path).replace('public', '');
-    db.Artwork.update(req.body)
-        .then(function(me) {
+     //if (req.file) req.body.image = (req.file.path).replace('public', '');
+    db.User.update(req.body, { where: { id: req.session.user.id } }
+    )
+        .then(function(my) {
             res.redirect('/')
         })
         .catch(function(error) {
