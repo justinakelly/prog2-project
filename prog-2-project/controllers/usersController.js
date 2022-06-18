@@ -20,6 +20,7 @@ const controller = {
 },
 edit: function (req, res) {     
     res.render('profile-edit', { user: data.user });
+    // res.render('edit', { title: 'Edit' });
 },
 //con el access pasa que le das submit y te lleva a la pag en negro con {}
 access: function(req, res) {
