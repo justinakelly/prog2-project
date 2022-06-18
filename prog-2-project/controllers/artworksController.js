@@ -87,6 +87,7 @@ edit: function(req, res) {
             res.send(error);
         })
 },
+
 update: function(req, res) {
     if (req.file) req.body.image = (req.file.path).replace('public', '');
     db.Artwork.update(req.body, { where: { id: req.params.id } })

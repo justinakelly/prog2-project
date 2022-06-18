@@ -7,7 +7,7 @@ const upload= multer ({dest:'public/images/uploads'}); //inicializar multer
 router.get('/me', controller.profile); 
 
 router.get('/me/edit', controller.edit); 
-router.post('/me/edit', controller.edit);
+router.get('/me/edit', controller.edit);
 router.post('/me/edit', controller.update);
 
 router.get('/login', controller.login);
@@ -19,7 +19,7 @@ router.get('/register', controller.register);
 router.post('/register', controller.store);
 
 
-router.get('/:id', controller.profile); //profile.ejs
+//router.get('/:id', controller.profile); //profile.ejs
 
 router.get('/:id', controller.stocking);
 

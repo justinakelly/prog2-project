@@ -20,35 +20,35 @@
 			<!-- form -->
 			<div class=" col-13"> 
 				
-				<form method="post" enctype="multipart/form-data" action="/users/profile"></form>>
+				<form method="post" enctype="multipart/form-data" action="/users/me/edit"></form>>
 
 				<div class="registrando"> 
 					
 				</div>
 
 				<div class="registrando"> 
-					<label for="exampleInputEmail1" class="form-label" > Email address</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value= "<%= users.email %>">
+					<label for="emial" class="form-label" > Email address</label>
+					<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value= "<%= me.email %>">
 				</div>
 
 				<div class="registrando"> 
-					<label for="exampleInputUsername1" class="form-label"> Username </label>
-					<input type="username" class="form-control" id="exampleInputUsername1" value="<%= users.username %>">   
+					<label for="username" class="form-label"> Username </label>
+					<input type="username" class="form-control" id="username" name="username" value="<%= me.username %>">   
 				</div>
 
 				<div class="registrando"> 
-					<label for="exampleInputPassword1" class="form-label"> Password</label>
-					<input type="password" class="form-control" id="exampleInputPassword1" value="<%= users.password %>" >   
+					<label for="password" class="form-label"> Password</label>
+					<input type="password" class="form-control" id="password" name="password" value="<%= me.password %>" >   
 				</div>
 
 				<div class="registrando"> 
-					<label for="exampleBirthDate1" class="form-label"> Birth Date</label>
-					<input type="date" class="form-control" id="exampleBirthDate1" value="<%= users.birthdate %>">    
+					<label for="birthdate" class="form-label"> Birth Date</label>
+					<input type="date" class="form-control" id="birthdate" name="birthdate" value="<%= me.birthdate %>">    
 				</div>
 
 				<div class="registrando"> 
-					<label for="exampleId1" class="form-label"> ID </label>
-					<input type="number" class="form-control" id="exampleId1" value="<%= users.document %>">
+					<label for="document" class="form-label"> ID </label>
+					<input type="number" class="form-control" id="document" name="document" value="<%= me.document %>">
 				</div>
 					
 				<button type="submit" class="btn btn primary"> Save changes </button>

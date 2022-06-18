@@ -9,7 +9,7 @@ const controller = {
     },
     profile: function (req, res) {
         // res.render('profile'); // { user: req.session.user} si no me funciona el codigo de abajo poner el res.render
-        db.User.findByPk(req.session.user.id, { include: [ { association: 'artworks' }, { association: 'comments' } ] })
+        db.User.findByPk(req.session.user.id, { include: { all: true, nested: true }  })
         .then(function (user) {
             res.render('profile', { user });
         })
@@ -17,9 +17,44 @@ const controller = {
             res.send(error)
         });                                    
 },
-edit: function (req, res) {     
-    res.render('profile-edit', { user: data.user });
+stocking: function(req, res) {
+    //res.render('profile');
+    db.User.findByPk(req.params.id, { include: { all: true, nested: true } }
+       // { include: [ { association: 'artworks' }, { association: 'comments' } ] }
+        )
+        .then(function (user) {
+            res.render('profile', { user });
+        })
+        .catch(function (error) {
+            res.send(error)
+        });
 },
+edit: function (req, res) {     
+    db.User.findOne({
+        where: [{ id: req.session.id}]
+    })
+  .then(function (me) {
+        res.render('profile-edit', { me });
+   })
+    .catch(function (error) {
+        res.send(error);
+    })
+
+   // res.render('profile-edit', req.body);
+   
+},
+
+update: function(req, res) {
+     if (req.file) req.body.image = (req.file.path).replace('public', '');
+    db.Artwork.update(req.body)
+        .then(function(me) {
+            res.redirect('/')
+        })
+        .catch(function(error) {
+            res.send(error);
+        })
+},
+
 //con el access pasa que le das submit y te lleva a la pag en negro con {}
 access: function(req, res) {
     db.User.findOne({where: {email: req.body.email}}) //busco usuario en db, en where busco lo que se mando por formulario de login
@@ -85,18 +120,7 @@ store: function(req, res) {
         .catch(function(error){
             res.send(error)
         })
-    },
-    stocking: function(req, res) {
-        //res.render('profile');
-        db.User.findByPk(req.params.id, { include: { all: true, nested: true } }
-           // { include: [ { association: 'artworks' }, { association: 'comments' } ] }
-            )
-            .then(function (user) {
-                res.render('profile', { user });
-            })
-            .catch(function (error) {
-                res.send(error)
-            });
-    },
+    }
+   
 }
 module.exports = controller; 

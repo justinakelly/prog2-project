@@ -6,6 +6,7 @@
 	<%-include('partials/header')%>
 	<!-- header -->
 	<!-- user info -->
+		
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
@@ -17,13 +18,19 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
+					<% if (user.id == me.id) { %>
 					<h1 class="main-title">
-						<a href="/users/profile/edit" class="a"> <%= user.username  %> 
+						<a href="/users/me/edit" class="a"> <%= user.username  %> 
 							
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
-					
+					<%	}else { %>
+					<h1 class="main-title">
+						 <%= user.username  %> 
+					</h1>
+					<% } %> 
+
 				</div>
 				<div>
 					<ul class="email">
@@ -44,10 +51,15 @@
 	<!-- my artworks -->
 	<div class="container products-wrapper">
 		<div class="row">
+			<% if (user.id == me.id) { %>
 			<div class="col-12">
 				<h2 class="products-title">My artworks</h2>
 			</div>
-  
+			<%  }else { %>
+			<div class="col-12">
+				<h2 class="products-title"> @<%= user.username  %> Artworks</h2>
+			</div>
+			<% } %>
 			<% for (let i= 0; i < user.artworks.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
@@ -75,7 +87,7 @@
 								<p class="no-description">no description available</p>
 							<% } %>
   
-							
+							<p class="artwork-description">Comments: <%= user.artworks[i].comments.length %> </p> 
 							</article>
 					</a>
   
