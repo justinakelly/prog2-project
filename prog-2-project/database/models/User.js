@@ -25,13 +25,13 @@ module.exports = function (sequelize, dataTypes) {
     
     User.associate = function(models) {
         User.hasMany(models.Artwork, {// 1 usuario has many artworks
-            as: 'artwork',// campo donde va a vivir el otro recurso
+            as: 'artworks',// campo donde va a vivir el otro recurso
             foreignKey: 'user_id'
         })
-        // User.hasMany(models.Comment, {
-        //     as: 'comments', 
-        //     foreignKey: 'user_id'
-        // })
+        User.hasMany(models.Comment, {
+            as: 'comments', 
+            foreignKey: 'user_id'
+        })
         
     }
     

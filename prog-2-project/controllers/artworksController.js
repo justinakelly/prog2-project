@@ -13,12 +13,15 @@ creator: function(req, res) {
     })
 },
 show: function(req, res) {
-    db.Artwork.findByPk(req.params.id, {
-        include: [
-        {association: 'creator'},
-        {association: 'comments'}
-        ]
-        })
+    db.Artwork.findByPk(req.params.id, //{ 
+        { include: { all: true, nested: true } }
+        // include: [
+        // {association: 'creator'},
+        // //{association: 'commenter'},
+        // {association: 'comments'}
+        // ]
+        // }
+        )
         .then(function (artworks) {
             res.render('product', { artworks});
         })

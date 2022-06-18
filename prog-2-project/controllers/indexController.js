@@ -60,7 +60,8 @@ index: function(req, res) {
 
     results: function(req, res) {
         db.Artwork.findAll({ 
-            where: [{ name: {[op.like]: '%'+req.query.search+'%'} }] 
+            where: [{ name: {[op.like]: '%'+req.query.search+'%'} }], 
+            include: { all: true, nested: true } 
         })
         .then(function(artworks) {
             res.render('search-results', {artworks});

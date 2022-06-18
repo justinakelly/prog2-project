@@ -31,15 +31,60 @@
 					</ul>
 						
 					<ul>
-						<li>3 artworks</li>
+						<li> <%= user.artworks.length %> artworks</li>
 						<li>2,1M followers</li>
-						<li>300 comments</li>
+						<li> <%= user.comments.length %> comments </li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- user info -->
+
+	<!-- my artworks -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">My artworks</h2>
+			</div>
+  
+			<% for (let i= 0; i < user.artworks.length; i++) { %>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+  
+					<a href="/artworks/<%= user.artworks[i].id %>">
+  
+						<figure class="product-box_image">
+							<% if (user.artworks[i].image) { %>
+								<img src=" <%= user.artworks[i].image %> " width="300" height="350" alt="artwork image">
+							<%  }else { %>
+								<img src="/images/products/default-image.png" width="300" height="350" alt="artwork image">
+							<% } %>
+						</figure>
+  
+						<article class="product-box_data">
+							<% if (user.artworks[i].name) { %>
+								<h2> <%= user.artworks[i].name %> </h2>
+							<%  }else { %>
+								<h2 class="no-name">no name available</h2>
+							<% } %>
+							   
+							<% if (user.artworks[i].description) { %>
+								<p> <%= user.artworks[i].description %> </p>
+							<%  }else { %>
+								<p class="no-description">no description available</p>
+							<% } %>
+  
+							<p>Comments: <%= user.artworks[i].comments.length %> </p> <!--en realidad quiero comments.length-->
+							</article>
+					</a>
+  
+				</section>
+			</div>
+			<% } %>
+  
+		</div>
+	</div> 
 	<!-- my artworks -->
 
 	<!-- footer -->

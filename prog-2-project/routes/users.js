@@ -19,7 +19,8 @@ router.get('/register', controller.register);
 router.post('/register', controller.store);
 
 
-router.get('/:id', controller.profile); //profile.ejs
+//router.get('/:id', controller.profile); //profile.ejs
 
+router.get('/:id', controller.stocking);
 
 module.exports = router;
