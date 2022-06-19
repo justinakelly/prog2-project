@@ -105,10 +105,12 @@ access: function(req, res) {
 },
 register: function(req, res) {
     res.render('register');
+    
 },
 
 //se guarda en la base de datos y te manda al form de login osea esta bien esto de abajo
 store: function(req, res) {
+    //  if (req.file) req.body.image = (req.file.path).replace('public', '');
     if (!req.body.email) { throw Error('No email provided.') }
      const hashedPassword = hasher.hashSync(req.body.password, 8);
     db.User.create({
