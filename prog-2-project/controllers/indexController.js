@@ -65,6 +65,13 @@ index: function(req, res) {
         .then(function(artworks) {
             res.render('search-results', {artworks});
         })
+       
+        db.Artwork.findAll({ 
+             where: [{ description: {[op.like]: '%'+req.query.search+'%'} }] 
+        })
+        .then(function(artworks) {
+            res.render('search-results', {artworks});
+        })
         .catch(function (error) {
             res.send(error)
         });
