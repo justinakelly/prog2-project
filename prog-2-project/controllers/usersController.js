@@ -51,7 +51,7 @@ update: function(req, res) {
     db.User.update(req.body, { where: { id: req.session.user.id } }
     )
         .then(function(user) {
-            res.redirect('/')
+            res.redirect('/users/me')
         })
         .catch(function(error) {
             res.send(error);
@@ -108,7 +108,7 @@ register: function(req, res) {
 
 //se guarda en la base de datos y te manda al form de login osea esta bien esto de abajo
 store: function(req, res) {
-    //  if (req.file) req.body.image = (req.file.path).replace('public', '');
+    if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
     if (!req.body.email) { throw Error('No email provided.') }
      const hashedPassword = hasher.hashSync(req.body.password, 8);
     db.User.create({

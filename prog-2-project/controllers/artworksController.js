@@ -77,7 +77,7 @@ delete: function(req, res) {
     }
     db.Artwork.destroy({ where: { id: req.params.id } })
         .then(function() {
-            res.redirect('/')
+            res.redirect('/users/me')
         })
         .catch(function(error) {
             res.send(error);

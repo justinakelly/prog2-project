@@ -2,3 +2,4 @@ node_modules/
 .DS_Store
 /database/config/config.js
 /public/images/uploads/
+/public/images/users/uploads/
