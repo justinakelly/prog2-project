@@ -59,11 +59,19 @@ index: function(req, res) {
     //     },
 
     results: function(req, res) {
+        // if (!req.query.search) { 
+        //     throw Error ('searcher cant be empty')
+        //     //res.send('no hay resultados')
+        //  }
         db.Artwork.findAll({ 
-            where: [{ name: {[op.like]: '%'+req.query.search+'%'} }] 
-        })
+            where: {[op.or]: [
+                { name: {[op.like]: '%'+req.query.search+'%'}},
+                { description: {[op.like]: '%'+req.query.search+'%'}  }
+            ]},
+        include: [ {association: 'comments'}]
+         })
         .then(function(artworks) {
-            res.render('search-results', {artworks});
+            res.render('search-results', { artworks: artworks, result: req.query.search });
         })
         .catch(function (error) {
             res.send(error)

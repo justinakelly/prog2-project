@@ -6,8 +6,6 @@ const controller = {
     login: function(req, res) {
         res.render('login', { title: 'Login'});
     },
-    update: function(req, res){
-    },
     profile: function (req, res) {
         // res.render('profile'); // { user: req.session.user} si no me funciona el codigo de abajo poner el res.render
         db.User.findByPk(req.session.user.id, { include: { all: true, nested: true }  })
@@ -36,9 +34,9 @@ edit: function (req, res) {
        // req.body.user_id = req.session.user.id;
   // db.Comment.create(req.body)
         db.User.findByPk(req.session.user.id)
-        .then(function (my) {
+        .then(function (user) {
            // req.session.user = user
-            res.render('profile-edit', { my });
+            res.render('profile-edit', { user });
         })
         .catch(function (error) {
             res.send(error);
@@ -52,7 +50,7 @@ update: function(req, res) {
      //if (req.file) req.body.image = (req.file.path).replace('public', '');
     db.User.update(req.body, { where: { id: req.session.user.id } }
     )
-        .then(function(my) {
+        .then(function(user) {
             res.redirect('/')
         })
         .catch(function(error) {
@@ -105,10 +103,12 @@ access: function(req, res) {
 },
 register: function(req, res) {
     res.render('register');
+    
 },
 
 //se guarda en la base de datos y te manda al form de login osea esta bien esto de abajo
 store: function(req, res) {
+    //  if (req.file) req.body.image = (req.file.path).replace('public', '');
     if (!req.body.email) { throw Error('No email provided.') }
      const hashedPassword = hasher.hashSync(req.body.password, 8);
     db.User.create({

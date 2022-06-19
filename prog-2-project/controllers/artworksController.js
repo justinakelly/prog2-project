@@ -1,6 +1,7 @@
 var db = require('../database/models');
 
 
+
 const controller = {
 creator: function(req, res) {
     db.Artwork.findAll({
@@ -46,6 +47,7 @@ add: function(req, res) {
 store: function(req, res) {
    // res.send(req.file)
         req.body.user_id = req.session.user.id;
+        if (req.file) req.body.image = (req.file.path).replace('public', '');
         db.Artwork.create(req.body)
             .then(function(){
                 res.redirect('/')
