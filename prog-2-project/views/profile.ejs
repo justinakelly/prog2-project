@@ -21,13 +21,18 @@
 					<% if (user.id == me.id) { %>
 					<h1 class="main-title">
 						<a href="/users/me/edit" class="a"> <%= user.username  %> 
-							
+						<% if (user.artworks.length > 10) { %>
+							<img src="/images/users/verified.png" class="verified">
+						<%	} %>
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
 					<%	}else { %>
 					<h1 class="main-title">
 						 <%= user.username  %> 
+						 <% if (user.artworks.length > 10) { %>
+							<img src="/images/users/verified.png" class="verified">
+						<%	} %>
 					</h1>
 					<% } %> 
 

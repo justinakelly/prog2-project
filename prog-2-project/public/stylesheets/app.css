@@ -793,3 +793,20 @@ color: #39b54a;
   width: 35px;
   margin-right: 5px;
 }
+
+.fa-trash{
+  color: white;
+    font-size: 20px;
+}
+
+.delete-button{
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px;
+    color: #fff;
+    border: 2px solid transparent;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+}
