@@ -22,33 +22,37 @@
 				
 				<form method="post" enctype="multipart/form-data" action="/users/me/edit">
 
-				<div class="registrando"> 
-					
+				<div class="registrando">  
+						<label for="image" class="form-label">Profile picture <picture></picture></label>
+						<figure class="product-box_image">
+						<img src="<%= me.profilepicture %> " width="300" height="350" alt="artwork image">
+						</figure>
+						<input type="file" class="form-control" name="profilepicture" id="profilepicture" value="<%= me.profilepicture %>">
 				</div>
 
 				<div class="registrando"> 
 					<label for="email" class="form-label" > Email address</label>
-					<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value= "<%= user.email %>">
+					<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value= "<%= me.email %>">
 				</div>
 
 				<div class="registrando"> 
 					<label for="username" class="form-label"> Username </label>
-					<input type="username" class="form-control" id="username" name="username" value="<%= user.username %>">   
+					<input type="username" class="form-control" id="username" name="username" value="<%= me.username %>">   
 				</div>
 
 				<div class="registrando"> 
 					<label for="password" class="form-label"> Password</label>
-					<input type="password" class="form-control" id="password" name="password" value="<%= user.password %>" >   
+					<input type="password" class="form-control" id="password" name="password" value="<%= me.password %>" >   
 				</div>
 
 				<div class="registrando"> 
 					<label for="birthdate" class="form-label"> Birth Date</label>
-					<input type="date" class="form-control" id="birthdate" name="birthdate" value="<%= user.birthdate %>">    
+					<input type="date" class="form-control" id="birthdate" name="birthdate" value="<%= me.birthdate %>">    
 				</div>
 
 				<div class="registrando"> 
 					<label for="document" class="form-label"> ID </label>
-					<input type="number" class="form-control" id="document" name="document" value="<%= user.document %>">
+					<input type="number" class="form-control" id="document" name="document" value="<%= me.document %>">
 				</div>
 					
 				<button type="submit" class="btn btn primary"> Save changes </button>

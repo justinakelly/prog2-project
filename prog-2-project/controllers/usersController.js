@@ -34,9 +34,9 @@ edit: function (req, res) {
        // req.body.user_id = req.session.user.id;
   // db.Comment.create(req.body)
         db.User.findByPk(req.session.user.id)
-        .then(function (user) {
+        .then(function (me) {
            // req.session.user = user
-            res.render('profile-edit', { user });
+            res.render('profile-edit', { me });
         })
         .catch(function (error) {
             res.send(error);
@@ -50,7 +50,7 @@ update: function(req, res) {
      //if (req.file) req.body.image = (req.file.path).replace('public', '');
     db.User.update(req.body, { where: { id: req.session.user.id } }
     )
-        .then(function(user) {
+        .then(function(me) {
             res.redirect('/users/me')
         })
         .catch(function(error) {
