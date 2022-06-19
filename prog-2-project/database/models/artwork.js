@@ -13,7 +13,9 @@ module.exports = function (sequelize, dataTypes) {
      image: { type: dataTypes.STRING},
      description: { type: dataTypes.STRING}, 
      date: { type: dataTypes.DATE},
-     user_id: {type: dataTypes.INTEGER}
+     user_id: {type: dataTypes.INTEGER},
+     created_at: { type: dataTypes.DATE },
+     updated_at: { type: dataTypes.DATE },
     }
     
     const configs = {
