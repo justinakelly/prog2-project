@@ -17,6 +17,7 @@
 				<h2 class="products-title">no name available</h2> 
 			<% } %> 
 			<% if(locals.me) { %>
+				<!-- <a class="add-product a" href="/artworks/add/"><i class="fa-light fa-plus"></i></a> -->
 			<% } %> 
 			<% if(locals.me && me.id == artworks.user_id) { %>
 			<p class="product-detail-description">
@@ -24,7 +25,8 @@
 			</p>
 			<br></br>
 			<form action="/artworks/<%= artworks.id %>/delete" method="post">
-				<input class="add-product" type="submit" value="Delete">
+				<!-- <input class="add-product" type="submit" value="Delete"> -->
+				<button class="delete-button" type="submit"><i class="fas fa-trash trash-delete"></i></button>
 			</form>
 			<% } %> 
 
@@ -57,15 +59,15 @@
   
 					<% for (let i= 0; i < artworks.comments.length; i++) { %>
 						<article>
-							<% if (artworks.comments[i].profilepicture) { %>
-								<img src=" <%= artworks.comments[i].profilepicture %> " width="100">
+							<% if (artworks.comments[i].commenter.profilepicture) { %>
+								<img src=" <%= artworks.comments[i].commenter.profilepicture %> " width="100">
 							<%  }else { %>
 								<img src="/images/users/default-user.JPEG " width="100">
 							<% } %>
 							<div class="data">
 								<p class="user">
 								<strong>
-									<a href="/users/<%= artworks.comments[i].commenter.id %> " class="username-black a"> @  <%= artworks.comments[i].commenter.username %>: </a>
+									<a href="/users/<%= artworks.comments[i].commenter.id %> " class="username-black a"> @<%= artworks.comments[i].commenter.username %>: </a>
 								</strong>
 								<%= artworks.comments[i].comment %>
 								</p>
