@@ -30,6 +30,11 @@
 					</div>
 					<button type="submit" class="button-login"> Submit </button>
 				</form>
+				<% if (locals.error) { %>
+					<div class="alert alert-danger" role="alert">
+					  <%= error %>
+					</div>
+				  <% } %>
 			</div>
 
 		</div>
