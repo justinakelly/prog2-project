@@ -8,7 +8,20 @@ const controller = {
     },
     profile: function (req, res) {
         // res.render('profile'); // { user: req.session.user} si no me funciona el codigo de abajo poner el res.render
-        db.User.findByPk(req.session.user.id, { include: { all: true, nested: true }  })
+        db.User.findByPk(req.session.user.id, { include: 
+            [
+                {association: 'comments'},
+                {association: 'artworks',
+                               include: [ {association: 'comments'} ]} //para hacer artworks.comments.length
+                
+            ]
+            
+            
+    //         include: [{association: 'comments'},  {association: 'creator'},
+    //         {association: 'comments',
+    //     include: [ {association: 'user'} ]
+    // ]
+})
         .then(function (user) {
             res.render('profile', { user });
         })
@@ -18,7 +31,14 @@ const controller = {
 },
 stocking: function(req, res) {
     //res.render('profile');
-    db.User.findByPk(req.params.id, { include: { all: true, nested: true } }
+    db.User.findByPk(req.params.id, { include: 
+        [
+            {association: 'comments'},
+            {association: 'artworks',
+                           include: [ {association: 'comments'} ]} //para hacer artworks.comments.length
+            
+        ]
+    }
        // { include: [ { association: 'artworks' }, { association: 'comments' } ] }
         )
         .then(function (user) {
