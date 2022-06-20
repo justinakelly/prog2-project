@@ -15,7 +15,7 @@ creator: function(req, res) {
 show: function(req, res) {
     db.Artwork.findByPk(req.params.id, //{ 
         { include: 
-          //  { all: true, nested: true }
+//  { all: true, nested: true }
             [
                 {association: 'creator'},
                 {association: 'comments',

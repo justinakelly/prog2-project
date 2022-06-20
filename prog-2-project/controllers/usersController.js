@@ -79,23 +79,23 @@ update: function(req, res) {
 },
 
 //con el access pasa que le das submit y te lleva a la pag en negro con {}
-access: function(req, res) {
+access: function(req, res, next) {
     db.User.findOne({where: {email: req.body.email}}) //busco usuario en db, en where busco lo que se mando por formulario de login
  .then(function (user) {//resultado de promesa=usuario
-     // if (!user) throw Error('User not found.') 
+      if (!user) throw Error('User not found.') 
     if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
-        req.session.user = user //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
+        req.session.user = user; //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
          if (req.body.rememberme){ //si apreta boton
              res.cookie('userId', user.id, {maxAge: 1000 * 60 * 60 * 7})// cookie nueva que se guarda en cliente por 7 hs
          }
          res.redirect('/users/me');
      } else {
-         //throw Error('Invalid credentials')
-         res.send("mal contrasena")
+         throw Error('Invalid credentials')
+        //  res.send("mal contrasena")
       }
   })
   .catch(function (error) {
-      res.send(error)
+      next(error)
   });    
  },
  //antes teniamos esto sin procesar el hasheo pero lo pruebo y tampoco me funciona

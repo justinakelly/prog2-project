@@ -70,7 +70,11 @@
 					</li> -->
 		</div>
 	</header>
-
+<main>	<% if (locals.error) { %>
+		<div class="alert alert-danger" role="alert">
+		  <%= error %>
+		</div>
+	  <% } %>
 <!-- header -->
 	
 
