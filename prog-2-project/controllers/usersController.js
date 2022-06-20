@@ -131,7 +131,7 @@ store: async function(req, res, next) {
     try{
         if (!req.body.email) { throw Error('Not email provided.') }
         if (!req.body.username) { throw Error('Not username provided.') }
-        if (!req.body.password.length > 4) { throw Error('Password too short.') }
+        if (!req.body.password.length > 3) { throw Error('Password too short.') }
         const user = await db.User.findOne ({where: {email: req.body.email} })
         if(user) {throw Error ('Email already in use.')}
     } catch(err){
