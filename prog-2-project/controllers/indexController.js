@@ -8,7 +8,8 @@ index: function(req, res) {
     db.Artwork.findAll(
         {
             include: [
-            {association: 'comments'}
+            {association: 'comments'},
+            {association: 'creator'}
             ]
             }
     )
@@ -66,9 +67,9 @@ index: function(req, res) {
         db.Artwork.findAll({ 
             where: {[op.or]: [
                 { name: {[op.like]: '%'+req.query.search+'%'}},
-                { description: {[op.like]: '%'+req.query.search+'%'}  }
+                { description: {[op.like]: '%'+req.query.search+'%'} },
             ]},
-        include: [ {association: 'comments'}]
+        include: [ {association: 'comments'},  {association: 'creator'}]
          })
         .then(function(artworks) {
             res.render('search-results', { artworks: artworks, result: req.query.search });

@@ -44,7 +44,9 @@
 							<%	}else { %>
 								<h2 class="no-name">no name available</h2>
 							<% } %>
-								
+							<a href="/users/<%= artworks[i].creator.id %>" class="title-index">
+								<p class="artwork-description"> By: <%= artworks[i].creator.username %> </p>
+							</a>
 							<% if (artworks[i].description) { %>
 								<p class="artwork-description"> <%= artworks[i].description %> </p>
 							<%	}else { %>
