@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300&family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Jura:wght@300&family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200&display=swap');
 
 /*====== Variables ======*/
 :root {
@@ -27,7 +28,8 @@ body {
 
 body {
   /* font-family: var(--base-font-family); */
-  font-family: 'Quicksand', sans-serif;
+  /* font-family: 'Quicksand', sans-serif; */
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 300;
   /* background-color: var(--light-gray); */
   /*background-color: rgb(33, 33, 33);*/
@@ -60,6 +62,7 @@ img {
 input,
 textarea {
   font-family: 'Quicksand', sans-serif;
+
 }
 
 hr {
@@ -89,14 +92,16 @@ hr {
 }
 
 .search-form {
-  font-family: 'Akshar', sans-serif;
+  /* font-family: 'Akshar', sans-serif; */
+  font-family: 'IBM Plex Sans', sans-serif;
   position: relative;
   display: flex;
   align-items: center;
 }
 
 .search-form_input {
-  font-family: 'Akshar', sans-serif;
+  /* font-family: 'Akshar', sans-serif; */
+  font-family: 'IBM Plex Sans', sans-serif;
   border: solid 1px var(--light-gray);
   display: block;
   width: 100%;
@@ -130,7 +135,8 @@ hr {
   margin: 20px auto 0;
 }
 .btn{
-  font-family: 'Jura', sans-serif;
+  /* font-family: 'Jura', sans-serif; */
+  font-family: 'IBM Plex Sans', sans-serif;
   background-color: #2f2abd;
   color: white;
   height: 40px;
@@ -151,7 +157,8 @@ hr {
 .left-navbar,
 .right-navbar {
   font-size: 1.5em;
-  font-family: 'Jura', sans-serif;
+  /* font-family: 'Jura', sans-serif; */
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .logout{
@@ -218,7 +225,8 @@ hr {
 }
 
 .product-box {
-  font-family: 'Jura', sans-serif;
+  /* font-family: 'Jura', sans-serif; */
+  font-family: 'IBM Plex Sans', sans-serif;
   background-color: #ffffff;
   border-radius: 5px;
   overflow: hidden;
@@ -548,7 +556,8 @@ textarea.form-input {
   width: 100%;
 }
 .a{
-  font-family: 'Jura', sans-serif;
+  /* font-family: 'Jura', sans-serif; */
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 .results{
   color: white;
@@ -578,7 +587,8 @@ textarea.form-input {
   margin-bottom: 10px;
 }
 .fas fa-sign-in-alt{
-  font-family: 'Jura', sans-serif;
+  /* font-family: 'Jura', sans-serif; */
+  font-family: 'IBM Plex Sans', sans-serif;
   color:red;
 }
 .fas fa-cog{
@@ -603,6 +613,7 @@ textarea.form-input {
   }
 .left-navbar{
   font-family: 'Jura', sans-serif;
+  
 }
   .main-navbar,
   .left-navbar,
