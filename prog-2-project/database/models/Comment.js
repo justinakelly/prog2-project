@@ -11,7 +11,8 @@ module.exports = function (sequelize, dataTypes) {
 
     comment: { type: dataTypes.STRING}, 
     user_id: {type: dataTypes.INTEGER},
-    artwork_id: {type: dataTypes.INTEGER}
+    artwork_id: {type: dataTypes.INTEGER},
+    // created_at:{type: dataTypes.DATE},
  }
     
     const configs = {

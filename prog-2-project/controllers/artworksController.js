@@ -113,6 +113,8 @@ comment: function(req, res) {
     req.body.user_id = req.session.user.id;
     // Set book from url params
     req.body.artwork_id = req.params.id;
+    req.body.created_at = new Date();
+    
     db.Comment.create(req.body, {
         include: [
         {association: 'commenter'},
