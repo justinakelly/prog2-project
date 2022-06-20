@@ -68,6 +68,7 @@ edit: function (req, res) {
 
 update: function(req, res) {
      if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
+     req.body.updated_at= new Date ();
     db.User.update(req.body, { where: { id: req.session.user.id } }
     )
         .then(function(me) {
