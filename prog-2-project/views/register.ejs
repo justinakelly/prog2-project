@@ -15,10 +15,12 @@
 			<div class="col-12">
 			<h2 class="products-title">Register</h2>
 			</div>
+
 			
 
 			<!-- register form -->
 			<div class=" col-13 form-register-div-container">
+				
 
 				<form method="post"  enctype="multipart/form-data" action="/users/register">
 					<div class="registrando"> 
@@ -54,9 +56,14 @@
 					<button type="submit" class="btn btn primary"> Submit</button>
 
 				</form>
-
+				
 				<div class="circles">
 					<img src="/images/m-05-02.png" alt="image">
+					<% if (locals.error) { %>
+						<div class="alert alert-danger" role="alert">
+						  <%= error %>
+						</div>
+					  <% } %>
 				</div>
 			
 			</div>

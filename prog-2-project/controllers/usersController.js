@@ -94,8 +94,8 @@ access: function(req, res, next) {
         //  res.send("mal contrasena")
       }
   })
-  .catch(function (error) {
-      next(error)
+  .catch(function (err) {
+      next(err)
   });    
  },
  //antes teniamos esto sin procesar el hasheo pero lo pruebo y tampoco me funciona
@@ -127,9 +127,21 @@ register: function(req, res) {
 },
 
 //se guarda en la base de datos y te manda al form de login osea esta bien esto de abajo
-store: function(req, res) {
+store: async function(req, res, next) {
+    try{
+        if (!req.body.email) { throw Error('Not email provided.') }
+        if (!req.body.username) { throw Error('Not username provided.') }
+        if (!req.body.password.length > 4) { throw Error('Password too short.') }
+        const user = await db.User.findOne ({where: {email: req.body.email} })
+        if(user) {throw Error ('Email already in use.')}
+    } catch(err){
+        res.render ('register', {error: err.message})
+        return;
+    }
+
+
     if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
-    if (!req.body.email) { throw Error('No email provided.') }
+    
      const hashedPassword = hasher.hashSync(req.body.password, 8);
     db.User.create({
                 username: req.body.username,
