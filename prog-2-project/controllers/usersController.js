@@ -64,7 +64,7 @@ update: function(req, res) {
         .then(function(me) {
             res.redirect('/users/me')
             if(req.body.username){
-                req.session.user.username = req.body.user;
+                req.session.user.username = req.body.username;
             }
         })
         .catch(function(error) {
