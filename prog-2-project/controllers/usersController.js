@@ -74,6 +74,7 @@ access: function(req, res, next) {
    
     db.User.findOne({where: {email: req.body.email}}) //busco usuario en db, en where busco lo que se mando por formulario de login
  .then(function (user) {//resultado de promesa=usuario
+
     if (!user) {
         return res.render ('login', {error: "Invalid email"})
     }
@@ -114,6 +115,12 @@ store: async function(req, res, next) {
     if (req.body.password.length <= 3){
         return res.render ('register', {error: 'Password must have at least 4 characters'})
     }
+    if (!req.body.birthdate){
+        return res.render ('register', {error: 'No birthdate provided.'})
+    }
+    if ('No document provided.'){
+        return res.render ('register', {error: 'No document provided.'})
+    }
     try{
         // if (!req.body.email) { throw Error('No email provided.') }
         // if (!req.body.username) { throw Error('No username provided.') }
@@ -125,14 +132,26 @@ store: async function(req, res, next) {
         if(username) {
             return res.render ('register', {error: 'Username already in use'})}
 
+        // if (!req.body.email) { throw Error('No email provided.') }
+        // if (!req.body.username) { throw Error('No username provided.') }
+        // if (!req.body.password.length < 3) { throw Error('Password too short.') }
+        // if (!req.body.birthdate) { throw Error('No birthdate provided.') }
+        // if (!req.body.document) { throw Error('No document provided.') }
+    
+
+        const user = await db.User.findOne ({where: {email: req.body.email} })
+        if(user) {throw Error ('Email already in use.')}
     } catch(err){
         res.render ('register', {error: err.message})
         next();
     }
-    if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
+
+
     
     const hashedPassword = hasher.hashSync(req.body.password, 8);
-    req.body.created_at = new Date();
+
+    if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
+    req.body.created_at= new Date();
     db.User.create({
                 username: req.body.username,
                 password: hashedPassword,
