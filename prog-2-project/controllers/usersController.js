@@ -63,6 +63,9 @@ update: function(req, res) {
     )
         .then(function(me) {
             res.redirect('/users/me')
+            if(req.body.username){
+                req.session.user.username = req.body.user;
+            }
         })
         .catch(function(error) {
             res.send(error);
