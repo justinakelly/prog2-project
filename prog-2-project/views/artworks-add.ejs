@@ -13,7 +13,14 @@
 		<div class="row">
 
 			<div class="form-background">
+	<% if (locals.error){ %> 
+	<div class="alert alert-light" role="alert">
+		<%= error %> 
+	</div>
+	<p><a href="/users/login">Login</a></p>
+	<p><a href="/users/register">Register</a></p>
 
+	<% } else {%> 
 			<div class="col-12">
 				<h2 class="products-title">Add artworks</h2>
 			</div>
@@ -36,17 +43,22 @@
 						<label for="image" class="form-label">Add Image</label>
 						<input type="file" class="form-control" name="image" id="image" >
 					</div> 
-
+					<% if (locals.noImage){ %> 
+						<p><%= noImage %> </p>
+					<% }%> 
 					<div class="AddProduct"> 
 						<label for="date" class="form-label">Upload Date</label>
 						<input type="date" class="form-control" id="date" name="date" >
 					</div> 
+					<% if (locals.noDate){ %> 
+						<p><%= noDate %> </p>
+					<% }%> 
 		
 					<button type="submit" class="btn btn primary"> Add artwork </button>
 				</form>
 			</h2>
 			<!-- form -->
-			
+			<% } %> 
 			</div>
 			
 		</div>
