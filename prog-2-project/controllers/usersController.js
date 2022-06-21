@@ -76,27 +76,16 @@ access: function(req, res, next) {
  .then(function (user) {//resultado de promesa=usuario
 
     if (!user) {
-<<<<<<< HEAD
-        throw Error('User not found.') }
-    if (hasher.compareSync(req.body.password, user.password)) { // ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
-=======
         return res.render ('login', {error: "Invalid email"})
     }
     if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
->>>>>>> ce866e5af1857facedf8d58206c7b92bdad56f17
         req.session.user = user; //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
          if (req.body.rememberme){ //si apreta boton
              res.cookie('userId', user.id, {maxAge: 1000 * 60 * 60 * 7})// cookie nueva que se guarda en cliente por 7 hs
          }
          res.redirect('/users/me');
      } else {
-<<<<<<< HEAD
-        // res.render('login', {msg: "Invalid credentials"})
-         throw Error('Invalid credentials')
-        //  res.send("mal contrasena")
-=======
         res.render('login', {error: "Wrong password"})
->>>>>>> ce866e5af1857facedf8d58206c7b92bdad56f17
       }
   })
   .catch(function (err) {
