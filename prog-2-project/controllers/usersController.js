@@ -62,6 +62,9 @@ update: function(req, res) {
     db.User.update(req.body, { where: { id: req.session.user.id } }
     )
         .then(function(me) {
+            if(req.body.username){
+                req.session.user.username = req.body.username;
+            }
             res.redirect('/users/me')
         })
         .catch(function(error) {
