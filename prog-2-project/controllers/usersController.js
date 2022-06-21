@@ -118,7 +118,7 @@ store: async function(req, res, next) {
     if (!req.body.birthdate){
         return res.render ('register', {error: 'No birthdate provided.'})
     }
-    if ('No document provided.'){
+    if (!req.body.document){
         return res.render ('register', {error: 'No document provided.'})
     }
     try{
