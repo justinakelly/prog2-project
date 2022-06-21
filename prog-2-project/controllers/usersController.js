@@ -110,7 +110,11 @@ store: async function(req, res, next) {
     try{
         if (!req.body.email) { throw Error('No email provided.') }
         if (!req.body.username) { throw Error('No username provided.') }
-        if (!req.body.password.length > 3) { throw Error('Password too short.') }
+        if (!req.body.password.length < 3) { throw Error('Password too short.') }
+        if (!req.body.birthdate) { throw Error('No birthdate provided.') }
+        if (!req.body.document) { throw Error('No document provided.') }
+    
+
         const user = await db.User.findOne ({where: {email: req.body.email} })
         if(user) {throw Error ('Email already in use.')}
     } catch(err){
