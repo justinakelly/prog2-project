@@ -14,6 +14,8 @@ module.exports = function (sequelize, dataTypes) {
      password: { type: dataTypes.STRING},
      document: { type: dataTypes.INTEGER}, 
      birthdate: { type: dataTypes.DATE},
+     created_at: { type: dataTypes.DATE },
+     updated_at: { type: dataTypes.DATE },
     }
     
     const configs = {

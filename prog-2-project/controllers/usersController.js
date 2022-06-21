@@ -151,14 +151,14 @@ store: async function(req, res, next) {
     const hashedPassword = hasher.hashSync(req.body.password, 8);
 
     if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
-    req.body.created_at= new Date();
+    req.body.created_at = new Date();
     db.User.create({
                 username: req.body.username,
                 password: hashedPassword,
                 email: req.body.email,
                 document: req.body.document,
                 birthdate: req.body.birthdate,
-                profilepicture: req.body.profilepicture,
+                profilepicture: req.body.profilepicture 
                 })
         .then(function(){
             res.redirect('/users/login')
