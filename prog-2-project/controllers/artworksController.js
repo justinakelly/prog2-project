@@ -50,6 +50,7 @@ store: function(req, res) {
    // res.send(req.file)
         req.body.user_id = req.session.user.id;
         if (req.file) req.body.image = (req.file.path).replace('public', '');
+        req.body.created_at= new Date();
         db.Artwork.create(req.body)
             .then(function(){
                 res.redirect('/')
