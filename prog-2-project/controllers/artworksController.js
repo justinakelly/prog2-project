@@ -53,7 +53,7 @@ store: function(req, res) {
             return res.render ('artworks-add', { noDate: 'You must include a date'})
         }
         req.body.user_id = req.session.user.id;
-        req.body.created_at = new Date(); 
+       // req.body.created_at = new Date(); 
       
         db.Artwork.create(req.body)
             .then(function(){
@@ -138,7 +138,7 @@ comment: function(req, res) {
     req.body.user_id = req.session.user.id;
     // Set book from url params
     req.body.artwork_id = req.params.id;
-    req.body.created_at = new Date();
+    //req.body.created_at = new Date();
 
     db.Comment.create(req.body, {
         include: [
