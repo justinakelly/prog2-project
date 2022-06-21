@@ -7,8 +7,9 @@ const controller = {
 index: function(req, res) {
     db.Artwork.findAll(
         {
+            order: [ [ 'date', 'DESC'] ],
             include: [
-            {association: 'comments'},
+            {association: 'comments',},
             {association: 'creator'}
             ]
             }
