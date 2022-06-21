@@ -83,7 +83,10 @@ update: function(req, res) {
 access: function(req, res, next) {
     db.User.findOne({where: {email: req.body.email}}) //busco usuario en db, en where busco lo que se mando por formulario de login
  .then(function (user) {//resultado de promesa=usuario
-      if (!user) throw Error('User not found.') 
+    if (!user) {
+        throw Error('User not found.') 
+        //res.render('login', {msg: "User not found"})
+    }
     if (hasher.compareSync(req.body.password, user.password)) {// ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
         req.session.user = user; //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
          if (req.body.rememberme){ //si apreta boton
@@ -91,6 +94,7 @@ access: function(req, res, next) {
          }
          res.redirect('/users/me');
      } else {
+        // res.render('login', {msg: "Invalid credentials"})
          throw Error('Invalid credentials')
         //  res.send("mal contrasena")
       }
@@ -130,8 +134,8 @@ register: function(req, res) {
 //se guarda en la base de datos y te manda al form de login osea esta bien esto de abajo
 store: async function(req, res, next) {
     try{
-        if (!req.body.email) { throw Error('Not email provided.') }
-        if (!req.body.username) { throw Error('Not username provided.') }
+        if (!req.body.email) { throw Error('No email provided.') }
+        if (!req.body.username) { throw Error('No username provided.') }
         if (!req.body.password.length > 3) { throw Error('Password too short.') }
         const user = await db.User.findOne ({where: {email: req.body.email} })
         if(user) {throw Error ('Email already in use.')}
