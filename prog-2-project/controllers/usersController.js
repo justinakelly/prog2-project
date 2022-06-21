@@ -147,9 +147,10 @@ store: async function(req, res, next) {
     }
 
 
-    if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
     
     const hashedPassword = hasher.hashSync(req.body.password, 8);
+
+    if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
     req.body.created_at= new Date();
     db.User.create({
                 username: req.body.username,

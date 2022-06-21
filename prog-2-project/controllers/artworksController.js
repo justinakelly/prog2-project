@@ -19,7 +19,7 @@ show: function(req, res) {
             [
                 {association: 'creator'},
                 {association: 'comments',
-                               include: [ {association: 'commenter'} ]} //para hacer artworks.comments.length
+             include: [ {association: 'commenter'} ]} //para hacer artworks.comments.length
                 
             ]
         }
