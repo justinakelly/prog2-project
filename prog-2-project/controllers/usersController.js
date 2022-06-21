@@ -75,7 +75,7 @@ access: function(req, res, next) {
  .then(function (user) {//resultado de promesa=usuario
 
     if (!user) {
-        throw Error('User not found.') 
+        throw Error('User not found.') }
     if (hasher.compareSync(req.body.password, user.password)) { // ver si la contrasena esta bien, compara lo que ingresa usr con hash de db
         req.session.user = user; //guardo en campo usuario (servidor) datos del usuario, si es true entra a if
          if (req.body.rememberme){ //si apreta boton
@@ -86,7 +86,7 @@ access: function(req, res, next) {
         // res.render('login', {msg: "Invalid credentials"})
          throw Error('Invalid credentials')
         //  res.send("mal contrasena")
-      }}
+      }
   })
   .catch(function (err) {
       next(err)
