@@ -18,7 +18,7 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<% if (user.id == me.id) { %>
+					<% if (locals.me && user.id == me.id) { %>
 					<h1 class="main-title">
 						<a href="/users/me/edit" class="a"> <%= user.username  %> 
 						<% if (user.artworks.length > 10) { %>
@@ -56,7 +56,7 @@
 	<!-- my artworks -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<% if (user.id == me.id) { %>
+			<% if (locals.me && user.id == me.id) { %>
 			<div class="col-12">
 				<h2 class="products-title">My artworks</h2>
 			</div>
