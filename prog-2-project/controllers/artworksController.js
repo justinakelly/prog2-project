@@ -19,16 +19,13 @@ show: function(req, res) {
             [
                 {association: 'creator'},
                 {association: 'comments',
-                               include: [ {association: 'commenter'} ]} //para hacer artworks.comments.length
-                
-            ]
-        }
-        // include: [
-        // {association: 'creator'},
-        // //{association: 'commenter'},
-        // {association: 'comments'}
-        // ]
-        // }
+                               include: [ {association: 'commenter'} ], //para hacer artworks.comments.length
+                               //order: [ [ 'created_at', 'DESC'] ]
+                            }
+            ],
+            //order: [ [Comment, 'created_at', 'DESC'] ]
+        },
+       
         )
         .then(function (artworks) {
             res.render('product', { artworks});
@@ -50,7 +47,7 @@ store: function(req, res) {
    // res.send(req.file)
         req.body.user_id = req.session.user.id;
         if (req.file) req.body.image = (req.file.path).replace('public', '');
-        req.body.created_at= new Date(); 
+        req.body.created_at = new Date(); 
         db.Artwork.create(req.body)
             .then(function(){
                 res.redirect('/')
@@ -98,7 +95,7 @@ edit: function(req, res) {
 
 update: function(req, res) {
     if (req.file) req.body.image = (req.file.path).replace('public', '');
-    req.body.updated_at= new Date();
+    req.body.updated_at = new Date();
     db.Artwork.update(req.body, { where: { id: req.params.id } })
         .then(function(artworks) {
             res.redirect('/artworks/' + req.params.id)

@@ -15,12 +15,6 @@ const controller = {
                                include: [ {association: 'comments'} ]} //para hacer artworks.comments.length
                 
             ]
-            
-            
-    //         include: [{association: 'comments'},  {association: 'creator'},
-    //         {association: 'comments',
-    //     include: [ {association: 'user'} ]
-    // ]
 })
         .then(function (user) {
             res.render('profile', { user });
@@ -39,7 +33,6 @@ stocking: function(req, res) {
             
         ]
     }
-       // { include: [ { association: 'artworks' }, { association: 'comments' } ] }
         )
         .then(function (user) {
             res.render('profile', { user });
@@ -49,10 +42,6 @@ stocking: function(req, res) {
         });
 },
 edit: function (req, res) {     
-   
-        //res.render('profile-edit', {user: locals.me});
-       // req.body.user_id = req.session.user.id;
-  // db.Comment.create(req.body)
         db.User.findByPk(req.session.user.id)
         .then(function (me) {
            // req.session.user = user
@@ -61,16 +50,15 @@ edit: function (req, res) {
         .catch(function (error) {
             res.send(error);
         })
-
-   // res.render('profile-edit', req.body);
    
 },
 
 update: function(req, res) {
      if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
      if (req.body.password){ //si viene el campo password lo hasheas 
-        req.body.password= hasher.hashSync(req.body.password, 8)}
-     req.body.updated_at= new Date ();
+        req.body.password = hasher.hashSync(req.body.password, 8)}
+    
+    req.body.updated_at = new Date ();
     db.User.update(req.body, { where: { id: req.session.user.id } }
     )
         .then(function(me) {
@@ -105,29 +93,13 @@ access: function(req, res, next) {
       next(err)
   });    
  },
- //antes teniamos esto sin procesar el hasheo pero lo pruebo y tampoco me funciona
- //     const user = db.User.findOne({where: {username: req.body.username}}) //lo que nos manda el usuario
- //     .then(function (user) {
- //         if (user.password == req.body.password){ // if (hasher.compareSync(req.body.password, user.password))
- //             req.session.user = user
- //             if (req.body.rememberme){
- //                 res.cookie('userId', user.id, {maxAge: 1000 * 60 * 60 * 7})
- //             }
- //             res.redirect('/users/profile')
- //         } else {
- //            //throw Error('Invalid credentials')
- //            res.send("mal contrasena")
- //         }
- //     })
- //     .catch(function (error) {
- //         res.send(error)
- //     });    
- // },
+ 
  logout: function (req, res, next) {
     req.session.user = null;
     res.clearCookie('userId');
     res.redirect('/users/login')
 },
+
 register: function(req, res) {
     res.render('register');
     
@@ -145,12 +117,10 @@ store: async function(req, res, next) {
         res.render ('register', {error: err.message})
         return;
     }
-
-
     if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
     
     const hashedPassword = hasher.hashSync(req.body.password, 8);
-    req.body.created_at= new Date();
+    req.body.created_at = new Date();
     db.User.create({
                 username: req.body.username,
                 password: hashedPassword,
