@@ -20,9 +20,10 @@
 				<a class="add-product a" href="/artworks/add/"><i class="fas fa-light fa-plus"></i></a>
 			<% } %> 
 			<!-- < if(locals.me && me.id == artworks.user_id) { %> -->
-			<p class="product-detail-description">
+				<% if(locals.me) { %>
+				<p class="product-detail-description">
 			<a class="add-product a" href="/artworks/<%= artworks.id %>/edit">Edit</a>
-			</p>
+			</p><% } %> 
 			<br></br>
 			<% if(locals.me) { %>
 				<form action="/artworks/<%= artworks.id %>/delete" method="post">
