@@ -14,7 +14,9 @@
 
 			<div class="form-background">
 <% if (locals.error){ %> 
-<p><%= error %> </p>
+	<div class="alert alert-danger" role="alert">
+		<%= error %>
+	  </div>
 <% }else{ %> 
 			<div class="col-12">
 				<h2 class="products-title">Edit artworks</h2>
@@ -25,6 +27,12 @@
 				<form method="post" enctype="multipart/form-data" action="/artworks/<%= artworks.id %>/edit"> 
 
 					<div class="AddProduct"> 
+						<img src="<%= artworks.image %> " alt="">
+						<label for="image" class="form-label">Add Image</label>
+						<input type="file" class="form-control" name="image" id="image" value="<%= artworks.image%>">
+					</div>
+
+					<div class="AddProduct"> 
 						<label for="name" class="form-label">Product Name</label>
 						<input type="text" class="form-control" id="name" name="name" value="<%= artworks.name%>">   
 					</div>
@@ -32,11 +40,6 @@
 					<div class="AddProduct"> 
 						<label for="description" class="form-label">Description </label>
 						<input type="text" class="form-control" id="description" name="description" value="<%= artworks.description%>" placeholder="Make sure your description is as representative as possible...">   
-					</div>
-
-					<div class="AddProduct"> 
-						<label for="image" class="form-label">Add Image</label>
-						<input type="file" class="form-control" name="image" id="image" value="<%= artworks.image%>">
 					</div>
 
 					<div class="AddProduct"> 

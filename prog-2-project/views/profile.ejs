@@ -20,7 +20,7 @@
 				<div class="d-flex align-items-center ">
 					<% if (locals.me && user.id == me.id) { %>
 					<h1 class="main-title">
-						<a href="/users/me/edit" class="a"> <%= user.username  %> 
+						<a href="/users/me/edit" class="a"><%= user.username  %> 
 						<% if (user.artworks.length > 10) { %>
 							<img src="/images/users/verified.png" class="verified">
 						<%	} %>
@@ -44,7 +44,7 @@
 						
 					<ul>
 						<li> <%= user.artworks.length %> artworks</li>
-						<li>2,1M followers</li>
+						<!-- <li>2,1M followers</li> -->
 						<li> <%= user.comments.length %> comments </li>
 					</ul>
 				</div>
@@ -81,7 +81,7 @@
   
 						<article class="product-box_data">
 							<% if (user.artworks[i].name) { %>
-								<h2> <%= user.artworks[i].name %> </h2>
+								<h2 class="artwork-name"> <%= user.artworks[i].name %> </h2>
 							<%  }else { %>
 								<h2 class="no-name">no name available</h2>
 							<% } %>

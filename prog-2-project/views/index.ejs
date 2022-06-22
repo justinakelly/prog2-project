@@ -17,7 +17,7 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Artworks</h2>
+				<h2 class="products-title">Recent Artworks</h2>
 			</div>
 			
 			
@@ -38,11 +38,11 @@
 						
 					<article class="product-box_data title-index">
 						<% if (artworks[i].name) { %>
-							<h2> <%= artworks[i].name %> </h2>
+							<h2 class="artwork-name"> <%= artworks[i].name %> </h2>
 						<%	}else { %>
 							<h2 class="no-name">no name available</h2>
 						<% } %>
-						<a href="/users/<%= artworks[i].creator.id %>" class="title-index">
+						<a href="/users/<%= artworks[i].creator.id %>" class="title-index creator">
 						<p class="artwork-description"> By: <%= artworks[i].creator.username %> </p>
 						</a>
 						<% if (artworks[i].description) { %>

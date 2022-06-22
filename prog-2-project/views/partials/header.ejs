@@ -39,7 +39,7 @@
 	
 				<ul class="right-navbar">
 					<li><a href="/users/me"> @<%= me.username %></a></li>
-					<li><a class="fas fa-user" href="/users/logout"> Log Out </a></li>
+					<li><a href="/users/logout"> Log Out </a></li>
 				</ul>
 			</nav>
 			<% } else { %>
@@ -49,8 +49,8 @@
 					<!-- <li><a href="/artworks/add">Add artworks</a></li> -->
 				</ul>
 				<ul class="right-navbar">
-					<li><a class="fas fa-user" href="/users/login"> Log In </a></li>
-					<li><a class="fas fa-user" href="/users/register"> Register </a></li>
+					<li><a href="/users/login"> <i class="fas fa-user"></i>  Log In </a></li>
+					<li><a href="/users/register"> <i class="fas fa-solid fa-user-plus"></i>  Register </a></li>
 				</ul>
 			</nav>
 			<% } %>

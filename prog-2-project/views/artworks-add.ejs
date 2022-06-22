@@ -14,11 +14,12 @@
 
 			<div class="form-background">
 	<% if (locals.error){ %> 
-	<div class="alert alert-light" role="alert">
-		<%= error %> 
-	</div>
-	<p><a href="/users/login">Login</a></p>
-	<p><a href="/users/register">Register</a></p>
+	<div class="alert alert-danger" role="alert">
+			<%= error %>
+		  </div>
+		<p class="alert alert-danger"><a href="/users/login"><i class="fas fa-user"></i>  Login</a></p>
+		<p class="alert alert-danger"><a href="/users/register">  <i class="fas fa-solid fa-user-plus"></i>  Register</a></p>
+	
 
 	<% } else {%> 
 			<div class="col-12">

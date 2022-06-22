@@ -60,7 +60,7 @@ const controller = {
         db.Artwork.findByPk(req.params.id)
             .then(function (artworks) {
                 if (!req.session.user || req.session.user.id !== artworks.user_id) {
-                    return res.render ('artworks-add', {error: 'You are not the owner of the artwork you are trying to edit.'}) //creo que ya es medio al pedo porque directamente no te aparece el boton de delete
+                    return res.render ('artworks-edit', {error: 'You are not the owner of the artwork you are trying to edit.'}) 
                 }
                 res.render('artworks-edit', { artworks });
             })
@@ -83,7 +83,7 @@ const controller = {
                     res.send(error);
                 })
         }else{
-            return res.render ('artworks-add', {error: 'You are not the owner of the artwork you are trying to edit.'})
+            return res.render ('artworks-edit', {error: 'You are not the owner of the artwork you are trying to edit.'})
         }
     },
     

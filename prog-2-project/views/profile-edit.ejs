@@ -23,9 +23,9 @@
 				<form method="post" enctype="multipart/form-data" action="/users/me/edit">
 
 				<div class="registrando">  
-						<label for="image" class="form-label">Profile picture <picture></picture></label>
+						<!-- <label for="image" class="form-label foto-perfil">Profile picture <picture></picture></label> -->
 						<figure class="product-box_image">
-						<img src="<%= me.profilepicture %> " width="300" height="350" alt="artwork image">
+						<img src="<%= me.profilepicture %> " class="foto-perfil-edit" width="300" height="350" alt="artwork image">
 						</figure>
 						<input type="file" class="form-control" name="profilepicture" id="profilepicture" value="<%= me.profilepicture %>">
 				</div>
