@@ -90,13 +90,15 @@ const controller = {
     
 // -  /artworks/:id/delete
     delete: function(req, res) {
-        // console.log(req.body.user_id);
+        // if (!req.session.user) {
+        //     throw Error('No autorizado.')
+        // } // console.log(req.body.user_id);
         // console.log(req.session.user.id);
         
-        // if (!req.session.user || req.session.user.id !== req.body.user_id) {
-        //    // throw Error('You are not the owner of the artwork you are trying to delete.')
-        //     return res.redirect ('/artworks/' + req.params.id) //creo que ya es medio al pedo porque directamente no te aparece el boton de delete
-        // }
+        if (!req.session.user || req.session.user.id !== req.body.user_id) {
+            throw Error('You are not the owner of the artwork you are trying to delete.')
+            return res.redirect ('/artworks/' + req.params.id)
+        }
         console.log(req.body);
         //console.log(artworks.user_id);
         db.Artwork.destroy({ where: { id: req.params.id } })
@@ -113,6 +115,7 @@ const controller = {
                 res.send(error);
             })
     },
+}
 
 // -  artworks/:id/comment
     comment: function(req, res) {
