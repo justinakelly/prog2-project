@@ -19,7 +19,7 @@ router.get('/me', controller.profile);
 router.get('/me/edit', controller.edit); 
 router.post('/me/edit', upload.single('profilepicture'), controller.update);
 
-
 router.get('/:id', controller.stocking);
+
 
 module.exports = router;

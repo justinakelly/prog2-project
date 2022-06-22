@@ -19,4 +19,5 @@ router.post('/:id/comment', controller.comment);
 
 router.get('/:id', controller.show); //product.ejs --> muestra detalle
 
+
 module.exports = router;
