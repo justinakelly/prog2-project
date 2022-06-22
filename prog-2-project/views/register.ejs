@@ -20,7 +20,13 @@
 			<!-- register form -->
 			<div class=" col-nuevo form-register-div-container">
 
+	
 				<form method="post"  action="/users/register">
+					<% if (locals.error) { %>
+						<div class="alert alert-danger" role="alert">
+						  <%= error %>
+						</div>
+					  <% } %> 
 					<div class="registrando"> 
 						<label for="email" class="form-label">Email </label>
 						<input type="email" class="form-control" id="email" name= "email" aria-describedby="emailHelp">
@@ -54,7 +60,7 @@
 					<button type="submit" class="btn btn primary"> Submit</button>
 
 				</form>
-
+				
 				<div class="circles">
 					<img src="/images/m-05-02.png" alt="image">
 				</div>

@@ -51,7 +51,7 @@ const controller = {
         if (!req.body.email){
             return res.render ('register', {error: 'No email provided.'})
         }
-        if (!req.body.email){
+        if (!req.body.username){
             return res.render ('register', {error: 'No username provided.'})
         }
         if (req.body.password.length <= 3){
