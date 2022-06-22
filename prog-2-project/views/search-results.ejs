@@ -12,12 +12,12 @@
 	<div class="container products-wrapper">
 		<div class="row">
 		
-		<% if (artworks == '') { %>	
-			<h2 class="products-title results"> No results for '<%= result %>' </h2>
+		<% if (locals.error) { %>	
+			<h2 class="products-title results"><%= error %> </h2>
 			 <!-- no me esta tomando el condicional este de artworks.search --> 
 			<!-- hacer un else if que me diga que si tengo mas de tres caracteres no me deje mandar formulario -->
-		<% } else if (result == '') { %> 
-			<h2 class="products-title results"> Searcher can't be empty </h2>
+		<% } else if (artworks == '') { %> 
+			<h2 class="products-title results">  No results for '<%= result %>' </h2>
 			<!-- no se si esta bien -> creo que tendria que estar en validaciones de formularios, osea que directamente
 			no me deje mandar el formulario -->
 		
