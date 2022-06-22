@@ -120,9 +120,8 @@ const controller = {
 // -  artworks/:id/comment
     comment: function(req, res) {
     if (!req.session.user) { 
-            throw Error('Not authorized.')
+            res.redirect('/users/login')
         }
-
         // Set user from session user
         req.body.user_id = req.session.user.id;
         // Set artwork from url params

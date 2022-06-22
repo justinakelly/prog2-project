@@ -892,3 +892,11 @@ color: #39b54a;
   border-radius: 50%;
   margin: 10px;
 }
+
+.add-product{
+  margin-left: 20px;
+}
+
+.add-alert{
+  width: 100%;
+}

@@ -14,11 +14,11 @@
 
 			<div class="form-background">
 	<% if (locals.error){ %> 
-	<div class="alert alert-danger" role="alert">
-			<%= error %>
-		  </div>
-		<p class="alert alert-danger"><a href="/users/login"><i class="fas fa-user"></i>  Login</a></p>
-		<p class="alert alert-danger"><a href="/users/register">  <i class="fas fa-solid fa-user-plus"></i>  Register</a></p>
+		<div class="alert alert-danger add-alert" role="alert">
+				<%= error %>
+		</div>
+		<p class="alert alert-danger add-alert"><a href="/users/login"><i class="fas fa-user"></i>  Login</a></p>
+		<p class="alert alert-danger add-alert"><a href="/users/register">  <i class="fas fa-solid fa-user-plus"></i>  Register</a></p>
 	
 
 	<% } else {%> 
@@ -45,14 +45,18 @@
 						<input type="file" class="form-control" name="image" id="image" >
 					</div> 
 					<% if (locals.noImage){ %> 
-						<p><%= noImage %> </p>
+						<div class="alert alert-danger" role="alert">
+							<%= noImage %>
+						</div>
 					<% }%> 
 					<div class="AddProduct"> 
 						<label for="date" class="form-label">Upload Date</label>
 						<input type="date" class="form-control" id="date" name="date" >
 					</div> 
 					<% if (locals.noDate){ %> 
-						<p><%= noDate %> </p>
+						<div class="alert alert-danger" role="alert">
+							<%= noDate %>
+						</div>
 					<% }%> 
 		
 					<button type="submit" class="btn btn primary"> Add artwork </button>

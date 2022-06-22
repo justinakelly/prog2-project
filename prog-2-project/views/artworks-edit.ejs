@@ -13,11 +13,13 @@
 		<div class="row">
 
 			<div class="form-background">
-<% if (locals.error){ %> 
-	<div class="alert alert-danger" role="alert">
-		<%= error %>
-	  </div>
-<% }else{ %> 
+		
+		<% if (locals.error){ %> 
+			<div class="alert alert-danger" role="alert">
+				<%= error %>
+			</div>
+		<% }else{ %> 
+
 			<div class="col-12">
 				<h2 class="products-title">Edit artworks</h2>
 			</div>
