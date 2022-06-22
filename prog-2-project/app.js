@@ -32,12 +32,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Cookie middleware por si cerras ventana, para recuperar sesion, pasa a todas las vistas una variable
 app.use(function(req, res, next) {
-  if (!req.session.user && req.cookies.userId) {
+  if (!req.session.user) { // si no estas logueado
     // Find the user
-    db.User.findByPk(req.cookies.userId)
+    db.User.findByPk(req.cookies.userId) //busca cookie de userid
       .then(function(user) {
         // Act as login
-        req.session.user = user;
+        req.session.user = user;// busca cookie en db y ponela en session
         next();
       })
   } else {
