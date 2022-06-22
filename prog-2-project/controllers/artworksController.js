@@ -1,5 +1,5 @@
 //const { localsName } = require('ejs');  //???
-var db = require('../database/models');
+var db = require('../database/models/Index');
 
 
 const controller = {

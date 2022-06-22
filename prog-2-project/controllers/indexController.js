@@ -1,4 +1,4 @@
-var db = require('../database/models');
+var db = require('../database/models/Index');
 var op = db.Sequelize.Op; 
 
 
