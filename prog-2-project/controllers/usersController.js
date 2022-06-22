@@ -1,4 +1,4 @@
-var db = require('../database/models/Index');
+var db = require('../database/models');
 var hasher = require('bcryptjs');
 
 
