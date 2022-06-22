@@ -10,6 +10,7 @@ CREATE TABLE `users` (
   `birthdate` date NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
+    PRIMARY KEY (`id`),
 
 
   CREATE TABLE `artworks` (
