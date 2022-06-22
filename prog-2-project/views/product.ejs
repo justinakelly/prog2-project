@@ -24,10 +24,12 @@
 			<a class="add-product a" href="/artworks/<%= artworks.id %>/edit">Edit</a>
 			</p>
 			<br></br>
-			<form action="/artworks/<%= artworks.id %>/delete" method="post">
+			<% if(locals.me) { %>
+				<form action="/artworks/<%= artworks.id %>/delete" method="post">
 				<!-- <input class="add-product" type="submit" value="Delete"> -->
 				<button class="delete-button" type="submit"><i class="fas fa-trash trash-delete"></i></button>
 			</form>
+			<% } %> 
 			<!-- < } %>  -->
 
 		</div>
