@@ -115,7 +115,7 @@ const controller = {
                 res.send(error);
             })
     },
-}
+
 
 // -  artworks/:id/comment
     comment: function(req, res) {
@@ -141,7 +141,8 @@ const controller = {
                 res.send(error);
             })
 
-    },
+    }
+
 
 };
 
