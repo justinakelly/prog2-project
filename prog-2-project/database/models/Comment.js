@@ -12,7 +12,6 @@ module.exports = function (sequelize, dataTypes) {
     comment: { type: dataTypes.STRING}, 
     user_id: {type: dataTypes.INTEGER},
     artwork_id: {type: dataTypes.INTEGER},
-    // created_at:{type: dataTypes.DATE},
  }
     
     const configs = {
@@ -33,16 +32,6 @@ module.exports = function (sequelize, dataTypes) {
         })
        
     }
-    // Comment.associate = function(models) {
-    //     Comment.belongsTo(models.User, {
-    //         as: 'owner',
-    //         foreignKey: 'user_id'
-    //     });
-    //     Comment.belongsTo(models.Artwork, {
-    //         as: 'artworks',
-    //         foreignKey: 'artwork_id'
-    //     })
-    // }
     return Comment;
 
 }

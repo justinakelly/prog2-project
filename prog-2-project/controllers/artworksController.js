@@ -97,10 +97,6 @@ edit: function(req, res) {
     // if (!req.session.user || req.session.user.id !== req.body.user_id) {
     //      return res.render ('artworks-add', {error: 'You are not the owner of the artwork you are trying to edit.'}) //creo que ya es medio al pedo porque directamente no te aparece el boton de delete
     //  }
-
-    // console.log(req.body.user_id);
-    // console.log(req.session.user.id);
-    // console.log(req.body)
    db.Artwork.findByPk(req.params.id)
         .then(function (artworks) {
             res.render('artworks-edit', { artworks });
@@ -114,11 +110,7 @@ edit: function(req, res) {
 update: function(req, res) {
     if (req.file) req.body.image = (req.file.path).replace('public', '');
     req.body.updated_at = new Date();
-
-//    console.log(req.body.user_id);
-//     console.log(req.session.user.id);
-//     console.log(req.body)
-   if(req.body.user_id == req.session.user.id){ //NO ME TOMA REQ.BODY.USER_ID LPM
+   if(req.body.user_id == req.session.user.id){ //NO  TOMA REQ.BODY.USER_ID L
     db.Artwork.update(req.body, { where: { id: req.params.id } })
         .then(function(artworks) {
             res.redirect('/artworks/' + req.params.id)

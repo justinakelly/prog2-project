@@ -7,9 +7,8 @@ module.exports = function (sequelize, dataTypes) {
      primaryKey: true,
      type: dataTypes.INTEGER } ,
 
-    username: { type: dataTypes.STRING},
-    //  profilepicture: { type: dataTypes.STRING},
-     profilepicture:{type:dataTypes.STRING},//aca hay q acomodar el tipo de dato q segun google es blob
+     username: { type: dataTypes.STRING},
+     profilepicture:{type:dataTypes.STRING},
      email: { type: dataTypes.STRING}, 
      password: { type: dataTypes.STRING},
      document: { type: dataTypes.INTEGER}, 
