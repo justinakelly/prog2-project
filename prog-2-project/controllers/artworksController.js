@@ -94,20 +94,25 @@ const controller = {
         //     throw Error('No autorizado.')
         // } // console.log(req.body.user_id);
         // console.log(req.session.user.id);
-        
+       
+       // console.log(req.body);
+      //  console.log(artworks.user_id);
+
         if (!req.session.user || req.session.user.id !== req.body.user_id) {
+            console.log(req.params.user_id)
+            console.log(req.params)
+            console.log(req.session.user.id);
             throw Error('You are not the owner of the artwork you are trying to delete.')
             return res.redirect ('/artworks/' + req.params.id)
+          
         }
-        console.log(req.body);
+       // console.log(req.body);
         //console.log(artworks.user_id);
         db.Artwork.destroy({ where: { id: req.params.id } })
             .then(function() {
             //  console.log(req.body.user_id);
-
-                console.log(artworks.user_id);
-                console.log(req.session.user.id);
-                console.log(req.body);
+               
+                
 
                 res.redirect('/users/me')
             })
