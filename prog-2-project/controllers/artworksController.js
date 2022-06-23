@@ -99,7 +99,7 @@ const controller = {
             throw Error('You are not the owner of the artwork you are trying to delete.')
             return res.redirect ('/artworks/' + req.params.id)
         }
-        console.log(req.body);
+               console.log(req.body);
         //console.log(artworks.user_id);
         db.Artwork.destroy({ where: { id: req.params.id } })
             .then(function() {
