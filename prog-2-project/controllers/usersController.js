@@ -150,7 +150,7 @@ const controller = {
 
         db.User.update(req.body, { where: { id: req.session.user.id } }
         )
-            .then(function(me) { //no se si esta bien esto
+            .then(function(me) { 
                 if(req.body.username){
                     req.session.user.username = req.body.username;
                 }
