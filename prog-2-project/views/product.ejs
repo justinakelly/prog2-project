@@ -19,15 +19,31 @@
 			<% if(locals.me) { %>
 				<a class="add-product a" href="/artworks/add/"><i class="fas fa-light fa-plus"></i></a>
 			<% } %> 
+<<<<<<< HEAD
 			<% if(locals.me && me.id == artworks.user_id) { %> 
 			<p class="product-detail-description">
+=======
+			<!-- < if(locals.me && me.id == artworks.user_id) { %> -->
+				<% if(locals.me) { %>
+				<p class="product-detail-description">
+>>>>>>> 87b0a36efc49c31eb82a98a69ef76e61586b4c88
 			<a class="add-product a" href="/artworks/<%= artworks.id %>/edit">Edit</a>
-			</p>
+			</p><% } %> 
 			<br></br>
+<<<<<<< HEAD
 			<form action="/artworks/<%= artworks.id %>/delete" method="post">
 				<button class="delete-button" type="submit"><i class="fas fa-trash trash-delete"></i></button>
 			</form>
 			<% } %> 
+=======
+			<% if(locals.me) { %>
+				<form action="/artworks/<%= artworks.id %>/delete" method="post">
+				<!-- <input class="add-product" type="submit" value="Delete"> -->
+				<button class="delete-button" type="submit"><i class="fas fa-trash trash-delete"></i></button>
+			</form>
+			<% } %> 
+			<!-- < } %>  -->
+>>>>>>> 87b0a36efc49c31eb82a98a69ef76e61586b4c88
 
 		</div>
 		<div class="product-detail">
