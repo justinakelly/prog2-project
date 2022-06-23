@@ -1,4 +1,3 @@
-//const { localsName } = require('ejs');  //???
 var db = require('../database/models');
 
 
@@ -90,30 +89,13 @@ const controller = {
     
 // -  /artworks/:id/delete
     delete: function(req, res) {
-        // if (!req.session.user) {
-        //     throw Error('No autorizado.')
-        // } // console.log(req.body.user_id);
-        // console.log(req.session.user.id);
-       
-       // console.log(req.body);
-      //  console.log(artworks.user_id);
 
-        if (!req.session.user || req.session.user.id !== req.body.user_id) {
-            console.log(req.params.user_id)
-            console.log(req.params)
-            console.log(req.session.user.id);
-            throw Error('You are not the owner of the artwork you are trying to delete.')
+        if (!req.session.user) {
             return res.redirect ('/artworks/' + req.params.id)
-          
-        }
-       // console.log(req.body);
-        //console.log(artworks.user_id);
+        } 
+      
         db.Artwork.destroy({ where: { id: req.params.id } })
             .then(function() {
-            //  console.log(req.body.user_id);
-               
-                
-
                 res.redirect('/users/me')
             })
             .catch(function(error) {

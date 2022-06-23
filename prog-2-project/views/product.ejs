@@ -19,16 +19,15 @@
 			<% if(locals.me) { %>
 				<a class="add-product a" href="/artworks/add/"><i class="fas fa-light fa-plus"></i></a>
 			<% } %> 
-			<!-- < if(locals.me && me.id == artworks.user_id) { %> -->
+			<% if(locals.me && me.id == artworks.user_id) { %> 
 			<p class="product-detail-description">
 			<a class="add-product a" href="/artworks/<%= artworks.id %>/edit">Edit</a>
 			</p>
 			<br></br>
 			<form action="/artworks/<%= artworks.id %>/delete" method="post">
-				<!-- <input class="add-product" type="submit" value="Delete"> -->
 				<button class="delete-button" type="submit"><i class="fas fa-trash trash-delete"></i></button>
 			</form>
-			<!-- < } %>  -->
+			<% } %> 
 
 		</div>
 		<div class="product-detail">
