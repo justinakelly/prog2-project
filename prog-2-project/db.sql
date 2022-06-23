@@ -1,5 +1,8 @@
 BASE DE DATOS en workbench:
 
+CREATE SCHEMA artworks;
+USE artworks; 
+
 CREATE TABLE `users` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
