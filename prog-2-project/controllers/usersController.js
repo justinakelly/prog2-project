@@ -70,7 +70,7 @@ const controller = {
                     return res.render ('register', {error: 'Email already in use'})}
                 if(username) {
                     return res.render ('register', {error: 'Username already in use'})}
-        } catch(err){
+        } catch(error){
             res.render ('register', {error: err.message})
             next();
         }
