@@ -1,4 +1,4 @@
-var db = require('../database/models');
+var db = require('../database/models');// requiero modelos modulos
 var hasher = require('bcryptjs');
 
 
@@ -10,8 +10,8 @@ const controller = {
     },
 
     access: function(req, res, next) {
-        db.User.findOne({where: {email: req.body.email}}) 
-            .then(function (user) { //resultado de promesa=usuario
+        db.User.findOne({where: {email: req.body.email}}) //modelo modulo User //atributo columna, valor a buscar
+            .then(function (user) { //resultado de promesa=user
 
                 if (!user) {
                     return res.render ('login', {error: "Invalid email"})
@@ -76,9 +76,9 @@ const controller = {
         }
 
         const hashedPassword = hasher.hashSync(req.body.password, 8);
-        if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
+        if (req.file) req.body.profilepicture = (req.file.path).replace('public', ''); //path multer
         
-        db.User.create({
+        db.User.create({ //recibe OL
                     username: req.body.username,
                     password: hashedPassword,
                     email: req.body.email,
@@ -99,13 +99,13 @@ const controller = {
 
         db.User.findByPk(req.session.user.id, { include: 
                     [
-                        {association: 'comments'},
+                        {association: 'comments'}, //asociaciones (relaciones) definidas en los modelos
                         {association: 'artworks',
-                                    include: [ {association: 'comments'} ]} //para hacer artworks.comments.length
+                                    include: [ {association: 'comments'} ]} // relaciones anidadas para hacer artworks.comments.length
                     ]
         })
-            .then(function (user) {
-                res.render('profile', { user });
+            .then(function (user) { //resultado de promesa user 
+                res.render('profile', { user });// ol info que quiero mandar con la vista
             })
             .catch(function (error) {
                 res.send(error)
@@ -116,12 +116,12 @@ const controller = {
     
         db.User.findByPk(req.params.id, { include: 
                 [
-                    {association: 'comments'},
+                    {association: 'comments'},//asociaciones (relaciones) definidas en los modelos
                     {association: 'artworks',
-                                include: [ {association: 'comments'} ]} //para hacer artworks.comments.length 
+                                include: [ {association: 'comments'} ]} // relaciones anidadas para hacer artworks.comments.length 
                 ]
         })
-            .then(function (user) {
+            .then(function (user) {  //resultado de promesa user 
                 res.render('profile', { user });
             })
             .catch(function (error) {
@@ -142,13 +142,13 @@ const controller = {
 
     },
     update: function(req, res) {
-        if (req.file) req.body.profilepicture = (req.file.path).replace('public', '');
+        if (req.file) req.body.profilepicture = (req.file.path).replace('public', ''); //path multer
         if (req.body.password){ //si viene el campo password lo hasheas 
             req.body.password = hasher.hashSync(req.body.password, 8)}
         
         req.body.updated_at = new Date ();
 
-        db.User.update(req.body, { where: { id: req.session.user.id } }
+        db.User.update(req.body, { where: { id: req.session.user.id } } //where
         )
             .then(function(me) { 
                 if(req.body.username){

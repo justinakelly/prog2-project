@@ -4,13 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require ('express-session');
-var db = require('./database/models');
+var db = require('./database/models'); // requiero modelos
 
+//requiero rutas
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var artworksRouter = require('./routes/artworks'); //la requiero
 
-var app = express();
+var app = express();//acceso a todas las funcionalidades express
 
 app.use(session( {
   secret: 'a_secret_word',// llave que encripta, me permite guar datos y traerlos de vuelta
@@ -19,13 +20,13 @@ app.use(session( {
 }))
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views')); // rec estaticos desde vistas
 app.set('view engine', 'ejs');
 
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json()); //capt info forms
+app.use(express.urlencoded({ extended: false }));// tamb
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -51,7 +52,8 @@ app.use(function(req, res, next) {
   next();
 })
 
-app.use('/', indexRouter);
+// uso rutas
+app.use('/', indexRouter); // /recurso y  constante dnd almaceno modulo d recurso
 app.use('/users', usersRouter);
 app.use ('/artworks', artworksRouter); //la uso 
 
