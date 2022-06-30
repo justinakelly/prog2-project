@@ -21,7 +21,7 @@
 			<div class=" col-nuevo form-register-div-container">
 
 	
-				<form method="post"  action="/users/register">
+				<form method="post" enctype="multipart/form-data" action="/users/register">
 					<% if (locals.error) { %>
 						<div class="alert alert-danger" role="alert">
 						  <%= error %>
