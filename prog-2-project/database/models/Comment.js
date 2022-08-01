@@ -15,7 +15,7 @@ module.exports = function (sequelize, dataTypes) { // .define() y declarar dataT
             created_at: { type: dataTypes.DATE },
     }
     const configs = { // adicionales
-        tableName : 'comments', // nombre tabla no coincide con el del modelo en plural
+        tableName : 'comments', // nombre tabla no coincide con el del modelo
         timestamps : false //desabilita columnas para timestamps en este modelo
     }
 
